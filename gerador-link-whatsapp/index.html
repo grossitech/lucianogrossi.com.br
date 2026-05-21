@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gerador de Link do WhatsApp | Luciano Grossi</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<style>
+  main {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 8rem 2rem 5rem;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.75rem;
+  }
+
+  .page-desc {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-bottom: 3rem;
+  }
+
+  .card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .field-group {
+    display: grid;
+    grid-template-columns: 100px 110px 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    .field-group { grid-template-columns: 1fr 1fr; }
+    .field-group .field:last-child { grid-column: 1 / -1; }
+  }
+
+  .field { display: flex; flex-direction: column; gap: 0.4rem; }
+
+  label {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .required::after { content: ' *'; color: var(--accent); }
+
+  input[type="tel"],
+  textarea {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 14px;
+    padding: 0.65rem 0.85rem;
+    width: 100%;
+    transition: border-color 0.2s;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  input[type="tel"]:focus, textarea:focus { border-color: var(--accent); }
+  input::placeholder, textarea::placeholder { color: rgba(136,136,136,0.4); }
+  textarea { resize: vertical; min-height: 90px; line-height: 1.5; }
+
+  .hint {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 0.2rem;
+  }
+
+  .field-full { margin-bottom: 1.5rem; }
+
+  .optional-label {
+    font-size: 9px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    margin-left: 0.4rem;
+  }
+
+  .privacy-note {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .privacy-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .btn-generate {
+    width: 100%;
+    padding: 0.9rem;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .btn-generate:hover { background: var(--accent-dark); }
+
+  .result-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    display: none;
+    animation: fadeUp 0.3s ease both;
+  }
+
+  .result-card.visible { display: block; }
+
+  .result-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+
+  .result-link {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--accent);
+    word-break: break-all;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.75rem 1rem;
+    display: block;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+
+  .result-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+  .btn-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.6rem 1.25rem;
+    border-radius: 4px;
+    font-family: var(--mono);
+    font-size: 12px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+    letter-spacing: 0.03em;
+  }
+
+  .btn-open { background: #25d366; color: #fff; }
+  .btn-open:hover { background: #1db954; }
+
+  .btn-copy {
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid var(--border-hover);
+  }
+  .btn-copy:hover { color: var(--text); border-color: var(--text); }
+  .btn-copy.copied { color: var(--accent); border-color: var(--accent); }
+
+  .error { border-color: #e24b4a !important; }
+
+  .error-msg {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: #e24b4a;
+    margin-top: 0.2rem;
+  }
+
+  footer { margin-top: 4rem; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">lg.dev</a>
+  <div class="nav-links">
+    <a href="/#sobre">sobre</a>
+    <a href="/#experiencia">experiência</a>
+    <a href="/#projetos">projetos</a>
+    <a href="/#contato">contato</a>
+  </div>
+</nav>
+
+<main>
+  <div class="page-tag">Ferramenta</div>
+  <h1>Gerador de Link<br>do <em>WhatsApp</em></h1>
+  <p class="page-desc">Crie um link direto para qualquer número do WhatsApp, com ou sem mensagem pré-definida. Nenhum dado é armazenado.</p>
+
+  <div class="card">
+    <div class="field-group">
+      <div class="field">
+        <label class="required">DDI</label>
+        <input type="tel" id="ddi" placeholder="55" maxlength="4">
+        <span class="hint">Brasil = 55</span>
+      </div>
+      <div class="field">
+        <label class="required">DDD</label>
+        <input type="tel" id="ddd" placeholder="11" maxlength="3">
+        <span class="hint">Sem zero inicial</span>
+      </div>
+      <div class="field">
+        <label class="required">Número</label>
+        <input type="tel" id="numero" placeholder="999999999">
+        <span class="hint">Só dígitos</span>
+      </div>
+    </div>
+
+    <div class="field-full">
+      <label>Mensagem <span class="optional-label">opcional</span></label>
+      <textarea id="mensagem" placeholder="Digite uma mensagem pré-definida…"></textarea>
+    </div>
+
+    <div class="privacy-note">
+      <span class="privacy-dot"></span>
+      Seus dados não são armazenados.
+    </div>
+
+    <button class="btn-generate" onclick="gerarLink()">Gerar link ↗</button>
+  </div>
+
+  <div class="result-card" id="resultado">
+    <div class="result-label">// link gerado</div>
+    <span class="result-link" id="linkGerado"></span>
+    <div class="result-actions">
+      <a class="btn-action btn-open" id="btnAbrir" href="#" target="_blank">Abrir no WhatsApp</a>
+      <button class="btn-action btn-copy" id="btnCopiar" onclick="copiarLink()">Copiar link</button>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p><a href="/">← lucianogrossi.com.br</a></p>
+</footer>
+
+<script>
+  document.getElementById('ddi').value = '55';
+
+  function limparErros() {
+    ['ddi','ddd','numero'].forEach(id => {
+      document.getElementById(id).classList.remove('error');
+      const err = document.getElementById(id + '-err');
+      if (err) err.remove();
+    });
+  }
+
+  function marcarErro(id, msg) {
+    const el = document.getElementById(id);
+    el.classList.add('error');
+    const err = document.createElement('span');
+    err.className = 'error-msg';
+    err.id = id + '-err';
+    err.textContent = msg;
+    el.parentNode.appendChild(err);
+  }
+
+  function gerarLink() {
+    limparErros();
+
+    const ddi    = document.getElementById('ddi').value.trim().replace(/\D/g,'');
+    const ddd    = document.getElementById('ddd').value.trim().replace(/\D/g,'');
+    const numero = document.getElementById('numero').value.trim().replace(/\D/g,'');
+    const msg    = document.getElementById('mensagem').value.trim();
+
+    let ok = true;
+    if (!ddi)               { marcarErro('ddi',    'Obrigatório');                  ok = false; }
+    if (!ddd)               { marcarErro('ddd',    'Obrigatório');                  ok = false; }
+    else if (ddd[0] === '0'){ marcarErro('ddd',    'Não pode começar com zero');    ok = false; }
+    if (!numero)            { marcarErro('numero', 'Obrigatório');                  ok = false; }
+    if (!ok) return;
+
+    const tel  = ddi + ddd + numero;
+    const link = msg ? `https://wa.me/${tel}?text=${encodeURIComponent(msg)}` : `https://wa.me/${tel}`;
+
+    document.getElementById('linkGerado').textContent = link;
+    document.getElementById('btnAbrir').href = link;
+
+    const result = document.getElementById('resultado');
+    result.classList.add('visible');
+    result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+    document.getElementById('btnCopiar').textContent = 'Copiar link';
+    document.getElementById('btnCopiar').classList.remove('copied');
+  }
+
+  function copiarLink() {
+    const link = document.getElementById('linkGerado').textContent;
+    navigator.clipboard.writeText(link).then(() => {
+      const btn = document.getElementById('btnCopiar');
+      btn.textContent = 'Copiado!';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = 'Copiar link'; btn.classList.remove('copied'); }, 2000);
+    });
+  }
+
+  document.querySelectorAll('input[type="tel"]').forEach(el => {
+    el.addEventListener('keydown', e => { if (e.key === 'Enter') gerarLink(); });
+  });
+</script>
+
+</body>
+</html>

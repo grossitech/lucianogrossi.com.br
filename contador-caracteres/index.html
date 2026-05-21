@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contador de Caracteres | Luciano Grossi</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<style>
+  :root {
+    --ok: #25d366;
+    --warn: #f0a500;
+    --danger: #e24b4a;
+  }
+
+  main { max-width: 780px; margin: 0 auto; padding: 8rem 2rem 5rem; }
+
+  h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 300; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 0.75rem; }
+
+  .page-desc { color: var(--muted); font-size: 0.95rem; margin-bottom: 3rem; }
+
+  .editor-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.75rem 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .editor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .editor-label { font-family: var(--mono); font-size: 10px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
+
+  .char-count-main {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--muted);
+    transition: color 0.2s;
+  }
+
+  textarea#texto {
+    width: 100%;
+    min-height: 160px;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.7;
+    padding: 1rem 1.25rem;
+    resize: vertical;
+    outline: none;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+  }
+
+  textarea#texto:focus { border-color: var(--accent); }
+  textarea#texto::placeholder { color: rgba(136,136,136,0.4); }
+
+  .editor-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.75rem;
+  }
+
+  .meta-info { font-family: var(--mono); font-size: 10px; color: var(--muted); display: flex; gap: 1.5rem; }
+
+  .btn-clear {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    background: none;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+    padding: 0;
+  }
+  .btn-clear:hover { color: var(--text); }
+
+  .networks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+
+  .network-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    transition: border-color 0.2s;
+    position: relative;
+    overflow: hidden;
+    animation: fadeUp 0.4s ease both;
+  }
+
+  .network-card.ok     { border-color: rgba(37,211,102,0.25); }
+  .network-card.warn   { border-color: rgba(240,165,0,0.25); }
+  .network-card.danger { border-color: rgba(226,75,74,0.35); }
+
+  .network-card:nth-child(1) { animation-delay: 0.05s; }
+  .network-card:nth-child(2) { animation-delay: 0.10s; }
+  .network-card:nth-child(3) { animation-delay: 0.15s; }
+  .network-card:nth-child(4) { animation-delay: 0.20s; }
+  .network-card:nth-child(5) { animation-delay: 0.25s; }
+  .network-card:nth-child(6) { animation-delay: 0.30s; }
+  .network-card:nth-child(7) { animation-delay: 0.35s; }
+  .network-card:nth-child(8) { animation-delay: 0.40s; }
+
+  .network-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; }
+  .network-name { font-size: 13px; font-weight: 400; }
+  .network-field { font-family: var(--mono); font-size: 10px; color: var(--muted); margin-top: 2px; letter-spacing: 0.03em; }
+
+  .network-badge {
+    font-family: var(--mono);
+    font-size: 10px;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    letter-spacing: 0.04em;
+    flex-shrink: 0;
+  }
+  .badge-ok     { background: rgba(37,211,102,0.12); color: #25d366; }
+  .badge-warn   { background: rgba(240,165,0,0.12);  color: #f0a500; }
+  .badge-danger { background: rgba(226,75,74,0.12);  color: #e24b4a; }
+  .badge-empty  { background: var(--bg3); color: var(--muted); }
+
+  .progress-bar-bg {
+    height: 3px;
+    background: var(--bg3);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 0.75rem;
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 0.15s ease, background 0.15s ease;
+  }
+
+  .network-numbers { display: flex; justify-content: space-between; align-items: baseline; }
+  .count-used { font-family: var(--mono); font-size: 1.4rem; font-weight: 400; transition: color 0.2s; }
+  .count-sep  { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+  .count-max  { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+  .count-left { font-family: var(--mono); font-size: 10px; color: var(--muted); }
+
+  footer { margin-top: 4rem; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">lg.dev</a>
+  <div class="nav-links">
+    <a href="/#sobre">sobre</a>
+    <a href="/#experiencia">experiência</a>
+    <a href="/#projetos">projetos</a>
+    <a href="/#contato">contato</a>
+  </div>
+</nav>
+
+<main>
+  <div class="page-tag">Ferramenta</div>
+  <h1>Contador de<br><em>Caracteres</em></h1>
+  <p class="page-desc">Digite ou cole seu texto e veja em tempo real quantos caracteres restam para cada rede social.</p>
+
+  <div class="editor-card">
+    <div class="editor-header">
+      <span class="editor-label">// seu texto</span>
+      <span class="char-count-main" id="totalCount">0 caracteres</span>
+    </div>
+    <textarea id="texto" placeholder="Digite ou cole seu texto aqui…"></textarea>
+    <div class="editor-footer">
+      <div class="meta-info">
+        <span id="wordCount">0 palavras</span>
+        <span id="lineCount">0 linhas</span>
+      </div>
+      <button class="btn-clear" onclick="limpar()">limpar</button>
+    </div>
+  </div>
+
+  <div class="networks-grid" id="networksGrid"></div>
+</main>
+
+<footer>
+  <p><a href="/">← lucianogrossi.com.br</a></p>
+</footer>
+
+<script>
+  const REDES = [
+    { name: 'LinkedIn',  field: 'Post',              max: 3000  },
+    { name: 'LinkedIn',  field: 'About (resumo)',     max: 2600  },
+    { name: 'LinkedIn',  field: 'Headline',           max: 220   },
+    { name: 'LinkedIn',  field: 'Comentário',         max: 1250  },
+    { name: 'X / Twitter', field: 'Tweet',           max: 280   },
+    { name: 'Instagram', field: 'Legenda',            max: 2200  },
+    { name: 'Instagram', field: 'Bio',                max: 150   },
+    { name: 'WhatsApp',  field: 'Status',             max: 139   },
+    { name: 'Facebook',  field: 'Post',               max: 63206 },
+    { name: 'Threads',   field: 'Post',               max: 500   },
+    { name: 'YouTube',   field: 'Título do vídeo',    max: 100   },
+    { name: 'YouTube',   field: 'Descrição',          max: 5000  },
+  ];
+
+  function getStatus(used, max) {
+    const pct = used / max;
+    if (used === 0) return 'empty';
+    if (pct < 0.8)  return 'ok';
+    if (pct < 1.0)  return 'warn';
+    return 'danger';
+  }
+
+  function getBarColor(status) {
+    if (status === 'ok')     return '#25d366';
+    if (status === 'warn')   return '#f0a500';
+    if (status === 'danger') return '#e24b4a';
+    return '#333';
+  }
+
+  function getBadgeText(used, max, status) {
+    if (status === 'empty')  return '—';
+    if (status === 'danger') return 'excedido';
+    const left = max - used;
+    return `−${left.toLocaleString('pt-BR')}`;
+  }
+
+  function formatNum(n) { return n.toLocaleString('pt-BR'); }
+
+  function buildCards() {
+    const grid = document.getElementById('networksGrid');
+    grid.innerHTML = '';
+    REDES.forEach((r, i) => {
+      const card = document.createElement('div');
+      card.className = 'network-card';
+      card.id = 'card-' + i;
+      card.innerHTML = `
+        <div class="network-top">
+          <div>
+            <div class="network-name">${r.name}</div>
+            <div class="network-field">${r.field}</div>
+          </div>
+          <span class="network-badge badge-empty" id="badge-${i}">—</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="bar-${i}" style="width:0%;background:#333;"></div>
+        </div>
+        <div class="network-numbers">
+          <div>
+            <span class="count-used" id="used-${i}">0</span>
+            <span class="count-sep"> / </span>
+            <span class="count-max">${formatNum(r.max)}</span>
+          </div>
+          <span class="count-left" id="left-${i}">${formatNum(r.max)} restantes</span>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  function atualizar() {
+    const texto = document.getElementById('texto').value;
+    const total = texto.length;
+    const words = texto.trim() === '' ? 0 : texto.trim().split(/\s+/).length;
+    const lines = texto === '' ? 0 : texto.split('\n').length;
+
+    document.getElementById('totalCount').textContent = `${formatNum(total)} caractere${total !== 1 ? 's' : ''}`;
+    document.getElementById('wordCount').textContent  = `${formatNum(words)} palavra${words !== 1 ? 's' : ''}`;
+    document.getElementById('lineCount').textContent  = `${formatNum(lines)} linha${lines !== 1 ? 's' : ''}`;
+
+    REDES.forEach((r, i) => {
+      const used   = total;
+      const status = getStatus(used, r.max);
+      const pct    = Math.min(used / r.max * 100, 100);
+      const left   = r.max - used;
+
+      const card  = document.getElementById('card-' + i);
+      const badge = document.getElementById('badge-' + i);
+      const bar   = document.getElementById('bar-' + i);
+      const usedEl = document.getElementById('used-' + i);
+      const leftEl = document.getElementById('left-' + i);
+
+      card.className = 'network-card' + (status !== 'empty' ? ' ' + status : '');
+      badge.className = 'network-badge badge-' + status;
+      badge.textContent = getBadgeText(used, r.max, status);
+      bar.style.width = pct + '%';
+      bar.style.background = getBarColor(status);
+      usedEl.textContent = formatNum(used);
+      usedEl.style.color = status === 'danger' ? 'var(--danger)' : status === 'warn' ? 'var(--warn)' : status === 'ok' ? 'var(--text)' : 'var(--muted)';
+
+      if (status === 'empty') {
+        leftEl.textContent = `${formatNum(r.max)} restantes`;
+      } else if (status === 'danger') {
+        leftEl.textContent = `${formatNum(Math.abs(left))} acima do limite`;
+        leftEl.style.color = 'var(--danger)';
+      } else {
+        leftEl.textContent = `${formatNum(left)} restantes`;
+        leftEl.style.color = 'var(--muted)';
+      }
+    });
+  }
+
+  function limpar() {
+    document.getElementById('texto').value = '';
+    atualizar();
+    document.getElementById('texto').focus();
+  }
+
+  buildCards();
+  atualizar();
+
+  document.getElementById('texto').addEventListener('input', atualizar);
+</script>
+
+</body>
+</html>

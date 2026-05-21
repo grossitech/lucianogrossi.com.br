@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vença os Mitos que Sabotam sua Carreira | Luciano Grossi</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<style>
+  /* HERO */
+  .hero {
+    min-height: 100vh; display: flex; align-items: center;
+    padding: 8rem 2rem 5rem; max-width: 1100px; margin: 0 auto; gap: 5rem;
+  }
+  .hero-text { flex: 1; animation: fadeUp 0.6s ease both; }
+
+  h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 300; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
+
+  .hero-desc { font-size: 1.05rem; color: var(--muted); max-width: 500px; margin-bottom: 2.5rem; line-height: 1.8; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+  .hero-book { flex-shrink: 0; width: 280px; animation: fadeUp 0.6s 0.15s ease both; }
+  .hero-book img { width: 100%; height: auto; display: block; border-radius: 4px; box-shadow: 0 30px 80px rgba(0,0,0,0.6), 0 0 60px rgba(255,107,43,0.08); transition: transform 0.3s ease; }
+  .hero-book img:hover { transform: translateY(-6px); }
+
+  @media (max-width: 800px) {
+    .hero { flex-direction: column; gap: 3rem; padding-top: 7rem; text-align: center; min-height: auto; }
+    .hero-book { width: 200px; margin: 0 auto; }
+    .page-tag, .hero-actions { justify-content: center; }
+    .hero-desc { margin-left: auto; margin-right: auto; }
+  }
+
+  /* SECTIONS */
+  .section { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem; border-top: 1px solid var(--border); }
+  .section-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 3rem; }
+  .section-label { font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; }
+  h2 { font-size: 1.9rem; font-weight: 300; letter-spacing: -0.01em; }
+
+  /* ABOUT */
+  .about-text { max-width: 740px; font-size: 1.05rem; color: var(--muted); line-height: 1.9; }
+  .about-text p + p { margin-top: 1.25rem; }
+  .about-text strong { color: var(--text); font-weight: 400; }
+
+  .author-card { display: flex; align-items: center; gap: 2rem; background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 2rem; max-width: 500px; margin-top: 3rem; }
+  .author-photo { width: 80px; height: 80px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 2px solid rgba(255,107,43,0.3); }
+  .author-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+  .author-name { font-size: 1rem; font-weight: 400; margin-bottom: 0.15rem; }
+  .author-role { font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing: 0.04em; }
+  @media (max-width: 500px) { .author-card { flex-direction: column; text-align: center; } }
+
+  /* CHAPTERS */
+  .chapters-list { display: flex; flex-direction: column; }
+  .chapter-item { display: flex; align-items: center; gap: 1.5rem; padding: 1rem 0; border-bottom: 1px solid var(--border); }
+  .chapter-item:last-child { border-bottom: none; }
+  .chapter-num { font-family: var(--mono); font-size: 11px; color: var(--accent); width: 36px; flex-shrink: 0; letter-spacing: 0.04em; }
+  .chapter-title { font-size: 0.95rem; color: var(--muted); }
+
+  /* BUY */
+  .buy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 680px; }
+  @media (max-width: 560px) { .buy-grid { grid-template-columns: 1fr; } }
+
+  .buy-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 2rem; display: flex; flex-direction: column; gap: 1.25rem; transition: border-color 0.2s; }
+  .buy-card:hover { border-color: var(--border-hover); }
+  .buy-card-type { font-family: var(--mono); font-size: 10px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
+  .buy-card-title { font-size: 1.1rem; font-weight: 400; }
+
+  .buy-features { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; }
+  .buy-features li { font-size: 0.88rem; color: var(--muted); display: flex; align-items: flex-start; gap: 0.6rem; }
+  .buy-features li::before { content: '—'; color: var(--accent); font-family: var(--mono); font-size: 11px; flex-shrink: 0; margin-top: 0.15rem; }
+
+  .buy-btn { display: block; text-align: center; padding: 0.8rem; background: var(--accent); color: #fff; border-radius: 4px; font-family: var(--mono); font-size: 12px; font-weight: 500; letter-spacing: 0.06em; text-decoration: none; transition: background 0.2s; }
+  .buy-btn:hover { background: var(--accent-dark); }
+  .buy-note { font-family: var(--mono); font-size: 10px; color: var(--muted); text-align: center; letter-spacing: 0.03em; }
+
+  /* TESTIMONIALS */
+  .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 1rem; }
+
+  .testimonial-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
+  .testimonial-text { font-size: 0.9rem; color: var(--muted); line-height: 1.75; flex: 1; }
+  .testimonial-text::before { content: '"'; color: var(--accent); font-size: 1.4rem; line-height: 0; vertical-align: -0.35rem; margin-right: 0.15rem; }
+  .testimonial-author { display: flex; align-items: center; gap: 0.75rem; }
+  .t-avatar { width: 40px; height: 40px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 1px solid var(--border); }
+  .t-avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .t-name { font-size: 13px; font-weight: 400; }
+  .t-role { font-family: var(--mono); font-size: 10px; color: var(--muted); }
+
+  .testimonial-featured {
+    grid-column: 1 / -1;
+    background: var(--bg2);
+    border: 1px solid rgba(255,107,43,0.25);
+    border-radius: 8px;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  @media (max-width: 660px) { .testimonial-featured { grid-template-columns: 1fr; } }
+
+  .featured-text-wrap { display: flex; flex-direction: column; gap: 1.25rem; }
+
+  .featured-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+  }
+  .featured-badge::before { content: '★'; font-size: 12px; }
+
+  .featured-quote { font-size: 1rem; color: var(--muted); line-height: 1.8; font-style: italic; }
+  .featured-quote::before { content: '"'; color: var(--accent); font-size: 1.6rem; line-height: 0; vertical-align: -0.4rem; margin-right: 0.2rem; }
+
+  .featured-author { display: flex; align-items: center; gap: 0.75rem; }
+  .featured-avatar { width: 48px; height: 48px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 2px solid rgba(255,107,43,0.3); }
+  .featured-avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .featured-name { font-size: 14px; font-weight: 400; }
+  .featured-role { font-family: var(--mono); font-size: 10px; color: var(--accent); }
+
+  .featured-video {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #000;
+    border: 1px solid var(--border);
+  }
+  .featured-video iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+
+  /* GUARANTEE */
+  .guarantee-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 2.5rem; display: flex; align-items: center; gap: 2.5rem; max-width: 680px; }
+  @media (max-width: 560px) { .guarantee-card { flex-direction: column; text-align: center; } }
+  .g-icon { width: 72px; height: 72px; border-radius: 50%; background: rgba(255,107,43,0.08); border: 1px solid rgba(255,107,43,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .g-icon svg { width: 32px; height: 32px; fill: var(--accent); }
+  .g-title { font-size: 1.1rem; font-weight: 400; margin-bottom: 0.5rem; }
+  .g-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
+
+  /* CTA FINAL */
+  .cta-final { text-align: center; padding: 5rem 2rem; border-top: 1px solid var(--border); max-width: 1100px; margin: 0 auto; }
+  .cta-quote { font-size: 1.2rem; color: var(--muted); margin-bottom: 2rem; font-style: italic; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">lg.dev</a>
+  <div class="nav-links">
+    <a href="/#sobre">sobre</a>
+    <a href="/#experiencia">experiência</a>
+    <a href="/#projetos">projetos</a>
+    <a href="/#contato">contato</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-text">
+    <div class="page-tag">Livro</div>
+    <h1>Vença os Mitos que<br><em>Sabotam</em> sua Carreira</h1>
+    <p class="hero-desc">
+      Muitas pessoas são infelizes no trabalho, mas permanecem onde estão — criando mitos para não precisar mudar.
+      Este livro foi escrito porque <strong style="color:var(--text);font-weight:400;">todo mundo merece ser feliz no que faz.</strong>
+    </p>
+    <div class="hero-actions">
+      <a href="#comprar" class="btn btn-primary">Comprar agora ↓</a>
+      <a href="#sobre-livro" class="btn btn-outline">Saiba mais</a>
+    </div>
+  </div>
+  <div class="hero-book">
+    <img src="../imagens/MOCKUP-venca-os-mitos-que-sabotam-sua-carreira.png"
+         alt="Capa do livro Vença os Mitos que Sabotam sua Carreira">
+  </div>
+</div>
+
+<!-- SOBRE -->
+<div class="section" id="sobre-livro">
+  <div class="section-header">
+    <span class="section-label">// 01</span>
+    <h2>Sobre o livro</h2>
+  </div>
+  <div class="about-text">
+    <p>Descobrir a sua verdadeira vocação não é algo fácil — a maioria das pessoas passa a vida tentando e termina sem uma resposta. <strong>Vença os Mitos que Sabotam sua Carreira</strong> apresenta dicas certeiras para quem quer descobrir sua vocação e desenvolver uma carreira, seja a atual ou a dos sonhos.</p>
+    <p>O coach Luciano Grossi reuniu nesse livro tudo que você precisa para olhar para si mesmo e para o seu redor, e alcançar o objetivo maior: <strong>descobrir o que te realiza.</strong> Mostra que seu trabalho não deve ser um problema, mas sim a sua realização pessoal — e apresenta um método único para diagnosticar por que você está preso.</p>
+    <p>Depois, aborda <strong>cinco grandes mitos</strong> — sorte, dificuldade, menor esforço, "eu faço sozinho" e "tá bom" — que nossa mente cria para nos sabotar, e como vencê-los de vez.</p>
+  </div>
+  <div class="author-card">
+    <div class="author-photo">
+      <img src="../imagens/LucianoGrossiPerfil-ol-transparente.PNG" alt="Luciano Grossi" loading="lazy">
+    </div>
+    <div>
+      <div class="author-name">Luciano Grossi</div>
+      <div class="author-role">Autor · Coach · Data Governance Pro</div>
+    </div>
+  </div>
+</div>
+
+<!-- CAPÍTULOS -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-label">// 02</span>
+    <h2>O que você vai ler</h2>
+  </div>
+  <div class="chapters-list">
+    <div class="chapter-item"><span class="chapter-num">intro</span><span class="chapter-title">Introdução</span></div>
+    <div class="chapter-item"><span class="chapter-num">01</span><span class="chapter-title">O Seu Trabalho É a Solução</span></div>
+    <div class="chapter-item"><span class="chapter-num">02</span><span class="chapter-title">A Ilusão da Segurança Destrói os Sonhos</span></div>
+    <div class="chapter-item"><span class="chapter-num">03</span><span class="chapter-title">É Possível que o Seu Sonho Esteja Ficando para Trás</span></div>
+    <div class="chapter-item"><span class="chapter-num">04</span><span class="chapter-title">O que É Carreira e o que É Sucesso?</span></div>
+    <div class="chapter-item"><span class="chapter-num">05</span><span class="chapter-title">Os Mitos que Impedem o Sucesso Profissional</span></div>
+    <div class="chapter-item"><span class="chapter-num">06</span><span class="chapter-title">Desconstruir Mitos e Criar Crenças Impulsionadoras</span></div>
+    <div class="chapter-item"><span class="chapter-num">07</span><span class="chapter-title">A Vida É Feita de Escolhas</span></div>
+    <div class="chapter-item"><span class="chapter-num">08</span><span class="chapter-title">Resgate o Seu Sonho e Faça o que É Preciso</span></div>
+    <div class="chapter-item"><span class="chapter-num">09</span><span class="chapter-title">Tudo o que Você Decide Ser</span></div>
+  </div>
+</div>
+
+<!-- COMPRAR -->
+<div class="section" id="comprar">
+  <div class="section-header">
+    <span class="section-label">// 03</span>
+    <h2>Comprar</h2>
+  </div>
+  <p style="color:var(--muted);margin-bottom:2rem;max-width:480px;font-size:0.95rem;">Disponível em Kindle e impresso. Ambos com compra segura pela Amazon.</p>
+  <div class="buy-grid">
+    <div class="buy-card">
+      <div class="buy-card-type">Digital</div>
+      <div class="buy-card-title">Kindle</div>
+      <ul class="buy-features">
+        <li>Leia no app Kindle (iOS, Android, PC)</li>
+        <li>Acesso imediato após a compra</li>
+        <li>Compra 100% segura pela Amazon</li>
+      </ul>
+      <a href="https://www.amazon.com.br/Ven%C3%A7a-Mitos-que-Sabotam-Carreira-ebook/dp/B075MTGYKF/" target="_blank" class="buy-btn">Comprar no Kindle ↗</a>
+      <div class="buy-note">via Amazon</div>
+    </div>
+    <div class="buy-card">
+      <div class="buy-card-type">Físico</div>
+      <div class="buy-card-title">Livro Impresso</div>
+      <ul class="buy-features">
+        <li>Entrega para todo o Brasil</li>
+        <li>A experiência completa do livro em papel</li>
+        <li>Compra 100% segura pela Amazon</li>
+      </ul>
+      <a href="https://www.amazon.com.br/Ven%C3%A7a-Mitos-que-Sabotam-Carreira/dp/8555440785/" target="_blank" class="buy-btn">Comprar Impresso ↗</a>
+      <div class="buy-note">via Amazon</div>
+    </div>
+  </div>
+</div>
+
+<!-- DEPOIMENTOS -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-label">// 04</span>
+    <h2>O que estão dizendo</h2>
+  </div>
+  <div class="testimonials-grid">
+
+    <div class="testimonial-card">
+      <p class="testimonial-text">O livro me deu forças para querer sair do comodismo de achar que 'tá bom assim' para realmente querer fazer algo e mudar, melhorar, crescer e realizar!</p>
+      <div class="testimonial-author">
+        <div class="t-avatar"><img src="../imagens/felipechavez.jpg" alt="Felipe Chavez" loading="lazy"></div>
+        <div><div class="t-name">Felipe Chavez</div><div class="t-role">Administrador</div></div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <p class="testimonial-text">Luciano é um autor honesto. É claro e simples, como é praxe na aula de um professor experiente e didático. O livro ganha em fluidez sem perder o rigor que o tema exige.</p>
+      <div class="testimonial-author">
+        <div class="t-avatar"><img src="../imagens/carlosgoncalves.jpg" alt="Carlos Gonçalves" loading="lazy"></div>
+        <div><div class="t-name">Carlos Gonçalves</div><div class="t-role">Coach da Naveen Coaching</div></div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <p class="testimonial-text">Me ajudou a perceber que estou no caminho profissional certo. Você acha que se sabota? Está realmente feliz? É bom se fazer essas perguntas — e esse livro ajuda a respondê-las.</p>
+      <div class="testimonial-author">
+        <div class="t-avatar"><img src="../imagens/rafa-rabelo.jpg" alt="Rafaela Rabelo" loading="lazy"></div>
+        <div><div class="t-name">Rafaela Rabelo</div><div class="t-role">Biomédica</div></div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <p class="testimonial-text">Luciano Grossi é um profissional de primeira! Leitura super recomendada!</p>
+      <div class="testimonial-author">
+        <div class="t-avatar"><img src="../imagens/rogerio-saint-clair.jpg" alt="Rogério Saint-Clair" loading="lazy"></div>
+        <div><div class="t-name">Rogério Saint-Clair</div><div class="t-role">Médico</div></div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <p class="testimonial-text">O livro me deu respostas sobre a minha vida de uma forma que eu não havia pensado antes. Fala sobre frustração, medo, carreira e como alcançar o sucesso.</p>
+      <div class="testimonial-author">
+        <div class="t-avatar"><img src="../imagens/leto-eda.jpg" alt="Leto Edo" loading="lazy"></div>
+        <div><div class="t-name">Leto Edo</div><div class="t-role">Fotógrafo</div></div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <p class="testimonial-text">Vale a pena conhecer esse autor aqui de Brasília. Parabéns pela realização!</p>
+      <div class="testimonial-author">
+        <div class="t-avatar"><img src="../imagens/ernopaulinyi.jpg" alt="Erno Paulinyi" loading="lazy"></div>
+        <div><div class="t-name">Erno Paulinyi</div><div class="t-role">Empreendedor</div></div>
+      </div>
+    </div>
+
+    <!-- GERALDO RUFINO — destaque com vídeo -->
+    <div class="testimonial-featured">
+      <div class="featured-text-wrap">
+        <div class="featured-badge">Depoimento especial</div>
+        <p class="featured-quote">Agradeço o belo trabalho que você vem fazendo por todos nós. Você é uma pessoa acima da média, tenho muito orgulho de ser seu amigo.</p>
+        <div class="featured-author">
+          <div class="featured-avatar">
+            <img src="../imagens/geraldo-rufino.png" alt="Geraldo Rufino" loading="lazy">
+          </div>
+          <div>
+            <div class="featured-name">Geraldo Rufino</div>
+            <div class="featured-role">Empresário, Autor e Grande Inspiração</div>
+          </div>
+        </div>
+      </div>
+      <div class="featured-video">
+        <iframe
+          src="https://www.youtube.com/embed/BBn4vcGS5J4"
+          title="Geraldo Rufino recebe o livro Vença os Mitos que Sabotam sua Carreira"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- GARANTIA -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-label">// 05</span>
+    <h2>Compra segura</h2>
+  </div>
+  <div class="guarantee-card">
+    <div class="g-icon">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+    </div>
+    <div>
+      <div class="g-title">Processado pela Amazon</div>
+      <div class="g-desc">Sua compra é processada diretamente pela Amazon, com toda a segurança da plataforma. O Kindle fica disponível imediatamente após o pagamento. O livro impresso chega com entrega rastreável para todo o Brasil.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA FINAL -->
+<div class="cta-final">
+  <p class="cta-quote">"Você merece ser feliz no trabalho e ter uma carreira de sucesso."</p>
+  <a href="#comprar" class="btn btn-primary" style="font-size:14px;padding:1rem 2rem;">Quero meu exemplar ↑</a>
+</div>
+
+<footer>
+  <p><a href="/">← lucianogrossi.com.br</a></p>
+</footer>
+
+</body>
+</html>
