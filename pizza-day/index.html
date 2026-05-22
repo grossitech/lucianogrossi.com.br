@@ -57,6 +57,71 @@
     max-width: 520px;
   }
 
+  /* CARD HISTÓRICO */
+  .hist-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1rem;
+    animation: fadeUp 0.5s ease both;
+  }
+  .hist-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+  }
+  .hist-label em {
+    color: var(--accent);
+    font-style: normal;
+  }
+  .hist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+  }
+  .hist-stat {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.9rem 1.2rem;
+  }
+  .hist-stat .lbl {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    margin-bottom: 0.3rem;
+  }
+  .hist-stat .val {
+    font-family: var(--mono);
+    font-size: 1.1rem;
+    color: var(--text);
+  }
+  .hist-stat .sub {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 0.2rem;
+    opacity: 0.7;
+  }
+  .hist-tag {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.06em;
+    background: rgba(255,107,43,0.1);
+    color: var(--accent);
+    border: 1px solid rgba(255,107,43,0.2);
+    border-radius: 3px;
+    padding: 0.15rem 0.5rem;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+  }
+
   /* PAINEL LASZLO */
   .laszlo-panel {
     background: var(--bg2);
@@ -340,6 +405,36 @@
 
 <main>
   <div class="page-tag">Ferramenta</div>
+
+  <!-- CARD HISTÓRICO -->
+  <div class="hist-card">
+    <div class="hist-label">
+      // em 22/05/2010, Laszlo pagou 10.000 BTC por duas pizzas
+      <span class="hist-tag">dados históricos</span>
+    </div>
+    <div class="hist-grid">
+      <div class="hist-stat">
+        <div class="lbl">preço de 1 BTC</div>
+        <div class="val">$0,0041</div>
+        <div class="sub">frações de centavo</div>
+      </div>
+      <div class="hist-stat">
+        <div class="lbl">10.000 BTC em USD</div>
+        <div class="val">$41,00</div>
+        <div class="sub">total pago pelas pizzas</div>
+      </div>
+      <div class="hist-stat">
+        <div class="lbl">10.000 BTC em BRL</div>
+        <div class="val">R$ 73,00</div>
+        <div class="sub">câmbio ~R$ 1,78/USD em mai/2010</div>
+      </div>
+      <div class="hist-stat">
+        <div class="lbl">custo por pizza</div>
+        <div class="val">$20,50</div>
+        <div class="sub">≈ R$ 36,50 cada</div>
+      </div>
+    </div>
+  </div>
 
   <!-- PAINEL LASZLO -->
   <div class="laszlo-panel">
