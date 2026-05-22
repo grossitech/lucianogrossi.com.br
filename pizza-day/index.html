@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bitcoin Pizza Day | Luciano Grossi</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<style>
+  main { max-width: 860px; margin: 0 auto; padding: 0 2rem 5rem; }
+
+  /* HERO */
+  .pizza-hero {
+    position: relative;
+    width: 100%;
+    height: 440px;
+    overflow: hidden;
+    margin-bottom: 4rem;
+  }
+  .pizza-hero img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    display: block;
+  }
+  .pizza-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.88) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 3rem;
+  }
+  .pizza-hero-date {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+  .pizza-hero h1 {
+    font-size: clamp(2.4rem, 6vw, 3.8rem);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin: 0 0 0.6rem;
+  }
+  .pizza-hero-sub {
+    color: rgba(240,237,232,0.65);
+    font-size: 0.95rem;
+    font-weight: 300;
+    max-width: 520px;
+  }
+
+  /* PAINEL LASZLO */
+  .laszlo-panel {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.5s ease both;
+  }
+  .panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  .panel-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .live-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: #25d366;
+    letter-spacing: 0.06em;
+  }
+  .live-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #25d366;
+    animation: blink 2s infinite;
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.25; }
+  }
+
+  .btc-price-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .btc-price-card {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem 1.5rem;
+    flex: 1;
+    min-width: 130px;
+  }
+  .btc-price-card .lbl { font-family: var(--mono); font-size: 10px; color: var(--muted); margin-bottom: 0.35rem; letter-spacing: 0.06em; }
+  .btc-price-card .val { font-family: var(--mono); font-size: 1.25rem; color: var(--accent); }
+
+  .pizzas-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+  }
+  @media (max-width: 560px) { .pizzas-grid { grid-template-columns: 1fr; } }
+
+  .pizza-stat {
+    background: var(--bg3);
+    border: 1px solid rgba(255,107,43,0.18);
+    border-radius: 6px;
+    padding: 1.1rem 1.4rem;
+  }
+  .pizza-stat .lbl { font-family: var(--mono); font-size: 10px; color: var(--muted); margin-bottom: 0.35rem; letter-spacing: 0.05em; }
+  .pizza-stat .big { font-family: var(--mono); font-size: 1.45rem; font-weight: 400; color: var(--text); line-height: 1.2; }
+  .pizza-stat .sub { font-family: var(--mono); font-size: 10px; color: var(--muted); margin-top: 0.25rem; }
+
+  .fun-facts { border-top: 1px solid var(--border); padding-top: 1.25rem; }
+  .fun-facts-label { font-family: var(--mono); font-size: 10px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.75rem; }
+  .fun-facts-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .fun-chip {
+    font-family: var(--mono);
+    font-size: 11px;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 0.3rem 0.9rem;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .fun-chip span { color: var(--text); }
+
+  .last-update {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 1rem;
+    text-align: right;
+    opacity: 0.6;
+  }
+
+  /* CALCULADORA */
+  .calc-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 4rem;
+    animation: fadeUp 0.5s 0.1s ease both;
+  }
+  .calc-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 1.5rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  @media (max-width: 520px) {
+    .calc-grid { grid-template-columns: 1fr; }
+    .calc-arrow { transform: rotate(90deg); text-align: center; }
+  }
+  .calc-side { display: flex; flex-direction: column; gap: 0.5rem; }
+  .calc-label-txt { font-family: var(--mono); font-size: 10px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
+  .calc-input {
+    width: 100%;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 1.5rem;
+    padding: 0.75rem 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  .calc-input:focus { border-color: var(--accent); }
+  .calc-input::placeholder { color: rgba(136,136,136,0.3); font-size: 1rem; }
+  .calc-result {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    min-height: 1.2em;
+  }
+  .calc-result.active { color: var(--accent); }
+  .calc-arrow { font-size: 1.4rem; color: var(--muted); text-align: center; user-select: none; }
+
+  .price-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-top: 1px solid var(--border);
+    padding-top: 1.25rem;
+    flex-wrap: wrap;
+  }
+  .price-row-label { font-family: var(--mono); font-size: 10px; color: var(--muted); letter-spacing: 0.06em; flex-shrink: 0; }
+  .price-prefix { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+  .price-input {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 13px;
+    padding: 0.4rem 0.75rem;
+    width: 90px;
+    outline: none;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  .price-input:focus { border-color: var(--accent); }
+  .price-note { font-family: var(--mono); font-size: 10px; color: var(--muted); }
+
+  /* HISTÓRIA */
+  .history-section { animation: fadeUp 0.5s 0.2s ease both; }
+  .section-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+  .history-section h2 {
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    margin-bottom: 2.5rem;
+    line-height: 1.15;
+  }
+
+  .history-img-recibo {
+    width: 100%;
+    max-width: 380px;
+    border-radius: 8px;
+    float: right;
+    margin: 0 0 2rem 2.5rem;
+    border: 1px solid var(--border);
+    display: block;
+  }
+  @media (max-width: 600px) {
+    .history-img-recibo { float: none; max-width: 100%; margin: 0 0 1.5rem; }
+  }
+
+  .history-text p {
+    color: var(--muted);
+    font-size: 0.97rem;
+    line-height: 1.85;
+    margin-bottom: 1.4rem;
+    font-weight: 300;
+  }
+  .history-text p strong { color: var(--text); font-weight: 400; }
+
+  blockquote {
+    border-left: 2px solid var(--accent);
+    margin: 1.75rem 0;
+    padding: 0.25rem 0 0.25rem 1.5rem;
+  }
+  blockquote p {
+    font-style: italic;
+    color: var(--muted);
+    margin: 0 !important;
+  }
+
+  .laszlo-card {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    margin: 2.5rem 0;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    clear: both;
+  }
+  @media (max-width: 600px) { .laszlo-card { flex-direction: column; } }
+  .laszlo-card img { width: 200px; flex-shrink: 0; border-radius: 6px; }
+  @media (max-width: 600px) { .laszlo-card img { width: 100%; } }
+  .laszlo-card-text h3 { font-size: 1rem; font-weight: 400; margin-bottom: 0.6rem; color: var(--text); }
+  .laszlo-card-text p { color: var(--muted); font-size: 0.9rem; line-height: 1.75; margin: 0; font-weight: 300; }
+
+  .source-note {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 2.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    opacity: 0.7;
+    clear: both;
+  }
+  .source-note a { color: var(--muted); text-decoration: underline; }
+  .source-note a:hover { color: var(--text); }
+
+  footer { margin-top: 4rem; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">lg.dev</a>
+  <div class="nav-links">
+    <a href="/#sobre">sobre</a>
+    <a href="/#experiencia">experiência</a>
+    <a href="/#projetos">projetos</a>
+    <a href="/#contato">contato</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="pizza-hero">
+  <img src="../imagens/pizza-day/hero.png" alt="Bitcoin Pizza Day — pizza flutuando no espaço com moedas de bitcoin">
+  <div class="pizza-hero-overlay">
+    <div class="pizza-hero-date">// 22 de maio de 2010 · Bitcoin Pizza Day</div>
+    <h1>A pizza mais<br><em>cara da história</em></h1>
+    <p class="pizza-hero-sub">10.000 bitcoins. Duas pizzas. US$ 41. Uma decisão que o mundo nunca esqueceu.</p>
+  </div>
+</div>
+
+<main>
+  <div class="page-tag">Ferramenta</div>
+
+  <!-- PAINEL LASZLO -->
+  <div class="laszlo-panel">
+    <div class="panel-header">
+      <span class="panel-label">// quanto valem as pizzas do Laszlo hoje</span>
+      <span class="live-badge"><span class="live-dot"></span> ao vivo</span>
+    </div>
+
+    <div class="btc-price-row">
+      <div class="btc-price-card">
+        <div class="lbl">1 BTC em USD</div>
+        <div class="val" id="btcUsd">—</div>
+      </div>
+      <div class="btc-price-card">
+        <div class="lbl">1 BTC em BRL</div>
+        <div class="val" id="btcBrl">—</div>
+      </div>
+    </div>
+
+    <div class="pizzas-grid">
+      <div class="pizza-stat">
+        <div class="lbl">10.000 BTC em USD</div>
+        <div class="big" id="totalUsd">—</div>
+        <div class="sub">valor original: US$ 41</div>
+      </div>
+      <div class="pizza-stat">
+        <div class="lbl">10.000 BTC em BRL</div>
+        <div class="big" id="totalBrl">—</div>
+        <div class="sub">eram ~R$ 200 em 2010</div>
+      </div>
+      <div class="pizza-stat">
+        <div class="lbl">custo por pizza · USD</div>
+        <div class="big" id="perPizzaUsd">—</div>
+        <div class="sub">foram 2 pizzas no total</div>
+      </div>
+      <div class="pizza-stat">
+        <div class="lbl">custo por pizza · BRL</div>
+        <div class="big" id="perPizzaBrl">—</div>
+        <div class="sub">foram 2 pizzas no total</div>
+      </div>
+    </div>
+
+    <div class="fun-facts">
+      <div class="fun-facts-label">// com 10.000 BTC hoje você compraria</div>
+      <div class="fun-facts-list" id="funFacts">
+        <span class="fun-chip">carregando…</span>
+      </div>
+    </div>
+
+    <div class="last-update">atualizado às <span id="lastUpdate">—</span> · a cada 60s</div>
+  </div>
+
+  <!-- CALCULADORA -->
+  <div class="calc-card">
+    <div class="panel-header">
+      <span class="panel-label">// calculadora pizza ↔ bitcoin</span>
+    </div>
+
+    <div class="calc-grid">
+      <div class="calc-side">
+        <label class="calc-label-txt" for="inputPizzas">🍕 pizzas</label>
+        <input class="calc-input" type="number" id="inputPizzas" placeholder="1" min="0" step="1">
+        <div class="calc-result" id="resPizzas">—</div>
+      </div>
+      <div class="calc-arrow">⇄</div>
+      <div class="calc-side">
+        <label class="calc-label-txt" for="inputBtc">₿ bitcoin</label>
+        <input class="calc-input" type="number" id="inputBtc" placeholder="0.001" min="0" step="any">
+        <div class="calc-result" id="resBtc">—</div>
+      </div>
+    </div>
+
+    <div class="price-row">
+      <span class="price-row-label">preço de uma pizza:</span>
+      <span class="price-prefix">R$</span>
+      <input class="price-input" type="number" id="pizzaPrice" value="50" min="1">
+      <span class="price-note">ajuste conforme sua pizzaria</span>
+    </div>
+  </div>
+
+  <!-- HISTÓRIA -->
+  <div class="history-section">
+    <div class="section-label">// a história</div>
+    <h2>Como duas pizzas viraram<br><em>lenda do Bitcoin</em></h2>
+
+    <div class="history-text">
+      <img class="history-img-recibo" src="../imagens/pizza-day/recibo.png" alt="Caixa de pizza com a inscrição 10.000 BTC — $41" loading="lazy">
+
+      <p>Era <strong>22 de maio de 2010</strong>. O Bitcoin tinha menos de dois anos de existência, era praticamente desconhecido fora de pequenas comunidades de programadores e criptógrafos, e não havia nenhuma maneira simples de convertê-lo em dinheiro real. A pergunta que pairava nos fóruns era simples e urgente: <strong>o Bitcoin tem algum valor no mundo real?</strong></p>
+
+      <p>Foi nesse contexto que <strong>Laszlo Hanyecz</strong>, um programador de Jacksonville, Flórida, publicou uma mensagem no fórum BitcoinTalk em 18 de maio de 2010:</p>
+    </div>
+
+    <blockquote>
+      <p>"Vou pagar 10.000 bitcoins por duas pizzas… pode ser uma grande pizza para sobrar para o dia seguinte. Gosto de ter pizza sobrando para beliscar mais tarde."</p>
+    </blockquote>
+
+    <div class="history-text">
+      <p>Quatro dias depois, um usuário chamado <strong>Jeremy Sturdivant</strong> ("jercos") aceitou a proposta. Ele pediu duas pizzas do Papa John's — e recebeu <strong>10.000 BTC</strong> em troca. Na época, esses bitcoins valiam aproximadamente <strong>US$ 41</strong>, cerca de R$ 200 ao câmbio da época. Era a primeira vez na história que o Bitcoin era usado para comprar um bem físico no mundo real.</p>
+
+      <p>A transação foi um marco: provou que o Bitcoin poderia funcionar como moeda de troca. Hanyecz estava satisfeito. Nos meses seguintes, repetiu a façanha outras vezes, sempre pagando em Bitcoin por comida — feliz em contribuir para o que acreditava ser o futuro das transações digitais.</p>
+    </div>
+
+    <div class="laszlo-card">
+      <img src="../imagens/pizza-day/laszlo.png" alt="Ilustração de Laszlo Hanyecz" loading="lazy">
+      <div class="laszlo-card-text">
+        <h3>Laszlo Hanyecz — o homem, a pizza, a lenda</h3>
+        <p>Hanyecz nunca se arrependeu publicamente da transação. Em entrevistas ao longo dos anos, disse estar feliz em ter contribuído para a adoção do Bitcoin, e que a pizza era boa. O que ele não sabia é que aquelas 10.000 moedas digitais compradas por US$ 41 valeriam bilhões de dólares anos depois. Hoje, <strong>22 de maio é celebrado globalmente como Bitcoin Pizza Day</strong> — um lembrete anual de que toda grande história começa com um gesto simples. Às vezes, com duas pizzas de pepperoni.</p>
+      </div>
+    </div>
+
+    <div class="history-text">
+      <p>O episódio ganhou dimensão histórica à medida que o preço do Bitcoin disparou nos anos seguintes. Em <strong>2011</strong>, 1 BTC ultrapassou US$ 1 pela primeira vez. Em <strong>2013</strong>, chegou a US$ 1.000. Em <strong>2017</strong>, rompeu US$ 20.000. Em <strong>2021</strong>, atingiu o recorde histórico de quase <strong>US$ 69.000</strong>. A cada novo recorde, o mundo voltava a calcular: quanto valem as pizzas do Laszlo?</p>
+
+      <p>A resposta muda todo dia. Mas a pergunta é sempre a mesma.</p>
+    </div>
+
+    <div class="source-note">
+      Fonte histórica: <a href="https://en.wikipedia.org/wiki/History_of_bitcoin" target="_blank" rel="noopener">Wikipedia — History of Bitcoin</a> &nbsp;·&nbsp; Preço em tempo real: <a href="https://www.coingecko.com" target="_blank" rel="noopener">CoinGecko API</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p><a href="/">← lucianogrossi.com.br</a></p>
+</footer>
+
+<script>
+  let btcUsd = 0, btcBrl = 0;
+
+  /* ── formatação ── */
+  const fmtUsd = v => '$' + Math.round(v).toLocaleString('en-US');
+  const fmtBrl = v => 'R$ ' + Math.round(v).toLocaleString('pt-BR');
+  function fmtBtc(v) {
+    if (v === 0) return '0 BTC';
+    if (v < 0.000001) return v.toExponential(4) + ' BTC';
+    if (v < 0.0001)   return v.toFixed(8) + ' BTC';
+    if (v < 0.01)     return v.toFixed(6) + ' BTC';
+    if (v < 1)        return v.toFixed(4) + ' BTC';
+    return v.toLocaleString('pt-BR', { maximumFractionDigits: 4 }) + ' BTC';
+  }
+
+  /* ── busca preço CoinGecko ── */
+  async function fetchPrice() {
+    try {
+      const r = await fetch(
+        'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd,brl',
+        { cache: 'no-store' }
+      );
+      const d = await r.json();
+      btcUsd = d.bitcoin.usd;
+      btcBrl = d.bitcoin.brl;
+      updatePanel();
+      updateCalc();
+    } catch {
+      ['btcUsd','btcBrl','totalUsd','totalBrl','perPizzaUsd','perPizzaBrl']
+        .forEach(id => { document.getElementById(id).textContent = 'erro'; });
+    }
+  }
+
+  /* ── painel do Laszlo ── */
+  function updatePanel() {
+    const total10k_usd = 10000 * btcUsd;
+    const total10k_brl = 10000 * btcBrl;
+
+    document.getElementById('btcUsd').textContent     = fmtUsd(btcUsd);
+    document.getElementById('btcBrl').textContent     = fmtBrl(btcBrl);
+    document.getElementById('totalUsd').textContent   = fmtUsd(total10k_usd);
+    document.getElementById('totalBrl').textContent   = fmtBrl(total10k_brl);
+    document.getElementById('perPizzaUsd').textContent = fmtUsd(total10k_usd / 2);
+    document.getElementById('perPizzaBrl').textContent = fmtBrl(total10k_brl / 2);
+
+    const ferraris   = Math.floor(total10k_usd / 350000);
+    const jatos      = Math.floor(total10k_usd / 90000000);
+    const aptos      = Math.floor(total10k_usd / 600000);
+    const starbucks  = Math.floor(total10k_usd / 7);
+    const iphones    = Math.floor(total10k_usd / 1200);
+
+    const chips = [
+      { e: '🏎️', v: ferraris.toLocaleString('pt-BR'),   l: 'Ferraris' },
+      { e: '✈️',  v: jatos.toLocaleString('pt-BR'),      l: 'jatos executivos' },
+      { e: '🏠',  v: aptos.toLocaleString('pt-BR'),      l: 'aptos em SP' },
+      { e: '📱',  v: iphones.toLocaleString('pt-BR'),    l: 'iPhones' },
+      { e: '☕',  v: starbucks.toLocaleString('pt-BR'),  l: 'cafés no Starbucks' },
+    ];
+
+    document.getElementById('funFacts').innerHTML = chips
+      .map(c => `<span class="fun-chip">${c.e} <span>${c.v}</span> ${c.l}</span>`)
+      .join('');
+
+    const now = new Date();
+    document.getElementById('lastUpdate').textContent =
+      now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+  }
+
+  /* ── calculadora ── */
+  function pizzaToBtc() {
+    const pizzas = parseFloat(document.getElementById('inputPizzas').value);
+    const priceR = parseFloat(document.getElementById('pizzaPrice').value) || 50;
+    if (!btcBrl || isNaN(pizzas) || pizzas < 0) {
+      document.getElementById('resPizzas').textContent = '—';
+      document.getElementById('resPizzas').classList.remove('active');
+      return;
+    }
+    const totalBrl = pizzas * priceR;
+    const btc = totalBrl / btcBrl;
+    const el = document.getElementById('resPizzas');
+    el.textContent = `= ${fmtBtc(btc)}  (${fmtBrl(totalBrl)})`;
+    el.classList.add('active');
+    document.getElementById('inputBtc').value = '';
+    document.getElementById('resBtc').textContent = '—';
+    document.getElementById('resBtc').classList.remove('active');
+  }
+
+  function btcToPizza() {
+    const btc    = parseFloat(document.getElementById('inputBtc').value);
+    const priceR = parseFloat(document.getElementById('pizzaPrice').value) || 50;
+    if (!btcBrl || isNaN(btc) || btc < 0) {
+      document.getElementById('resBtc').textContent = '—';
+      document.getElementById('resBtc').classList.remove('active');
+      return;
+    }
+    const totalBrl = btc * btcBrl;
+    const pizzas   = totalBrl / priceR;
+    const el = document.getElementById('resBtc');
+    el.textContent = `= ${pizzas.toLocaleString('pt-BR', { maximumFractionDigits: 1 })} pizzas  (${fmtBrl(totalBrl)})`;
+    el.classList.add('active');
+    document.getElementById('inputPizzas').value = '';
+    document.getElementById('resPizzas').textContent = '—';
+    document.getElementById('resPizzas').classList.remove('active');
+  }
+
+  function updateCalc() {
+    if (document.getElementById('inputPizzas').value !== '') pizzaToBtc();
+    else if (document.getElementById('inputBtc').value !== '') btcToPizza();
+  }
+
+  document.getElementById('inputPizzas').addEventListener('input', pizzaToBtc);
+  document.getElementById('inputBtc').addEventListener('input', btcToPizza);
+  document.getElementById('pizzaPrice').addEventListener('input', updateCalc);
+
+  /* ── init ── */
+  fetchPrice();
+  setInterval(fetchPrice, 60000);
+</script>
+
+</body>
+</html>
