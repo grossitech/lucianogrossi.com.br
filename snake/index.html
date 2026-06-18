@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jogo da Cobrinha | Luciano Grossi</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<style>
+  main { max-width: 720px; margin: 0 auto; padding: 8rem 2rem 5rem; text-align: center; }
+
+  h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 300; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 0.75rem; }
+
+  .page-tag { justify-content: center; }
+
+  .page-desc { color: var(--muted); font-size: 0.95rem; margin-bottom: 2.5rem; }
+
+  .game-wrap { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+
+  /* ===== CARCAÇA DO "CELULAR" ===== */
+  .phone-shell {
+    display: inline-block;
+    background: linear-gradient(160deg, #3a3a3e, #15151a);
+    border-radius: 30px;
+    padding: 20px 18px 26px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.06);
+    width: min(92vw, 380px);
+  }
+
+  .phone-brand {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: #8a8a90;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .screen-frame {
+    background: #060c06;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: inset 0 0 0 2px #02050200, inset 0 2px 6px rgba(0,0,0,0.6);
+  }
+
+  .screen {
+    position: relative;
+    background: #9bab7e;
+    border-radius: 3px;
+    overflow: hidden;
+    aspect-ratio: 336 / 210;
+    box-shadow: inset 0 0 14px rgba(0,0,0,0.35);
+  }
+
+  #gameCanvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+
+  .screen-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    text-align: center;
+    padding: 1rem;
+    cursor: pointer;
+  }
+
+  .screen-overlay.hidden { display: none; }
+
+  .overlay-title {
+    font-family: var(--mono);
+    font-size: 15px;
+    font-weight: 500;
+    color: #1c2a12;
+    letter-spacing: 0.06em;
+  }
+
+  .overlay-sub {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: #2c3d1d;
+    letter-spacing: 0.04em;
+    max-width: 220px;
+    line-height: 1.6;
+  }
+
+  .hud-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding: 0 2px;
+  }
+
+  .hud-score, .hud-best {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  .hud-best { color: var(--accent); }
+
+  .mute-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1;
+    padding: 2px 4px;
+    transition: color 0.2s;
+  }
+  .mute-btn:hover { color: var(--text); }
+
+  /* ===== CONTROLES ===== */
+  .controls { display: flex; flex-direction: column; align-items: center; gap: 1.25rem; margin-top: 2rem; }
+
+  .dpad {
+    display: grid;
+    grid-template-columns: 54px 54px 54px;
+    grid-template-rows: 54px 54px 54px;
+    gap: 6px;
+  }
+
+  .dpad button {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.15s, background 0.15s;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+  .dpad button:hover { border-color: var(--border-hover); }
+  .dpad button:active { background: var(--bg3); border-color: var(--accent); }
+
+  .dpad .up    { grid-column: 2; grid-row: 1; }
+  .dpad .left  { grid-column: 1; grid-row: 2; }
+  .dpad .pause { grid-column: 2; grid-row: 2; font-size: 11px; font-family: var(--mono); color: var(--muted); }
+  .dpad .right { grid-column: 3; grid-row: 2; }
+  .dpad .down  { grid-column: 2; grid-row: 3; }
+
+  .hint {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.03em;
+  }
+
+  footer { margin-top: 4rem; }
+
+  @media (max-width: 480px) {
+    .dpad { grid-template-columns: 48px 48px 48px; grid-template-rows: 48px 48px 48px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">lg.dev</a>
+  <div class="nav-links">
+    <a href="/#sobre">sobre</a>
+    <a href="/#experiencia">experiência</a>
+    <a href="/#projetos">projetos</a>
+    <a href="/#contato">contato</a>
+  </div>
+</nav>
+
+<main>
+  <div class="page-tag">Ferramenta</div>
+  <h1>Jogo da<br><em>Cobrinha</em></h1>
+  <p class="page-desc">Estilo Nokia 3310/3320. Use as setas, WASD ou os botões abaixo. Coma os pontos, não bata na parede nem em você mesma.</p>
+
+  <div class="game-wrap">
+    <div class="phone-shell">
+      <div class="phone-brand">◇ snake ◇</div>
+      <div class="screen-frame">
+        <div class="screen">
+          <canvas id="gameCanvas"></canvas>
+          <div class="screen-overlay" id="overlay">
+            <div class="overlay-title" id="overlayTitle">TOQUE PARA JOGAR</div>
+            <div class="overlay-sub" id="overlaySub">Setas / WASD / botões<br>para mover a cobrinha</div>
+          </div>
+        </div>
+      </div>
+      <div class="hud-row">
+        <span class="hud-score" id="scoreLabel">PONTOS: 0</span>
+        <button class="mute-btn" id="muteBtn" aria-label="Ativar/desativar som">🔊</button>
+        <span class="hud-best" id="bestLabel">MELHOR: 0</span>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="dpad">
+        <button class="up" data-dir="up" aria-label="Cima">▲</button>
+        <button class="left" data-dir="left" aria-label="Esquerda">◀</button>
+        <button class="pause" id="pauseBtn" aria-label="Pausar">II</button>
+        <button class="right" data-dir="right" aria-label="Direita">▶</button>
+        <button class="down" data-dir="down" aria-label="Baixo">▼</button>
+      </div>
+      <p class="hint">espaço / II para pausar · R para reiniciar</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p><a href="/">← lucianogrossi.com.br</a></p>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  // ===== CONFIG =====
+  var COLS = 24, ROWS = 15, CELL = 14;
+  var BASE_INTERVAL = 150;   // ms por passo no início
+  var MIN_INTERVAL = 80;     // ms por passo no máximo de velocidade
+  var SPEEDUP_PER_FOOD = 3;  // ms a menos por comida
+  var STORAGE_BEST = 'cobrinha-highscore';
+  var STORAGE_MUTE = 'cobrinha-mute';
+
+  var canvas = document.getElementById('gameCanvas');
+  var ctx = canvas.getContext('2d');
+  canvas.width = COLS * CELL;
+  canvas.height = ROWS * CELL;
+
+  var overlay = document.getElementById('overlay');
+  var overlayTitle = document.getElementById('overlayTitle');
+  var overlaySub = document.getElementById('overlaySub');
+  var scoreLabel = document.getElementById('scoreLabel');
+  var bestLabel = document.getElementById('bestLabel');
+  var muteBtn = document.getElementById('muteBtn');
+  var pauseBtn = document.getElementById('pauseBtn');
+
+  // ===== ÁUDIO (beep retrô via Web Audio API) =====
+  var audioCtx = null;
+  var muted = localStorage.getItem(STORAGE_MUTE) === '1';
+  muteBtn.textContent = muted ? '🔇' : '🔊';
+
+  function ensureAudio() {
+    if (!audioCtx) {
+      var AC = window.AudioContext || window.webkitAudioContext;
+      if (AC) audioCtx = new AC();
+    }
+    if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
+  }
+
+  function beep(freq, durationMs, type) {
+    if (muted || !audioCtx) return;
+    var osc = audioCtx.createOscillator();
+    var gain = audioCtx.createGain();
+    osc.type = type || 'square';
+    osc.frequency.value = freq;
+    gain.gain.value = 0.07;
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    var now = audioCtx.currentTime;
+    var dur = durationMs / 1000;
+    gain.gain.setValueAtTime(0.07, now);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + dur);
+    osc.start(now);
+    osc.stop(now + dur);
+  }
+
+  function beepEat() { beep(880, 70, 'square'); }
+  function beepGameOver() {
+    beep(220, 140, 'square');
+    setTimeout(function () { beep(140, 220, 'square'); }, 130);
+  }
+
+  muteBtn.addEventListener('click', function () {
+    muted = !muted;
+    localStorage.setItem(STORAGE_MUTE, muted ? '1' : '0');
+    muteBtn.textContent = muted ? '🔇' : '🔊';
+  });
+
+  // ===== ESTADO DO JOGO =====
+  var snake, dir, pendingDir, food, score, best, interval, lastTick, state, rafId;
+
+  best = parseInt(localStorage.getItem(STORAGE_BEST), 10) || 0;
+  bestLabel.textContent = 'MELHOR: ' + best;
+
+  function resetGame() {
+    var cx = Math.floor(COLS / 2), cy = Math.floor(ROWS / 2);
+    snake = [
+      { x: cx - 1, y: cy },
+      { x: cx - 2, y: cy },
+      { x: cx - 3, y: cy }
+    ];
+    dir = { x: 1, y: 0 };
+    pendingDir = dir;
+    score = 0;
+    interval = BASE_INTERVAL;
+    scoreLabel.textContent = 'PONTOS: 0';
+    placeFood();
+  }
+
+  function placeFood() {
+    var free = [];
+    for (var y = 0; y < ROWS; y++) {
+      for (var x = 0; x < COLS; x++) {
+        var occupied = snake.some(function (s) { return s.x === x && s.y === y; });
+        if (!occupied) free.push({ x: x, y: y });
+      }
+    }
+    food = free[Math.floor(Math.random() * free.length)];
+  }
+
+  function setDir(nx, ny) {
+    // impede reverter direção diretamente (corpo colidiria consigo mesmo na hora)
+    if (snake.length > 1 && nx === -dir.x && ny === -dir.y) return;
+    pendingDir = { x: nx, y: ny };
+  }
+
+  var KEY_MAP = {
+    ArrowUp: [0, -1], ArrowDown: [0, 1], ArrowLeft: [-1, 0], ArrowRight: [1, 0],
+    w: [0, -1], s: [0, 1], a: [-1, 0], d: [1, 0],
+    W: [0, -1], S: [0, 1], A: [-1, 0], D: [1, 0]
+  };
+
+  document.addEventListener('keydown', function (e) {
+    if (KEY_MAP[e.key]) {
+      e.preventDefault();
+      ensureAudio();
+      if (state === 'idle' || state === 'gameover') { startGame(); }
+      var m = KEY_MAP[e.key];
+      setDir(m[0], m[1]);
+    } else if (e.key === ' ') {
+      e.preventDefault();
+      ensureAudio();
+      togglePause();
+    } else if (e.key === 'r' || e.key === 'R') {
+      ensureAudio();
+      startGame();
+    }
+  });
+
+  document.querySelectorAll('.dpad button[data-dir]').forEach(function (btn) {
+    var handler = function (e) {
+      e.preventDefault();
+      ensureAudio();
+      if (state === 'idle' || state === 'gameover') { startGame(); }
+      var d = btn.getAttribute('data-dir');
+      if (d === 'up') setDir(0, -1);
+      else if (d === 'down') setDir(0, 1);
+      else if (d === 'left') setDir(-1, 0);
+      else if (d === 'right') setDir(1, 0);
+    };
+    btn.addEventListener('click', handler);
+    btn.addEventListener('touchstart', handler, { passive: false });
+  });
+
+  pauseBtn.addEventListener('click', function () {
+    ensureAudio();
+    togglePause();
+  });
+
+  overlay.addEventListener('click', function () {
+    ensureAudio();
+    if (state !== 'paused') startGame();
+  });
+
+  function togglePause() {
+    if (state === 'playing') {
+      state = 'paused';
+      showOverlay('PAUSADO', 'toque ou aperte espaço<br>para continuar');
+      cancelAnimationFrame(rafId);
+    } else if (state === 'paused') {
+      state = 'playing';
+      hideOverlay();
+      lastTick = performance.now();
+      rafId = requestAnimationFrame(loop);
+    }
+  }
+
+  function showOverlay(title, sub) {
+    overlayTitle.innerHTML = title;
+    overlaySub.innerHTML = sub;
+    overlay.classList.remove('hidden');
+  }
+  function hideOverlay() { overlay.classList.add('hidden'); }
+
+  function startGame() {
+    cancelAnimationFrame(rafId);
+    resetGame();
+    state = 'playing';
+    hideOverlay();
+    lastTick = performance.now();
+    rafId = requestAnimationFrame(loop);
+  }
+
+  function loop(now) {
+    rafId = requestAnimationFrame(loop);
+    if (state !== 'playing') return;
+    if (now - lastTick < interval) {
+      draw(); // mantém desenho fluido mesmo entre passos
+      return;
+    }
+    lastTick = now;
+    step();
+    draw();
+  }
+
+  function step() {
+    dir = pendingDir;
+    var head = snake[0];
+    var nx = head.x + dir.x;
+    var ny = head.y + dir.y;
+
+    // colisão com parede (fiel ao Nokia original, sem wraparound)
+    if (nx < 0 || nx >= COLS || ny < 0 || ny >= ROWS) { return gameOver(); }
+
+    // colisão com o próprio corpo
+    for (var i = 0; i < snake.length; i++) {
+      if (snake[i].x === nx && snake[i].y === ny) { return gameOver(); }
+    }
+
+    snake.unshift({ x: nx, y: ny });
+
+    if (nx === food.x && ny === food.y) {
+      score += 10;
+      scoreLabel.textContent = 'PONTOS: ' + score;
+      beepEat();
+      interval = Math.max(MIN_INTERVAL, interval - SPEEDUP_PER_FOOD);
+      placeFood();
+    } else {
+      snake.pop();
+    }
+  }
+
+  function gameOver() {
+    state = 'gameover';
+    beepGameOver();
+    if (score > best) {
+      best = score;
+      localStorage.setItem(STORAGE_BEST, String(best));
+      bestLabel.textContent = 'MELHOR: ' + best;
+    }
+    showOverlay('GAME OVER', 'pontos: ' + score + '<br>toque para jogar de novo');
+  }
+
+  function draw() {
+    ctx.fillStyle = '#9bab7e';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // grade sutil (efeito LCD)
+    ctx.fillStyle = 'rgba(0,0,0,0.04)';
+    for (var gy = 0; gy < ROWS; gy++) {
+      for (var gx = 0; gx < COLS; gx++) {
+        if ((gx + gy) % 2 === 0) ctx.fillRect(gx * CELL, gy * CELL, CELL, CELL);
+      }
+    }
+
+    // comida
+    ctx.fillStyle = '#28371b';
+    ctx.fillRect(food.x * CELL + 2, food.y * CELL + 2, CELL - 4, CELL - 4);
+
+    // cobrinha
+    ctx.fillStyle = '#1c2a12';
+    for (var i = 0; i < snake.length; i++) {
+      ctx.fillRect(snake[i].x * CELL + 1, snake[i].y * CELL + 1, CELL - 2, CELL - 2);
+    }
+  }
+
+  // estado inicial: desenha o tabuleiro vazio atrás do overlay
+  state = 'idle';
+  resetGame();
+  draw();
+})();
+</script>
+
+</body>
+</html>
