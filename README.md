@@ -17,6 +17,7 @@ Site estático hospedado via **GitHub Pages**, sem framework, sem bundler, sem d
 | `/` | Homepage / portfólio |
 | `/gerador-link-whatsapp/` | Ferramenta: gerador de link direto para WhatsApp |
 | `/contador-caracteres/` | Ferramenta: contador de caracteres por rede social |
+| `/snake/` | Ferramenta: jogo da cobrinha estilo Nokia 3310/3320 |
 | `/venca-os-mitos-que-sabotam-sua-carreira/` | Landing page do livro |
 
 ## Stack
