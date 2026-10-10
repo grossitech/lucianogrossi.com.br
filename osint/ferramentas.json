@@ -1,0 +1,254 @@
+[
+  {"id": "buscadores-e-operadores-de-busca", "codigo": "SRC", "nome": "Buscadores e Operadores de Busca", "ferramentas": [
+    {"nome": "Google", "url": "https://google.com"},
+    {"nome": "DuckDuckGo", "url": "https://duckduckgo.com"},
+    {"nome": "Bing", "url": "https://www.bing.com"},
+    {"nome": "Yandex", "url": "https://yandex.com"},
+    {"nome": "Advangle (montar expressão de busca/dorks)", "url": "http://advangle.com"},
+    {"nome": "Programmable Search Engine (Google CSE)", "url": "https://cse.google.com/cse?cx=011444696387487602669:aqf7d9w73om"}
+  ]},
+  {"id": "dominios-ip-e-infraestrutura-web", "codigo": "NET", "nome": "Domínios, IP e Infraestrutura Web", "ferramentas": [
+    {"nome": "Registro.br - Whois", "url": "https://registro.br/tecnologia/ferramentas/whois/"},
+    {"nome": "Whois.com", "url": "https://www.whois.com"},
+    {"nome": "What's My IP Address", "url": "https://www.whatsmyip.org"},
+    {"nome": "WhatIsMyIP.com", "url": "https://www.whatismyip.com/"},
+    {"nome": "MeuEnderecoIP.com", "url": "https://www.meuenderecoip.com/"},
+    {"nome": "Wayback Machine (Internet Archive)", "url": "https://archive.org/web/"},
+    {"nome": "IANA", "url": "https://www.iana.org"},
+    {"nome": "Whoxy (Whois histórico)", "url": "https://www.whoxy.com/"}
+  ]},
+  {"id": "pesquisa-reversa-de-imagem", "codigo": "IMG", "nome": "Pesquisa Reversa de Imagem", "ferramentas": [
+    {"nome": "Google Imagens", "url": "https://www.google.com/imghp"},
+    {"nome": "Yandex Images", "url": "https://yandex.com/images/"},
+    {"nome": "TinEye", "url": "https://tineye.com"},
+    {"nome": "Lenso.ai", "url": "https://lenso.ai"},
+    {"nome": "Immerse.zone", "url": "https://www.immerse.zone/"},
+    {"nome": "Search by Image (extensão Chrome)", "url": "https://chrome.google.com/webstore/detail/search-by-image/cnojnbdhbhnkbcieeekonklommdnndci"},
+    {"nome": "SmallSEOTools - Pesquisa por Imagem", "url": "https://smallseotools.com/pt/reverse-image-search/"},
+    {"nome": "Fake News Debunker by InVID & WeVerify", "url": "https://chrome.google.com/webstore/detail/fake-news-debunker-by-inv/mhccpoafgdgbhnjfhkcmgknndkeenfhe"},
+    {"nome": "Face Finder (VGG Oxford)", "url": "https://www.robots.ox.ac.uk/~vgg/software/vff/"},
+    {"nome": "Geolocation Estimation (TIB Labs)", "url": "https://labs.tib.eu/geoestimation/"}
+  ]},
+  {"id": "reconhecimento-e-comparacao-facial", "codigo": "FAC", "nome": "Reconhecimento e Comparação Facial", "ferramentas": [
+    {"nome": "PimEyes", "url": "https://pimeyes.com/en"},
+    {"nome": "FaceCheck.ID", "url": "https://facecheck.id/"},
+    {"nome": "FaceOnLive - Face Search", "url": "https://faceonlive.com/face-search-online/"},
+    {"nome": "Search4Faces", "url": "https://search4faces.com/"},
+    {"nome": "Face++ Cognitive Services (comparação facial)", "url": "https://www.faceplusplus.com/face-comparing/#demo"},
+    {"nome": "Diff Checker - Comparação de Imagens", "url": "https://www.diffchecker.com/image-diff/"},
+    {"nome": "face_recognition (GitHub)", "url": "https://github.com/ageitgey/face_recognition"},
+    {"nome": "Image Analysis Toolset (IAT) - Google Play", "url": "https://play.google.com/store/apps/details?id=tk.silviomarano.imageanalysistoolset"}
+  ]},
+  {"id": "rostos-e-imagens-geradas-por-ia", "codigo": "GEN", "nome": "Rostos e Imagens Geradas por IA", "ferramentas": [
+    {"nome": "This Person Does Not Exist", "url": "https://thispersondoesnotexist.com/"},
+    {"nome": "This Cat Does Not Exist", "url": "https://thiscatdoesnotexist.com"},
+    {"nome": "Gallery of AI Generated Faces", "url": "https://generated.photos/faces"},
+    {"nome": "AI Generated Faces (BoredHumans)", "url": "https://boredhumans.com/faces.php"},
+    {"nome": "Am I Real?", "url": "https://seintpl.github.io/AmIReal/"}
+  ]},
+  {"id": "edicao-e-melhoria-de-imagem", "codigo": "EDT", "nome": "Edição e Melhoria de Imagem", "ferramentas": [
+    {"nome": "PicWish", "url": "https://picwish.com/pt/create"},
+    {"nome": "Fotor - Editor de Fotos Online", "url": "https://www.fotor.com/pt/"},
+    {"nome": "Expression Editor (Hugging Face)", "url": "https://huggingface.co/spaces/fffiloni/expression-editor"},
+    {"nome": "Magic Eraser", "url": "https://www.magiceraser.io/"},
+    {"nome": "Let's Enhance (super-resolução)", "url": "https://letsenhance.io/"},
+    {"nome": "Watermarkremover.io", "url": "https://www.watermarkremover.io/"},
+    {"nome": "Dewatermark.ai", "url": "https://dewatermark.ai/"},
+    {"nome": "Remove.bg", "url": "https://www.remove.bg/pt-br"},
+    {"nome": "BackgroundRemover.app", "url": "https://backgroundremover.app"},
+    {"nome": "TheInpaint - Remover Objetos", "url": "https://theinpaint.com"},
+    {"nome": "PhotoRoom - Remover Objetos", "url": "https://www.photoroom.com/ferramentas/remover-objetos-de-fotos/"},
+    {"nome": "MyHeritage Photo Enhancer", "url": "https://www.myheritage.nl/photo-enhancer"},
+    {"nome": "ImprovePhoto.net", "url": "https://improvephoto.net"},
+    {"nome": "PinkMirror.com", "url": "https://pinkmirror.com"}
+  ]},
+  {"id": "metadados-de-arquivos-e-imagens", "codigo": "MET", "nome": "Metadados de Arquivos e Imagens", "ferramentas": [
+    {"nome": "ExifTool by Phil Harvey", "url": "https://exiftool.org/"},
+    {"nome": "ExifData.com Viewer", "url": "https://www.exifdata.com/"},
+    {"nome": "Online Exif Viewer", "url": "http://exif-viewer.com/"},
+    {"nome": "Exifinfo.org", "url": "https://exifinfo.org/"},
+    {"nome": "Metapicz", "url": "http://metapicz.com/#landing"},
+    {"nome": "Metadata2Go", "url": "https://www.metadata2go.com/"},
+    {"nome": "MetaCleaner", "url": "https://metacleaner.com/#home"},
+    {"nome": "GeoImgr", "url": "https://www.geoimgr.com/"},
+    {"nome": "Pic2Map - Photo Location Viewer", "url": "https://www.pic2map.com/"},
+    {"nome": "FotoForensics", "url": "https://fotoforensics.com"},
+    {"nome": "JPG Editor de Metadados (GroupDocs)", "url": "https://products.groupdocs.app/pt/metadata/jpg"},
+    {"nome": "Remoção de EXIF - ImageSmaller", "url": "https://www.imagesmaller.com/pt/exif-remover/"}
+  ]},
+  {"id": "e-mail", "codigo": "MAIL", "nome": "E-mail", "ferramentas": [
+    {"nome": "Epieos", "url": "https://epieos.com"},
+    {"nome": "Hunter.io", "url": "https://hunter.io"},
+    {"nome": "theHarvester (GitHub)", "url": "https://github.com/laramies/theHarvester"}
+  ]},
+  {"id": "vazamento-de-dados-data-leaks", "codigo": "LEAK", "nome": "Vazamento de Dados (Data Leaks)", "ferramentas": [
+    {"nome": "Have I Been Pwned?", "url": "https://haveibeenpwned.com"},
+    {"nome": "Intelligence X", "url": "https://intelx.io"},
+    {"nome": "Pastebin", "url": "https://pastebin.com"},
+    {"nome": "DeHashed", "url": "https://www.dehashed.com"}
+  ]},
+  {"id": "nome-de-usuario-username", "codigo": "USR", "nome": "Nome de Usuário (Username)", "ferramentas": [
+    {"nome": "Namechk", "url": "https://namechk.com"},
+    {"nome": "WhatsMyName Web", "url": "https://whatsmyname.app"},
+    {"nome": "Instant Username Search", "url": "https://instantusername.com"}
+  ]},
+  {"id": "facebook", "codigo": "FBK", "nome": "Facebook", "ferramentas": [
+    {"nome": "Find My Facebook ID (lookup-id.com)", "url": "https://lookup-id.com"},
+    {"nome": "Find My Facebook ID (CommentPicker)", "url": "https://commentpicker.com/find-facebook-id.php"},
+    {"nome": "Qual é meu ID do Facebook (PiliApp)", "url": "https://pt.piliapp.com/facebook/id/"},
+    {"nome": "Facebook Search (sowdust)", "url": "https://sowdust.github.io/fb-search/"},
+    {"nome": "Facebook Search (SowSearch)", "url": "https://www.sowsearch.info/"},
+    {"nome": "Who Posted What?", "url": "https://whopostedwhat.com/"},
+    {"nome": "Facebook Matrix - Plessas Experts Network", "url": "https://plessas.net/facebookmatrix"},
+    {"nome": "IntelTechniques Facebook Search Tool", "url": "https://inteltechniques.com/tools/Facebook.html"},
+    {"nome": "IntelX Tools (Facebook)", "url": "https://intelx.io/tools?tab=facebook"},
+    {"nome": "Export Comments", "url": "https://exportcomments.com/"}
+  ]},
+  {"id": "instagram", "codigo": "IGM", "nome": "Instagram", "ferramentas": [
+    {"nome": "Osintgram (Datalux, GitHub)", "url": "https://github.com/Datalux/Osintgram"},
+    {"nome": "Toutatis (megadose, GitHub)", "url": "https://github.com/megadose/toutatis"},
+    {"nome": "Exact Time Viewer for Instagram", "url": "https://chromewebstore.google.com/detail/exact-time-viewer-for-ins/koffnfmgjmoopfgelgbbkjmdnppadlae"},
+    {"nome": "Export Followers (extensão)", "url": "https://chromewebstore.google.com/detail/igexport-export-ins-follo/nhkojbdbcmjlnconlclkllbpbchjofna"},
+    {"nome": "Descobrir Username por User ID (CommentPicker)", "url": "https://commentpicker.com/instagram-username.php"},
+    {"nome": "Descobrir User ID (CommentPicker)", "url": "https://commentpicker.com/instagram-user-id.php"},
+    {"nome": "Instagram Anonymous Story Viewer (insta-stories-viewer)", "url": "https://insta-stories-viewer.com"},
+    {"nome": "StoriesIG - Visualizador Anônimo", "url": "https://storiesig.info/pt/"},
+    {"nome": "Inflact - Instagram Viewer", "url": "https://inflact.com/instagram-viewer/"},
+    {"nome": "InstaHunt", "url": "https://instahunt.co/"},
+    {"nome": "Piokok", "url": "https://www.piokok.com/"},
+    {"nome": "Buscar usuários pela Bio (Influencers.club)", "url": "https://influencers.club/2020/12/11/instagram-bio-search/"},
+    {"nome": "InDown - Visualizador de Foto de Perfil", "url": "https://indown.io/insta-dp-viewer/pt"},
+    {"nome": "Instagram Location Search (Bellingcat, GitHub)", "url": "https://github.com/bellingcat/instagram-location-search"}
+  ]},
+  {"id": "x-twitter", "codigo": "TWX", "nome": "X / Twitter", "ferramentas": [
+    {"nome": "BirdHunt", "url": "https://birdhunt.huntintel.io/"},
+    {"nome": "Twitter Advanced Search (nativo)", "url": "https://twitter.com/search-advanced"},
+    {"nome": "Twitter Advanced Search (GitHub, igorbrigadir)", "url": "https://github.com/igorbrigadir/twitter-advanced-search"},
+    {"nome": "Twitter Video Downloader", "url": "https://www.savetweetvid.com/"},
+    {"nome": "TwitterXID", "url": "https://twitterxid.com/"},
+    {"nome": "TweetHunter - Conversor de ID/Username", "url": "https://tweethunter.io/twitter-id-converter"},
+    {"nome": "TweeterID", "url": "https://tweeterid.com"},
+    {"nome": "Social Bearing", "url": "https://socialbearing.com"},
+    {"nome": "Followerwonk", "url": "https://followerwonk.com"},
+    {"nome": "The One Million Tweet Map", "url": "https://onemilliontweetmap.com"},
+    {"nome": "HEAVY.AI - Tweet Map", "url": "https://www.heavy.ai/demos/tweetmap"},
+    {"nome": "Tweetdeck", "url": "https://tweetdeck.twitter.com"},
+    {"nome": "Twitterfall", "url": "https://twitterfall.com"}
+  ]},
+  {"id": "youtube", "codigo": "YTB", "nome": "YouTube", "ferramentas": [
+    {"nome": "YouTube Geofind - Location Search", "url": "https://mattw.io/youtube-geofind/location"},
+    {"nome": "YouTube Metadata (mattw.io)", "url": "https://mattw.io/youtube-metadata/"}
+  ]},
+  {"id": "tiktok", "codigo": "TTK", "nome": "TikTok", "ferramentas": [
+    {"nome": "TokIntel (GitHub)", "url": "https://github.com/HackUnderway/TokIntel"},
+    {"nome": "Find TikTok ID (CommentPicker)", "url": "https://commentpicker.com/tiktok-id.php"},
+    {"nome": "SnapTik - Downloader", "url": "https://snaptik.app/en1"},
+    {"nome": "Urlebird - Visualizador Anônimo", "url": "https://urlebird.com/"},
+    {"nome": "Tikface.com", "url": "https://www.tikface.com/"},
+    {"nome": "TikTok Timestamp Extractor (Bellingcat)", "url": "https://bellingcat.github.io/tiktok-timestamp/"},
+    {"nome": "Picuki - Visualizador Instagram", "url": "https://www.picuki.com/"}
+  ]},
+  {"id": "whatsapp-telegram-discord", "codigo": "MSG", "nome": "WhatsApp / Telegram / Discord", "ferramentas": [
+    {"nome": "Privacy Extension for WhatsApp Web", "url": "https://chromewebstore.google.com/detail/privacy-extension-for-wha/jbojhlhhggfmmkpefknmbdhlaghehini"},
+    {"nome": "WA Contact Download (extensão)", "url": "https://chromewebstore.google.com/detail/wa-contact-download/dcidojkknfgophlmohhpdlmoiegfbkdd"},
+    {"nome": "DonoDoZap - Dono de número WhatsApp", "url": "https://donodozap.com/"},
+    {"nome": "Awesome Telegram OSINT (GitHub)", "url": "https://github.com/ItIsMeCall911/Awesome-Telegram-OSINT"},
+    {"nome": "Universal Search Bot (Telegram)", "url": "https://t.me/UniversalSearchEasyBot"},
+    {"nome": "Disboard - Lista de Servidores Discord", "url": "https://disboard.org/"},
+    {"nome": "Discord.id - User Info", "url": "https://discord.id/"},
+    {"nome": "Discord.me - Lista de Servidores", "url": "https://discord.me/servers"},
+    {"nome": "DiscordBee - Lista de Servidores", "url": "https://discordbee.com/"},
+    {"nome": "DiscordHub - Lista de Servidores", "url": "https://discordhub.com/"},
+    {"nome": "Discord Leaks (Unicorn Riot)", "url": "https://discordleaks.unicornriot.ninja/"},
+    {"nome": "DiscordServers.com - Lista de Servidores", "url": "https://discordservers.com/"}
+  ]},
+  {"id": "reddit", "codigo": "RDT", "nome": "Reddit", "ferramentas": [
+    {"nome": "Reddit Search Tool (Aware Online Academy)", "url": "https://www.aware-online.com/en/osint-tools/reddit-search-tool/"}
+  ]},
+  {"id": "telefone", "codigo": "TEL", "nome": "Telefone", "ferramentas": [
+    {"nome": "Truecaller", "url": "https://www.truecaller.com"},
+    {"nome": "Whoseno.com", "url": "https://www.whoseno.com"},
+    {"nome": "Ignorant (GitHub) - verificar apps por número", "url": "https://github.com/megadose/ignorant"},
+    {"nome": "Cadastropre.com.br", "url": "https://cadastropre.com.br"},
+    {"nome": "Tellows.com.br", "url": "https://www.tellows.com.br"},
+    {"nome": "Anatel - Fique Ligado", "url": "https://sistemas.anatel.gov.br/fiqueligado"}
+  ]},
+  {"id": "buscadores-de-pessoas", "codigo": "PPL", "nome": "Buscadores de Pessoas", "ferramentas": [
+    {"nome": "FamilySearch", "url": "https://www.familysearch.org/"},
+    {"nome": "IDCrawl", "url": "https://www.idcrawl.com/"},
+    {"nome": "PeekYou", "url": "https://www.peekyou.com/"},
+    {"nome": "WebMii", "url": "https://webmii.com/"},
+    {"nome": "Aleph (OCCRP)", "url": "https://aleph.occrp.org"}
+  ]},
+  {"id": "registros-publicos-e-cartoriais-brasil", "codigo": "REG", "nome": "Registros Públicos e Cartoriais (Brasil)", "ferramentas": [
+    {"nome": "Receita Federal - Consulta Situação CPF", "url": "https://servicos.receita.fazenda.gov.br/servicos/cpf/consultasituacao/consultapublica.asp"},
+    {"nome": "e-Proclamas", "url": "https://proclamas.org.br/"},
+    {"nome": "Falecidos no Brasil", "url": "https://www.falecidosnobrasil.org.br/"},
+    {"nome": "Portal Extrajudicial RJ (CNO)", "url": "https://www4.tjrj.jus.br/Portal-Extrajudicial/cno/"},
+    {"nome": "e-Notariado", "url": "https://e-notariado.org.br"},
+    {"nome": "Amazon UK - Busca de Lista de Casamento", "url": "https://www.amazon.co.uk/wedding/search"}
+  ]},
+  {"id": "geracao-de-dados-ficticios-para-testes", "codigo": "FAKE", "nome": "Geração de Dados Fictícios (para testes)", "ferramentas": [
+    {"nome": "Gerador Completo de Pessoa Física", "url": "https://geradorbrasileiro.com/pessoa.html"},
+    {"nome": "4Devs - Gerador de Pessoas", "url": "https://www.4devs.com.br/gerador_de_pessoas"},
+    {"nome": "Invertexto - Gerador de Pessoas", "url": "https://www.invertexto.com/gerador-de-pessoas"}
+  ]},
+  {"id": "checagem-de-fake-news", "codigo": "FCK", "nome": "Checagem de Fake News", "ferramentas": [
+    {"nome": "Agência Lupa", "url": "https://piaui.folha.uol.com.br/lupa/"},
+    {"nome": "Boatos.org", "url": "https://www.boatos.org/"},
+    {"nome": "Detector de Fake News (NILC)", "url": "https://nilc-fakenews.herokuapp.com/"},
+    {"nome": "E-farsas.com", "url": "https://www.e-farsas.com/"},
+    {"nome": "G1 - Fato ou Fake", "url": "https://g1.globo.com/fato-ou-fake/"}
+  ]},
+  {"id": "geoint-e-mapas", "codigo": "GEO", "nome": "GEOINT e Mapas", "ferramentas": [
+    {"nome": "Sentinel Hub - EO Browser", "url": "https://apps.sentinel-hub.com/eo-browser/"},
+    {"nome": "Planet", "url": "https://www.planet.com"},
+    {"nome": "Google Maps", "url": "https://maps.google.com"},
+    {"nome": "Google Earth", "url": "https://earth.google.com/web/"},
+    {"nome": "QGIS", "url": "https://qgis.org/pt_BR/site/"},
+    {"nome": "SunCalc.org", "url": "https://www.suncalc.org/"},
+    {"nome": "SunCalc.net", "url": "http://suncalc.net"},
+    {"nome": "Shadowmap", "url": "https://app.shadowmap.org"},
+    {"nome": "GeoSpy", "url": "https://geospy.web.app/"},
+    {"nome": "Mapillary", "url": "https://www.mapillary.com/"},
+    {"nome": "Wikimapia", "url": "https://wikimapia.org/"},
+    {"nome": "ImageJ (análise de imagem científica)", "url": "https://imagej.net/ij/"}
+  ]},
+  {"id": "maquinas-virtuais-e-sistemas-para-osint", "codigo": "SYS", "nome": "Máquinas Virtuais e Sistemas para OSINT", "ferramentas": [
+    {"nome": "CSI Linux", "url": "https://csilinux.com/"},
+    {"nome": "OSINT VM (Trace Labs)", "url": "https://www.tracelabs.org/initiatives/osint-vm"},
+    {"nome": "OSBoxes - Virtual Machines", "url": "https://www.osboxes.org/"},
+    {"nome": "CAINE Live USB/DVD", "url": "https://www.caine-live.net/"},
+    {"nome": "Kali Linux", "url": "https://www.kali.org/"},
+    {"nome": "Oracle VirtualBox", "url": "https://www.virtualbox.org/wiki/Downloads"},
+    {"nome": "Tails", "url": "https://tails.net/install/download-iso/index.en.html"}
+  ]},
+  {"id": "e-mails-temporarios", "codigo": "TMP", "nome": "E-mails Temporários", "ferramentas": [
+    {"nome": "Temp-Mail.org", "url": "https://temp-mail.org/pt/"},
+    {"nome": "Guerrilla Mail", "url": "https://www.guerrillamail.com/pt/"},
+    {"nome": "10 Minute Mail", "url": "https://10minutemail.com"}
+  ]},
+  {"id": "organizacao-e-mapa-de-vinculos", "codigo": "LNK", "nome": "Organização e Mapa de Vínculos", "ferramentas": [
+    {"nome": "Maltego", "url": "https://www.maltego.com/downloads/"},
+    {"nome": "XMind 8 Pro", "url": "https://www.xmind.net/xmind8-pro/"},
+    {"nome": "yEd Graph Editor", "url": "https://www.yworks.com/products/yed"}
+  ]},
+  {"id": "comunidades-e-atualizacao-em-osint", "codigo": "INT", "nome": "Comunidades e Atualização em OSINT", "ferramentas": [
+    {"nome": "Alex Lozano (LinkedIn)", "url": "https://www.linkedin.com/in/alozano-cibergy/"},
+    {"nome": "OSINT Combine - Blog", "url": "https://www.osintcombine.com/blog"},
+    {"nome": "Brigada OSINT (LinkedIn)", "url": "https://www.linkedin.com/company/brigadaosint/"},
+    {"nome": "COBRA OSINT (Telegram)", "url": "https://t.me/cobra_OSINT"},
+    {"nome": "Cyber Detective (X)", "url": "https://x.com/cyb_detective"},
+    {"nome": "Cyber Hunter Academy (Telegram)", "url": "https://t.me/cyberhunteracademy"},
+    {"nome": "LinkedIn Forensic OSINT", "url": "https://www.linkedin.com/company/forensicosint/posts/?feedView=all"},
+    {"nome": "Logan Woodward (LinkedIn)", "url": "https://www.linkedin.com/in/logan-woodward-919597215/"},
+    {"nome": "Nixintel (X)", "url": "https://x.com/nixintel"},
+    {"nome": "OSINT e Outras Fontes de Informações (Telegram)", "url": "https://t.me/OSINT_BR"},
+    {"nome": "OSINT Experts & Resources - UserSearch (LinkedIn)", "url": "https://www.linkedin.com/groups/13047129/"},
+    {"nome": "OSINT UK Community (X)", "url": "https://x.com/OSINT_Community"},
+    {"nome": "OSINT Belarus (Telegram)", "url": "https://t.me/osintby"},
+    {"nome": "OSIntOps.com News (Telegram)", "url": "https://t.me/Osintlatestnews"},
+    {"nome": "Bellingcat - Resources", "url": "https://www.bellingcat.com/category/resources/"},
+    {"nome": "Sector035 (X)", "url": "https://x.com/Sector035"}
+  ]}
+]

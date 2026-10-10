@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kit de Ferramentas OSINT | Luciano Grossi</title>
+<meta name="description" content="Catálogo de ferramentas de OSINT (Inteligência de Fontes Abertas) organizado por categoria, com busca: buscadores, imagens, metadados, redes sociais, GEOINT e mais.">
+<link rel="canonical" href="https://lucianogrossi.com.br/osint/">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="catalogo.css">
+</head>
+<body data-fonte="ferramentas.json">
+
+<nav>
+  <a href="/" class="nav-logo">lg.dev</a>
+  <div class="nav-links">
+    <a href="/#sobre">sobre</a>
+    <a href="/#experiencia">experiência</a>
+    <a href="/#projetos">projetos</a>
+    <a href="/#contato">contato</a>
+  </div>
+</nav>
+
+<main>
+  <div class="page-tag">Fontes abertas</div>
+  <h1>Kit de<br><em>Ferramentas OSINT</em></h1>
+  <p class="page-desc">Catálogo de ferramentas de Inteligência de Fontes Abertas, organizado por categoria. Busque pelo nome, pelo domínio ou pelo tipo de pesquisa.</p>
+
+  <div class="searchwrap">
+    <input id="search" type="search" placeholder="Buscar ferramenta, domínio ou categoria…" aria-label="Buscar ferramenta, domínio ou categoria" autocomplete="off">
+    <div class="meta-row">
+      <span id="count-live">carregando…</span>
+      <span>uso educacional · confira a legalidade e os termos de cada ferramenta</span>
+    </div>
+  </div>
+
+  <div class="cat-nav" id="cat-nav" role="navigation" aria-label="Categorias"></div>
+
+  <div id="lista"></div>
+  <p id="empty">nenhum resultado encontrado.</p>
+  <noscript><p class="page-desc">Ative o JavaScript para ver o catálogo.</p></noscript>
+</main>
+
+<footer>
+  <p><a href="/">← lucianogrossi.com.br</a></p>
+</footer>
+
+<script src="catalogo.js"></script>
+</body>
+</html>
