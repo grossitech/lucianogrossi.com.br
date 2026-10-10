@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Outras ferramentas</title>
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex, noai, noimageai">
+<meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="catalogo.css">
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">lg.dev</a>
+  <div class="nav-links">
+    <a href="/#sobre">sobre</a>
+    <a href="/#experiencia">experiência</a>
+    <a href="/#projetos">projetos</a>
+    <a href="/#contato">contato</a>
+  </div>
+</nav>
+
+<main>
+  <div class="page-tag">Reservado</div>
+  <h1>Outras<br><em>ferramentas</em></h1>
+  <p class="page-desc">Ferramentas que vão além de fontes abertas. Use somente em ambiente de teste ou com autorização expressa de quem é alvo da pesquisa.</p>
+
+  <div class="searchwrap">
+    <input id="search" type="search" placeholder="Buscar ferramenta, domínio ou categoria…" aria-label="Buscar ferramenta, domínio ou categoria" autocomplete="off">
+    <div class="meta-row">
+      <span id="count-live">carregando…</span>
+      <span>uso educacional · confira a legalidade e os termos de cada ferramenta</span>
+    </div>
+  </div>
+
+  <div class="cat-nav" id="cat-nav" role="navigation" aria-label="Categorias"></div>
+
+  <div id="lista"></div>
+  <p id="empty">nenhum resultado encontrado.</p>
+</main>
+
+<footer>
+  <p><a href="/osint/">← kit de ferramentas osint</a></p>
+</footer>
+
+<script type="application/json" id="dados">
+[
+  {"id": "instagram", "codigo": "IGM", "nome": "Instagram", "ferramentas": [
+    {"nome": "InstagramPrivSniffer (perfis fechados)", "url": "https://github.com/obitouka/InstagramPrivSniffer/issues"}
+  ]},
+  {"id": "numeros-virtuais-recebimento-de-sms", "codigo": "SMS", "nome": "Números Virtuais / Recebimento de SMS", "ferramentas": [
+    {"nome": "Center SMS Bot (Telegram)", "url": "https://t.me/CenterSmsBot"},
+    {"nome": "NorthSMS.com", "url": "https://northsms.com/"},
+    {"nome": "Notz SMS Bot (Telegram)", "url": "https://t.me/NotzSMSBot"},
+    {"nome": "SMS Temporário Bot (Telegram)", "url": "https://t.me/smstemporariobot"},
+    {"nome": "Turbo SMS Bot (Telegram)", "url": "https://t.me/Turbo_Sms_bot"}
+  ]},
+  {"id": "engenharia-social-e-seguranca-ofensiva", "codigo": "SOC", "nome": "Engenharia Social e Segurança Ofensiva", "ferramentas": [
+    {"nome": "Grabify - IP Logger & URL Shortener", "url": "https://grabify.link"},
+    {"nome": "Canarytokens", "url": "https://canarytokens.org/generate"},
+    {"nome": "Seeker (GitHub)", "url": "https://github.com/thewhiteh4t/seeker"},
+    {"nome": "Social-Engineer Toolkit (GitHub)", "url": "https://github.com/trustedsec/social-engineer-toolkit"},
+    {"nome": "Hispy.io", "url": "https://www.hispy.io/"},
+    {"nome": "GoClick", "url": "https://goclick.info/"}
+  ]}
+]
+</script>
+<script src="catalogo.js"></script>
+</body>
+</html>
