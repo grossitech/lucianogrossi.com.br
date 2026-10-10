@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Domínios e IPs · Guia OSINT | Luciano Grossi</title>
+<meta name="description" content="DNS, Whois e o que um endereço na internet revela.">
+<link rel="canonical" href="https://lucianogrossi.com.br/osint/guia/dominios-e-ips.html">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/osint/guia/guia.css">
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">lg.dev</a>
+  <div class="nav-links">
+    <a href="/#sobre">sobre</a>
+    <a href="/#experiencia">experiência</a>
+    <a href="/#projetos">projetos</a>
+    <a href="/#contato">contato</a>
+  </div>
+</nav>
+
+<main>
+  <div class="page-tag">Guia OSINT · 05</div>
+  <h1>Domínios e <em>IPs</em></h1>
+  <p class="lead">Todo site deixa registros públicos sobre quem o mantém, onde está hospedado e desde quando existe. Saber lê-los é o jeito mais rápido de avaliar se um endereço merece confiança.</p>
+<h2>Como um nome vira um endereço</h2>
+<p>Computadores se localizam por números, os endereços IP. O DNS (sistema de nomes de domínio) é a lista telefônica que traduz <code>exemplo.com.br</code> para o número do servidor onde o site está. Essa tradução é pública por natureza: se não fosse, ninguém chegaria ao site.</p>
+
+<h2>Whois: a ficha do domínio</h2>
+<p>Todo domínio tem um registro com dados de titularidade. A consulta se chama Whois (ou RDAP, o protocolo mais novo) e mostra, em geral:</p>
+<ul>
+  <li>quem é o titular, ou a empresa que o representa;</li>
+  <li>a data de criação e a de expiração;</li>
+  <li>os servidores DNS, que costumam indicar o provedor;</li>
+  <li>contatos técnicos e administrativos.</li>
+</ul>
+<p>Domínios <code>.br</code> são consultados no Registro.br. Nos internacionais, é comum os dados do titular estarem ocultos por um serviço de privacidade. Faça o teste com um domínio seu e veja o que aparece.</p>
+<p>A data de criação é o dado mais útil no dia a dia. Uma loja que diz ter "20 anos de tradição" num domínio registrado há três semanas merece desconfiança.</p>
+
+<h2>Os registros DNS também falam</h2>
+<pre><code>nslookup -type=mx exemplo.com.br
+nslookup -type=txt exemplo.com.br</code></pre>
+<p>O registro MX mostra qual serviço de e-mail a organização usa. Os registros TXT frequentemente listam, um por um, os serviços de terceiros que ela contratou, porque cada um pede uma linha de verificação. Para um atacante, isso é um mapa de fornecedores.</p>
+
+<h2>Certificados e histórico</h2>
+<ul>
+  <li><strong>Transparência de certificados</strong>: toda vez que um site obtém um certificado HTTPS, o nome vai para um registro público. Pesquisar um domínio nesses registros revela subdomínios que ninguém anunciou, como <code>teste.</code>, <code>intranet.</code> e <code>homologacao.</code>.</li>
+  <li><strong>Wayback Machine</strong>: guarda versões antigas das páginas. Serve para ver o que um site dizia antes e para recuperar conteúdo apagado.</li>
+</ul>
+
+<h2>O que um IP diz, e o que não diz</h2>
+<p>A consulta a um endereço IP informa a qual provedor ele pertence e uma localização aproximada. É só isso.</p>
+<ul>
+  <li>A localização é a do provedor, muitas vezes a cidade errada, e nunca um endereço residencial.</li>
+  <li>O IP identifica uma conexão, não uma pessoa. Uma casa inteira ou uma empresa inteira sai pelo mesmo número.</li>
+  <li>No Brasil, só o provedor sabe qual assinante usava um IP em determinado momento, e só entrega esse dado com ordem judicial (Marco Civil da Internet, Lei 12.965/2014).</li>
+</ul>
+
+<div class="defesa">
+<h3>Do lado da defesa</h3>
+<ul>
+  <li><strong>Consulte o Whois dos seus domínios.</strong> Se aparecem e-mail e telefone pessoais, troque por contatos criados só para isso.</li>
+  <li><strong>Liste os seus subdomínios</strong> nos registros de transparência de certificados. Ambientes de teste esquecidos são porta de entrada frequente.</li>
+  <li><strong>Antes de comprar ou clicar</strong>, olhe a idade do domínio. É uma verificação de trinta segundos que evita a maioria dos golpes de loja falsa.</li>
+</ul>
+</div>
+
+<p class="catalogo">No catálogo: <a href="/osint/#dominios-ip-e-infraestrutura-web">ferramentas de Whois, IP e histórico de sites</a>.</p>
+
+<div class="cap-nav">
+  <a href="/osint/guia/imagens.html">← Imagens</a>
+  <a href="/osint/guia/metadados.html">Metadados →</a>
+</div>
+</main>
+
+<footer>
+  <p><a href="/osint/guia/">← guia de osint</a></p>
+</footer>
+
+</body>
+</html>

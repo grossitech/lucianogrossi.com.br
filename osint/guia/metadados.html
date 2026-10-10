@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metadados · Guia OSINT | Luciano Grossi</title>
+<meta name="description" content="O que uma foto ou um PDF carregam e como limpar antes de publicar.">
+<link rel="canonical" href="https://lucianogrossi.com.br/osint/guia/metadados.html">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/osint/guia/guia.css">
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">lg.dev</a>
+  <div class="nav-links">
+    <a href="/#sobre">sobre</a>
+    <a href="/#experiencia">experiência</a>
+    <a href="/#projetos">projetos</a>
+    <a href="/#contato">contato</a>
+  </div>
+</nav>
+
+<main>
+  <div class="page-tag">Guia OSINT · 06</div>
+  <h1><em>Metadados</em>: o que vai junto com o arquivo</h1>
+  <p class="lead">Todo arquivo leva consigo informações sobre si mesmo: quem criou, quando, com qual programa, em qual aparelho e, às vezes, em que lugar. Quase ninguém olha, e é por isso que elas vazam.</p>
+<h2>Fotos: o EXIF</h2>
+<p>Câmeras e celulares gravam dentro de cada foto um bloco de dados chamado EXIF. Ele costuma conter:</p>
+<ul>
+  <li>data e hora exatas do clique;</li>
+  <li>marca e modelo do aparelho;</li>
+  <li>configurações da câmera;</li>
+  <li>coordenadas de GPS, se a localização estava ligada;</li>
+  <li>o programa usado para editar.</li>
+</ul>
+<p>As coordenadas são o ponto crítico. Uma foto tirada na sala de casa, com a localização ativa, carrega o endereço com precisão de poucos metros.</p>
+
+<h2>Documentos também</h2>
+<ul>
+  <li><strong>Word, Excel e PowerPoint</strong>: nome do autor e de quem salvou por último, nome da empresa, tempo de edição e, com frequência, comentários e alterações controladas que continuam lá dentro.</li>
+  <li><strong>PDF</strong>: autor, programa que gerou o arquivo, datas de criação e de modificação.</li>
+</ul>
+<p>É assim que um contrato "elaborado pela nossa equipe" revela ter sido criado a partir do modelo de outro escritório, ou que uma proposta mostra o nome do cliente anterior.</p>
+
+<h2>Como ver</h2>
+<p>O jeito mais simples é o próprio sistema: no Windows, clique com o botão direito no arquivo, depois em Propriedades e na aba Detalhes; no macOS, abra a imagem no Pré-Visualização e use o Inspetor.</p>
+<p>Para ver tudo, a referência é o ExifTool, gratuito e de linha de comando:</p>
+<pre><code>exiftool foto.jpg
+exiftool relatorio.pdf</code></pre>
+
+<h2>Como limpar</h2>
+<pre><code>exiftool -all= foto.jpg</code></pre>
+<p>O comando remove todos os metadados e guarda uma cópia do original com o sufixo <code>_original</code>. Sem instalar nada:</p>
+<ul>
+  <li><strong>Windows</strong>: em Propriedades, aba Detalhes, use "Remover propriedades e informações pessoais".</li>
+  <li><strong>Office</strong>: em Arquivo, Informações, use "Inspecionar Documento" antes de enviar. Ele encontra autor, comentários e revisões ocultas.</li>
+  <li><strong>Celular</strong>: desative a localização no aplicativo da câmera. No iPhone, a tela de compartilhamento tem um botão "Opções" que permite enviar a foto sem o local.</li>
+</ul>
+
+<h2>Quando os metadados somem sozinhos</h2>
+<p>As grandes redes sociais removem o EXIF das fotos publicadas, e os aplicativos de mensagem fazem o mesmo quando a imagem vai como foto. O dado sobrevive quando o arquivo original viaja inteiro:</p>
+<ul>
+  <li>enviado como <strong>documento</strong> no WhatsApp ou no Telegram;</li>
+  <li>anexado a um e-mail;</li>
+  <li>compartilhado por link de nuvem;</li>
+  <li>publicado diretamente num site ou blog.</li>
+</ul>
+
+<h2>Metadado não é prova</h2>
+<p>Tudo isso pode ser editado com o mesmo ExifTool. Data e localização num arquivo são um indício a confirmar por outros meios, nunca a confirmação.</p>
+
+<div class="defesa">
+<h3>Do lado da defesa</h3>
+<p>Crie o hábito de limpar antes de publicar ou enviar para fora. Para quem lida com dados pessoais no trabalho, isso é mais do que capricho: metadado que identifica uma pessoa é dado pessoal, e enviá-lo sem necessidade contraria o princípio da necessidade da LGPD (art. 6º, III).</p>
+<ul>
+  <li>Inclua "inspecionar documento" no roteiro de envio de propostas, contratos e relatórios.</li>
+  <li>Prefira gerar o PDF final a partir de uma cópia limpa, não do arquivo de trabalho.</li>
+  <li>Revise o que já está publicado no site da empresa com a busca <code>site:seudominio.com.br filetype:pdf</code>.</li>
+</ul>
+</div>
+
+<p class="catalogo">No catálogo: <a href="/osint/#metadados-de-arquivos-e-imagens">leitores e removedores de metadados</a>.</p>
+
+<div class="cap-nav">
+  <a href="/osint/guia/dominios-e-ips.html">← Domínios e IPs</a>
+  <a href="/osint/guia/pegada-digital.html">Sua pegada digital →</a>
+</div>
+</main>
+
+<footer>
+  <p><a href="/osint/guia/">← guia de osint</a></p>
+</footer>
+
+</body>
+</html>

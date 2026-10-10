@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Higiene digital · Guia OSINT | Luciano Grossi</title>
+<meta name="description" content="Senhas, vazamentos, permissões de aplicativos e cuidado com IAs.">
+<link rel="canonical" href="https://lucianogrossi.com.br/osint/guia/higiene-digital.html">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/osint/guia/guia.css">
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">lg.dev</a>
+  <div class="nav-links">
+    <a href="/#sobre">sobre</a>
+    <a href="/#experiencia">experiência</a>
+    <a href="/#projetos">projetos</a>
+    <a href="/#contato">contato</a>
+  </div>
+</nav>
+
+<main>
+  <div class="page-tag">Guia OSINT · 08</div>
+  <h1><em>Higiene</em> digital</h1>
+  <p class="lead">A maioria dos incidentes não começa com um ataque sofisticado. Começa com uma senha repetida, um aplicativo com permissão demais ou um texto colado no lugar errado.</p>
+<h2>Senhas</h2>
+<ul>
+  <li><strong>Uma senha por serviço.</strong> Quando um site vaza, a primeira coisa que se faz com a lista é testar as mesmas combinações em e-mail, banco e redes sociais.</li>
+  <li><strong>Longa vence complicada.</strong> Uma frase de quatro ou cinco palavras é mais forte e mais fácil de lembrar do que oito caracteres com símbolos.</li>
+  <li><strong>Use um cofre de senhas.</strong> Ele cria e guarda uma senha diferente para cada cadastro, e você decora só a principal.</li>
+  <li><strong>Troque quando houver motivo</strong>: vazamento, suspeita de acesso ou senha compartilhada. Trocar por calendário só leva a variações previsíveis.</li>
+</ul>
+
+<h2>Verificação em duas etapas</h2>
+<p>Com a segunda etapa ligada, a senha vazada sozinha não abre a conta. Ative primeiro no e-mail, porque é por ele que se redefinem todas as outras senhas.</p>
+<ul>
+  <li>Prefira aplicativo autenticador ou chave de acesso (passkey) ao código por SMS, que pode ser desviado quando alguém transfere o seu número para outro chip.</li>
+  <li>No WhatsApp, ative a "confirmação em duas etapas" nas configurações da conta. É o que impede o sequestro do número com um código pedido por telefone.</li>
+  <li>Guarde os códigos de recuperação fora do celular.</li>
+</ul>
+
+<h2>Vazamentos</h2>
+<p>Parta do princípio de que algum dado seu já vazou. Serviços de verificação informam em quais incidentes o seu e-mail aparece. O que fazer com a resposta:</p>
+<ol>
+  <li>troque a senha do serviço afetado e de qualquer outro onde ela se repetia;</li>
+  <li>ative a segunda etapa onde ainda não estava ativa;</li>
+  <li>desconfie de contatos que demonstrem saber seus dados. Golpistas usam nome, CPF e endereço vazados para parecer legítimos.</li>
+</ol>
+
+<h2>Aplicativos e permissões</h2>
+<ul>
+  <li>Instale só das lojas oficiais e confira o nome do desenvolvedor. Imitações de aplicativos conhecidos são comuns.</li>
+  <li>Leia as permissões pedidas. Uma lanterna não precisa dos seus contatos; um jogo não precisa do microfone.</li>
+  <li>Revise de tempos em tempos, nas configurações de privacidade do celular, quais aplicativos têm acesso a localização, câmera, microfone e fotos.</li>
+  <li>Mantenha sistema e aplicativos atualizados. A maior parte das atualizações corrige falhas já conhecidas.</li>
+</ul>
+
+<h2>Ferramentas de IA</h2>
+<p>Assistentes de IA entraram na rotina de trabalho mais rápido do que as regras sobre o que pode ser colado neles. Antes de colar, considere:</p>
+<ul>
+  <li><strong>Para onde vai.</strong> Dependendo do serviço e do plano, o que você escreve pode ser armazenado e usado para treinar versões futuras. Veja nas configurações se há como desativar.</li>
+  <li><strong>O que não entra.</strong> Dados pessoais de clientes e colegas, contratos, código proprietário, senhas e chaves de acesso.</li>
+  <li><strong>Anonimize antes.</strong> Para pedir ajuda com um texto ou uma planilha, troque nomes e números por dados fictícios. O resultado serve do mesmo jeito.</li>
+  <li><strong>Confira a resposta.</strong> A ferramenta erra com a mesma segurança com que acerta.</li>
+  <li><strong>Siga a política da empresa.</strong> Se ela não existe, esse é um bom assunto para levar a quem cuida de segurança ou de privacidade.</li>
+</ul>
+
+<div class="defesa">
+<h3>Do lado da defesa</h3>
+<p>Se for fazer só três coisas hoje:</p>
+<ol>
+  <li>ative a verificação em duas etapas no e-mail principal e no WhatsApp;</li>
+  <li>instale um cofre de senhas e troque as senhas repetidas, começando pelas de e-mail e banco;</li>
+  <li>consulte seus e-mails num verificador de vazamentos.</li>
+</ol>
+</div>
+
+<p class="catalogo">No catálogo: <a href="/osint/#vazamento-de-dados-data-leaks">verificadores de vazamento de dados</a>.</p>
+
+<div class="cap-nav">
+  <a href="/osint/guia/pegada-digital.html">← Sua pegada digital</a>
+  <a href="/osint/">catálogo de ferramentas →</a>
+</div>
+</main>
+
+<footer>
+  <p><a href="/osint/guia/">← guia de osint</a></p>
+</footer>
+
+</body>
+</html>

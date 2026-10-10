@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imagens · Guia OSINT | Luciano Grossi</title>
+<meta name="description" content="Busca reversa e o que observar numa foto.">
+<link rel="canonical" href="https://lucianogrossi.com.br/osint/guia/imagens.html">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/osint/guia/guia.css">
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">lg.dev</a>
+  <div class="nav-links">
+    <a href="/#sobre">sobre</a>
+    <a href="/#experiencia">experiência</a>
+    <a href="/#projetos">projetos</a>
+    <a href="/#contato">contato</a>
+  </div>
+</nav>
+
+<main>
+  <div class="page-tag">Guia OSINT · 04</div>
+  <h1>O que uma <em>imagem</em> conta</h1>
+  <p class="lead">Uma foto responde a três perguntas que o texto ao redor dela muitas vezes esconde: de onde veio, quando apareceu pela primeira vez e onde foi tirada.</p>
+<h2>Busca reversa</h2>
+<p>Na busca reversa você entrega uma imagem e o buscador devolve as páginas onde ela, ou algo parecido, aparece. Cada serviço tem um ponto forte:</p>
+<ul>
+  <li><strong>Google Lens</strong>: reconhece objetos, produtos, pontos turísticos e texto dentro da imagem.</li>
+  <li><strong>TinEye</strong>: procura cópias da mesma imagem, mesmo recortadas ou redimensionadas, e permite ordenar pela mais antiga. É a melhor opção para descobrir a origem.</li>
+  <li><strong>Bing e Yandex</strong>: têm índices diferentes dos do Google e muitas vezes encontram o que ele não encontra.</li>
+</ul>
+<p>Use mais de um. E recorte: se o que interessa é a fachada ao fundo, envie só a fachada.</p>
+
+<h2>Essa foto é de agora?</h2>
+<p>O uso mais valioso da busca reversa é desmontar imagem fora de contexto. A foto "da enchente de ontem" que já circulava em 2019 é o caso típico. O procedimento é sempre o mesmo:</p>
+<ol>
+  <li>faça a busca reversa em dois serviços;</li>
+  <li>ordene pelos resultados mais antigos;</li>
+  <li>abra a publicação mais antiga e leia a legenda original.</li>
+</ol>
+<p>Se a imagem existia antes do fato que ela supostamente mostra, a história é falsa, por mais convincente que pareça.</p>
+
+<h2>Ler a imagem com atenção</h2>
+<p>Quando a busca reversa não devolve nada, sobra olhar. Uma foto comum carrega mais pistas do que parece:</p>
+<ul>
+  <li><strong>Texto</strong>: placas de rua, fachadas de loja, outdoors, o idioma e até o DDD de um telefone.</li>
+  <li><strong>Veículos</strong>: modelo das placas, lado do volante, cores de táxis e ônibus.</li>
+  <li><strong>Construções</strong>: estilo dos prédios, tipo de poste e de fiação, calçamento.</li>
+  <li><strong>Natureza</strong>: vegetação, relevo, linha do horizonte.</li>
+  <li><strong>Luz</strong>: a direção e o comprimento das sombras indicam a hora aproximada e a orientação da rua.</li>
+</ul>
+<p>Com duas ou três pistas, mapas com fotos de rua permitem confirmar o lugar exato comparando os detalhes um a um.</p>
+
+<h2>Reconhecimento facial é outra conversa</h2>
+<p>Existem serviços que recebem um rosto e devolvem outras fotos da mesma pessoa na internet. Tecnicamente funcionam; o problema é o uso. Rosto é dado biométrico, que a LGPD classifica como sensível (art. 5º, II), e identificar um desconhecido a partir de uma foto tirada na rua é exatamente o tipo de uso que a lei pretende impedir. O uso que faz sentido é procurar o seu próprio rosto.</p>
+
+<div class="defesa">
+<h3>Do lado da defesa</h3>
+<ul>
+  <li><strong>Procure as suas fotos.</strong> Faça a busca reversa da sua foto de perfil. Usar a mesma imagem em vários lugares permite ligar contas que você preferia manter separadas, como a profissional e a pessoal.</li>
+  <li><strong>Olhe o fundo antes de publicar.</strong> Fachada de casa, uniforme da escola dos filhos, crachá, tela do computador e documentos sobre a mesa aparecem com muito mais nitidez do que você imagina.</li>
+  <li><strong>Publique depois.</strong> Foto de viagem postada em tempo real avisa que a casa está vazia.</li>
+</ul>
+</div>
+
+<p class="catalogo">No catálogo: <a href="/osint/#pesquisa-reversa-de-imagem">serviços de busca reversa de imagem</a>.</p>
+
+<div class="cap-nav">
+  <a href="/osint/guia/busca-avancada.html">← Busca avançada</a>
+  <a href="/osint/guia/dominios-e-ips.html">Domínios e IPs →</a>
+</div>
+</main>
+
+<footer>
+  <p><a href="/osint/guia/">← guia de osint</a></p>
+</footer>
+
+</body>
+</html>

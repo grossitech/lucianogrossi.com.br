@@ -80,6 +80,10 @@ function montar(categorias) {
     countLive.textContent = q === '' ? resumo : visiveis + ' resultado(s) / ' + catsVisiveis + ' categoria(s)';
     emptyMsg.style.display = visiveis === 0 ? 'block' : 'none';
   });
+
+  // As seções só existem depois da montagem, então a âncora da URL é aplicada aqui.
+  const alvo = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+  if (alvo) alvo.scrollIntoView();
 }
 
 const fonte = document.body.dataset.fonte;

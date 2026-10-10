@@ -3,6 +3,8 @@ main { max-width: 1120px; margin: 0 auto; padding: 8rem 2rem 5rem; }
 h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 300; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 0.75rem; }
 
 .page-desc { color: var(--muted); font-size: 0.95rem; max-width: 66ch; margin-bottom: 2rem; }
+.page-desc a { color: var(--accent); text-decoration: none; }
+.page-desc a:hover { text-decoration: underline; }
 
 /* BUSCA */
 .searchwrap {
@@ -138,4 +140,5 @@ h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 300; line-height: 1.1; lett
   main { padding: 7rem 1.25rem 4rem; }
   .nav-links { display: none; }
   .searchwrap { top: 61px; }
+  .cat { scroll-margin-top: 13.5rem; }
 }

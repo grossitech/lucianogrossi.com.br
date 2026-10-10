@@ -20,6 +20,7 @@ Site estático hospedado via **GitHub Pages**, sem framework, sem bundler, sem d
 | `/snake/` | Ferramenta: jogo da cobrinha estilo Nokia 3310/3320 |
 | `/pizza-day/` | Ferramenta: contagem do Bitcoin Pizza Day com preço do BTC ao vivo |
 | `/osint/` | Ferramenta: catálogo de ferramentas de OSINT com busca (dados em `osint/ferramentas.json`) |
+| `/osint/guia/` | Guia de OSINT em oito capítulos, com foco em privacidade e proteção |
 | `/venca-os-mitos-que-sabotam-sua-carreira/` | Landing page do livro |
 
 ## Stack

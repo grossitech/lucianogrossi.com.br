@@ -29,4 +29,67 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://lucianogrossi.com.br/osint/guia/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://lucianogrossi.com.br/osint/guia/o-que-e-osint.html</loc>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://lucianogrossi.com.br/osint/guia/metodo.html</loc>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://lucianogrossi.com.br/osint/guia/busca-avancada.html</loc>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://lucianogrossi.com.br/osint/guia/imagens.html</loc>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://lucianogrossi.com.br/osint/guia/dominios-e-ips.html</loc>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://lucianogrossi.com.br/osint/guia/metadados.html</loc>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://lucianogrossi.com.br/osint/guia/pegada-digital.html</loc>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://lucianogrossi.com.br/osint/guia/higiene-digital.html</loc>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>

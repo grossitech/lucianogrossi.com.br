@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Busca avançada · Guia OSINT | Luciano Grossi</title>
+<meta name="description" content="Operadores de pesquisa, com exemplos sobre o seu próprio nome e domínio.">
+<link rel="canonical" href="https://lucianogrossi.com.br/osint/guia/busca-avancada.html">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/osint/guia/guia.css">
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">lg.dev</a>
+  <div class="nav-links">
+    <a href="/#sobre">sobre</a>
+    <a href="/#experiencia">experiência</a>
+    <a href="/#projetos">projetos</a>
+    <a href="/#contato">contato</a>
+  </div>
+</nav>
+
+<main>
+  <div class="page-tag">Guia OSINT · 03</div>
+  <h1>Busca <em>avançada</em></h1>
+  <p class="lead">A maioria das pessoas digita três palavras e lê a primeira página. Os buscadores aceitam instruções bem mais precisas, e meia dúzia delas resolve quase tudo.</p>
+<h2>Os operadores que valem a pena</h2>
+<div class="tabela">
+<table>
+  <thead><tr><th>Operador</th><th>O que faz</th><th>Exemplo</th></tr></thead>
+  <tbody>
+    <tr><td><code>"..."</code></td><td>Frase exata, nessa ordem</td><td><code>"Maria Souza Andrade"</code></td></tr>
+    <tr><td><code>-</code></td><td>Exclui um termo ou um site</td><td><code>jaguar -carro</code></td></tr>
+    <tr><td><code>OR</code></td><td>Um termo ou outro (em maiúsculas)</td><td><code>currículo OR curriculum</code></td></tr>
+    <tr><td><code>site:</code></td><td>Só dentro de um site ou terminação</td><td><code>site:gov.br</code></td></tr>
+    <tr><td><code>filetype:</code></td><td>Só um tipo de arquivo</td><td><code>filetype:pdf</code></td></tr>
+    <tr><td><code>intitle:</code></td><td>Termo no título da página</td><td><code>intitle:"lista de aprovados"</code></td></tr>
+    <tr><td><code>inurl:</code></td><td>Termo no endereço</td><td><code>inurl:admin</code></td></tr>
+    <tr><td><code>intext:</code></td><td>Termo no corpo do texto</td><td><code>intext:"CPF"</code></td></tr>
+    <tr><td><code>*</code></td><td>Coringa: qualquer palavra no lugar</td><td><code>"Maria * Andrade"</code></td></tr>
+    <tr><td><code>before:</code> <code>after:</code></td><td>Antes ou depois de uma data</td><td><code>after:2024-01-01</code></td></tr>
+    <tr><td><code>..</code></td><td>Intervalo de números</td><td><code>2018..2022</code></td></tr>
+  </tbody>
+</table>
+</div>
+<p>Não deixe espaço depois dos dois-pontos: <code>site:gov.br</code> funciona, <code>site: gov.br</code> não.</p>
+
+<h2>Combinar é onde está a força</h2>
+<p>Um operador sozinho ajuda pouco. O ganho aparece quando você empilha restrições até sobrar só o que interessa:</p>
+<pre><code>"Maria Souza Andrade" site:gov.br filetype:pdf</code></pre>
+<p>Essa busca devolve apenas documentos PDF publicados em sites do governo que contenham o nome exato. É o tipo de consulta que encontra editais, portarias e listas de concursos.</p>
+
+<h2>Experimente em você</h2>
+<p>O melhor jeito de aprender é procurar o que existe a seu respeito. Troque os exemplos pelos seus dados:</p>
+<pre><code>"Seu Nome Completo"
+"Seu Nome Completo" -site:linkedin.com -site:instagram.com
+"seu.email@exemplo.com.br"
+"000.000.000-00"
+"Seu Nome Completo" filetype:pdf OR filetype:xlsx</code></pre>
+<p>A segunda linha tira da frente os perfis que você já conhece e mostra o resto. As duas seguintes costumam surpreender: e-mail e CPF aparecem em diários oficiais, listas de inscritos e planilhas que alguém esqueceu abertas.</p>
+<p>Se você tem um site ou cuida do site de uma empresa, estas mostram o que está indexado sem que ninguém tenha decidido isso:</p>
+<pre><code>site:seudominio.com.br filetype:pdf OR filetype:xlsx OR filetype:docx
+site:seudominio.com.br intitle:"index of"
+site:docs.google.com "Nome da Sua Empresa"</code></pre>
+
+<h2>O que já não funciona</h2>
+<p>Muitas listas de operadores que circulam por aí estão desatualizadas. O Google aposentou o <code>cache:</code> em 2024, o <code>+</code> há mais de uma década, e o <code>daterange:</code> deu lugar a <code>before:</code> e <code>after:</code>. Se um operador não muda o resultado, é provável que tenha sido descontinuado.</p>
+
+<h2>Mais de um buscador</h2>
+<p>Google, Bing, DuckDuckGo e Yandex têm índices diferentes e interpretam os operadores cada um a seu modo. O que um não mostra, outro pode mostrar. Quando a busca importa, repita em pelo menos dois. Para montar consultas longas sem decorar a sintaxe, a página de pesquisa avançada do Google (<code>google.com/advanced_search</code>) faz o mesmo com um formulário.</p>
+
+<div class="defesa">
+<h3>Do lado da defesa</h3>
+<p>Encontrou algo seu que não deveria estar público? O caminho tem três degraus:</p>
+<ol>
+  <li><strong>Peça a remoção na origem.</strong> O buscador só aponta; quem publica é o site. A LGPD (art. 18) dá a você o direito de pedir a eliminação de dados tratados sem necessidade.</li>
+  <li><strong>Peça a desindexação.</strong> O Google tem um formulário para remover dos resultados informações pessoais como CPF, telefone e endereço.</li>
+  <li><strong>No seu próprio site</strong>, tire o arquivo do ar. Bloquear no <code>robots.txt</code> não esconde nada de quem tem o endereço.</li>
+</ol>
+</div>
+
+<p class="catalogo">No catálogo: <a href="/osint/#buscadores-e-operadores-de-busca">buscadores e montadores de consulta</a>.</p>
+
+<div class="cap-nav">
+  <a href="/osint/guia/metodo.html">← Método</a>
+  <a href="/osint/guia/imagens.html">Imagens →</a>
+</div>
+</main>
+
+<footer>
+  <p><a href="/osint/guia/">← guia de osint</a></p>
+</footer>
+
+</body>
+</html>
