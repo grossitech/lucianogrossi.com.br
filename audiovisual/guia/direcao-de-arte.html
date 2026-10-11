@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Direção de arte · Curtas com IA | Luciano Grossi</title>
+<meta name="description" content="Referências, paleta e as decisões visuais tomadas antes de gerar.">
+<link rel="canonical" href="https://lucianogrossi.com.br/audiovisual/guia/direcao-de-arte.html">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/guia.css?v=2">
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">lg.dev</a>
+  <div class="nav-links">
+    <a href="/#sobre">sobre</a>
+    <a href="/#experiencia">experiência</a>
+    <a href="/#projetos">projetos</a>
+    <a href="/#contato">contato</a>
+  </div>
+</nav>
+
+<main>
+  <div class="page-tag">Curtas com IA · 02</div>
+  <h1>Direção de arte: <em>a cara do filme</em></h1>
+  <p class="lead">Sem uma direção definida, cada imagem gerada sai com uma estética diferente e o filme vira uma colagem. A direção de arte é a decisão, tomada uma vez, sobre como tudo vai parecer.</p>
+<h2>Uma frase que guia tudo</h2>
+<p>Antes de procurar imagens, tente dizer em uma linha qual é a sensação do filme e de onde ela vem: "abafado e parado, como um domingo à tarde no interior nos anos 80, em cores desbotadas". Essa frase serve de régua. Diante de qualquer imagem gerada, a pergunta deixa de ser "ficou bonito?" e passa a ser "pertence a esse mundo?".</p>
+
+<h2>Referência antes de prompt</h2>
+<p>Quem só conhece a estética padrão dos geradores só consegue pedir a estética padrão. Vá buscar repertório fora deles:</p>
+<ul>
+  <li>fotogramas de filmes, para luz e enquadramento;</li>
+  <li>fotografia e pintura, para cor e composição;</li>
+  <li>arquitetura, figurino e objetos da época e do lugar da história.</li>
+</ul>
+<p>Junte de dez a vinte imagens num painel, o moodboard. Depois faça o trabalho mais importante: tire as que não combinam entre si. O que sobra é a direção do filme.</p>
+
+<h2>Traduzir sensação em escolha técnica</h2>
+<p>O gerador não entende "melancólico" do jeito que você entende. Ele responde melhor a decisões concretas:</p>
+<div class="tabela">
+<table>
+  <thead><tr><th>Decisão</th><th>Opções</th><th>O que comunica</th></tr></thead>
+  <tbody>
+    <tr><td>Luz</td><td>dura ou difusa, lateral ou frontal</td><td>dureza, mistério, acolhimento</td></tr>
+    <tr><td>Paleta</td><td>três ou quatro cores nomeadas</td><td>época, temperatura emocional</td></tr>
+    <tr><td>Lente</td><td>grande-angular ou teleobjetiva</td><td>espaço amplo ou intimidade</td></tr>
+    <tr><td>Foco</td><td>fundo nítido ou desfocado</td><td>contexto ou isolamento</td></tr>
+    <tr><td>Textura</td><td>grão de película, digital limpo, ilustração</td><td>memória, presente, fábula</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>O bloco de estilo</h2>
+<p>Condense essas decisões num trecho curto e use exatamente o mesmo em todo prompt de imagem do filme:</p>
+<pre><code>35mm film still, soft overcast light, muted palette of
+ochre, dusty green and faded red, shallow depth of field,
+subtle film grain</code></pre>
+<p>A maioria dos modelos responde melhor em inglês, e a repetição literal é o que dá unidade. Trocar "muted palette" por "soft colors" no meio do caminho já muda o resultado.</p>
+
+<h2>Menos adjetivo, mais substantivo</h2>
+<p>Palavras como "cinematic", "epic", "stunning" e "8k" são o tempero de todo mundo, e empurram a imagem para a mesma cara brilhante e genérica. Descreva o que está na cena, de onde vem a luz e com que câmera aquilo teria sido fotografado. Um prompt específico dispensa os superlativos.</p>
+
+<div class="defesa">
+<h3>Na prática</h3>
+<ul>
+  <li>Escreva a frase de direção do filme.</li>
+  <li>Monte o moodboard e corte até sobrar um conjunto coerente.</li>
+  <li>Nomeie de três a quatro cores e fique nelas.</li>
+  <li>Redija o bloco de estilo e salve num arquivo de texto, para copiar sempre igual.</li>
+</ul>
+</div>
+
+<div class="cap-nav">
+  <a href="/audiovisual/guia/roteiro.html">← Ideia e roteiro</a>
+  <a href="/audiovisual/guia/consistencia.html">Consistência →</a>
+</div>
+</main>
+
+<footer>
+  <p><a href="/audiovisual/guia/">← guia de curtas com ia</a></p>
+</footer>
+
+</body>
+</html>

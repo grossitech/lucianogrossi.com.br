@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gerar o vídeo · Curtas com IA | Luciano Grossi</title>
+<meta name="description" content="A anatomia do prompt de vídeo e o que fazer quando o clipe volta errado.">
+<link rel="canonical" href="https://lucianogrossi.com.br/audiovisual/guia/video.html">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/guia.css?v=2">
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">lg.dev</a>
+  <div class="nav-links">
+    <a href="/#sobre">sobre</a>
+    <a href="/#experiencia">experiência</a>
+    <a href="/#projetos">projetos</a>
+    <a href="/#contato">contato</a>
+  </div>
+</nav>
+
+<main>
+  <div class="page-tag">Curtas com IA · 06</div>
+  <h1>Gerar o <em>vídeo</em></h1>
+  <p class="lead">Nesta etapa a preparação se paga. Com roteiro, direção de arte, referências e lista de planos prontos, gerar vídeo deixa de ser loteria e vira execução.</p>
+<h2>Parta da imagem</h2>
+<p>Há dois caminhos: do texto direto para o vídeo, ou de uma imagem para o vídeo. O segundo dá muito mais controle. A imagem já fixa o rosto, o cenário, a luz e o enquadramento; ao modelo de vídeo resta decidir só o movimento. Os planos que você gerou para o storyboard são o ponto de partida.</p>
+<p>Algumas ferramentas aceitam também a imagem final do plano. Informar início e fim é a forma mais precisa de dirigir o que acontece no meio.</p>
+
+<h2>A anatomia do prompt</h2>
+<p>Com a imagem de partida, o prompt de vídeo não precisa descrever de novo o que já está nela. Ele cuida do que muda:</p>
+<ol>
+  <li><strong>Câmera</strong>: fixa ou o movimento, com velocidade.</li>
+  <li><strong>Ação</strong>: o que o personagem faz, em ordem.</li>
+  <li><strong>Ambiente</strong>: o que se move em volta, como vento, chuva, luz, fumaça.</li>
+  <li><strong>Ritmo</strong>: lento, contido, brusco.</li>
+</ol>
+<pre><code>Static shot. The woman lifts the cup, pauses before
+drinking, and looks toward the window. Steam rises from
+the cup. Curtains move slightly. Slow, quiet pacing.</code></pre>
+
+<h2>Uma ação por clipe</h2>
+<p>Os clipes gerados duram poucos segundos, e o modelo tenta encaixar tudo o que você pediu nesse tempo. Três ações num clipe saem apressadas e deformadas. Peça uma ação principal e, quando fizer sentido, um instante de pausa antes ou depois dela. Essa sobra é o que permite escolher o ponto de corte na montagem.</p>
+
+<h2>Dirigir a atuação</h2>
+<p>"Ela está triste" produz uma careta genérica. Atores não recebem adjetivos, recebem ações, e com o modelo é igual:</p>
+<ul>
+  <li>em vez de "nervoso": "bate os dedos na mesa e olha duas vezes para a porta";</li>
+  <li>em vez de "triste": "abaixa os olhos e demora a responder";</li>
+  <li>em vez de "surpresa": "para no meio do gesto".</li>
+</ul>
+<p>Expressões pequenas funcionam melhor do que grandes. Peça <code>subtle</code>.</p>
+
+<h2>Quando o clipe volta errado</h2>
+<p>Antes de gerar de novo, identifique o tipo de erro. Mude uma coisa por vez, ou você não saberá o que resolveu.</p>
+<div class="tabela">
+<table>
+  <thead><tr><th>Sintoma</th><th>Causa provável</th><th>O que tentar</th></tr></thead>
+  <tbody>
+    <tr><td>Nada acontece</td><td>prompt vago</td><td>descrever a ação com verbo concreto</td></tr>
+    <tr><td>Acontece coisa demais</td><td>pedido longo demais</td><td>cortar para uma ação</td></tr>
+    <tr><td>Rosto deforma</td><td>rosto pequeno ou movimento amplo</td><td>plano mais fechado, câmera fixa</td></tr>
+    <tr><td>Câmera se move sem pedir</td><td>o modelo preenche o silêncio</td><td>escrever "static shot" explicitamente</td></tr>
+    <tr><td>Mãos e objetos estranhos</td><td>limite do modelo</td><td>tirar a ação do quadro ou mostrá-la em detalhe separado</td></tr>
+    <tr><td>Pedido recusado</td><td>filtro de conteúdo</td><td>reescrever sem os termos sensíveis</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Organização é metade do trabalho</h2>
+<ul>
+  <li>Nomeie os arquivos pelo número do plano e da tentativa: <code>p07_t03.mp4</code>.</li>
+  <li>Guarde o prompt de cada tentativa aprovada junto com o arquivo.</li>
+  <li>Defina um limite de tentativas por plano. Se depois de cinco não saiu, o problema está no plano, não na sorte: simplifique-o.</li>
+</ul>
+
+<h2>Sobre as ferramentas</h2>
+<p>Os modelos de vídeo mudam a cada poucos meses, e qualquer lista de "melhores" envelhece rápido. Em vez de decorar nomes, avalie cada um pelo que o seu filme precisa: aceita imagem de início e de fim? Mantém o rosto? Gera fala sincronizada? Quanto custa por segundo? Teste o mesmo plano em dois ou três antes de comprometer o orçamento.</p>
+
+<div class="defesa">
+<h3>Na prática</h3>
+<ul>
+  <li>Gere primeiro os planos mais difíceis. Se eles não saírem, é melhor mudar o roteiro cedo.</li>
+  <li>Peça sempre um pouco mais de duração do que o plano precisa.</li>
+  <li>Anote o que funcionou. O seu caderno de prompts vale mais do que qualquer lista pronta.</li>
+</ul>
+</div>
+
+<div class="cap-nav">
+  <a href="/audiovisual/guia/movimentos-de-camera.html">← Movimentos de câmera</a>
+  <a href="/audiovisual/guia/montagem.html">Montagem →</a>
+</div>
+</main>
+
+<footer>
+  <p><a href="/audiovisual/guia/">← guia de curtas com ia</a></p>
+</footer>
+
+</body>
+</html>

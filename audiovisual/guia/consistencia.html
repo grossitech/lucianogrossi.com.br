@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consistência · Curtas com IA | Luciano Grossi</title>
+<meta name="description" content="Como manter personagem e cenário iguais de uma geração para outra.">
+<link rel="canonical" href="https://lucianogrossi.com.br/audiovisual/guia/consistencia.html">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/guia.css?v=2">
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">lg.dev</a>
+  <div class="nav-links">
+    <a href="/#sobre">sobre</a>
+    <a href="/#experiencia">experiência</a>
+    <a href="/#projetos">projetos</a>
+    <a href="/#contato">contato</a>
+  </div>
+</nav>
+
+<main>
+  <div class="page-tag">Curtas com IA · 03</div>
+  <h1><em>Consistência</em>: o mesmo rosto em todo plano</h1>
+  <p class="lead">É a dificuldade número um de quem filma com IA. O modelo não lembra de nada: cada geração começa do zero, e o protagonista muda de rosto a cada plano se você não fizer nada a respeito.</p>
+<h2>Por que deriva</h2>
+<p>Uma descrição em texto admite milhares de rostos. "Mulher de 40 anos, cabelo castanho curto" é obedecido de um jeito diferente a cada tentativa. Só texto não segura um personagem. O que segura é <strong>imagem de referência</strong>, apoiada por texto repetido.</p>
+
+<h2>Primeiro o personagem, depois o filme</h2>
+<ol>
+  <li>Gere várias opções do personagem em fundo neutro, já com o estilo do filme.</li>
+  <li>Escolha <strong>uma</strong>. Essa imagem passa a ser a verdade sobre aquele rosto.</li>
+  <li>A partir dela, peça uma prancha: frente, três quartos, perfil e corpo inteiro, mesma roupa, mesma luz.</li>
+  <li>Use a prancha como referência em toda geração em que o personagem aparece.</li>
+</ol>
+<p>Quase todos os geradores atuais aceitam imagens de referência, com nomes que variam de um para outro. Vale escolher a ferramenta por esse recurso.</p>
+
+<h2>A descrição fixa</h2>
+<p>Junto com a imagem, mantenha um parágrafo que descreve o personagem e não muda nunca: idade aparente, formato do rosto, cabelo, um ou dois traços marcantes e a roupa.</p>
+<pre><code>a woman in her early 40s, round face, short wavy chestnut
+hair, small scar on her left eyebrow, wearing a faded
+mustard cardigan over a white shirt</code></pre>
+<p>Dê ao personagem algo fácil de reconhecer: uma peça de roupa de cor forte, um acessório, um corte de cabelo. Mesmo quando o rosto varia um pouco, o espectador segue o casaco amarelo.</p>
+
+<h2>Cenário também é personagem</h2>
+<p>A cozinha que tem janela à esquerda num plano e à direita no outro quebra o filme tanto quanto um rosto trocado. O método é o mesmo:</p>
+<ul>
+  <li>gere uma imagem aberta do lugar e escolha uma;</li>
+  <li>a partir dela, gere outros ângulos do mesmo espaço;</li>
+  <li>anote o que não pode mudar: onde ficam porta e janela, de que lado vem a luz, os três objetos que identificam o lugar.</li>
+</ul>
+
+<h2>Do plano parado ao vídeo</h2>
+<p>O caminho mais seguro é gerar primeiro a imagem do plano, com personagem e cenário corretos, e só então animá-la. Quem parte direto do texto para o vídeo entrega ao modelo todas as decisões de uma vez e perde o controle do rosto.</p>
+
+<h2>Quando o rosto escapa</h2>
+<ul>
+  <li><strong>Reduza o pedido.</strong> Quanto mais coisas acontecem no prompt, menos atenção sobra para o rosto.</li>
+  <li><strong>Aproxime.</strong> Rostos pequenos no quadro deformam mais; gere mais fechado e abra na montagem se precisar.</li>
+  <li><strong>Volte à referência original</strong>, não à última imagem gerada. Cópia de cópia acumula erro.</li>
+  <li><strong>Gere de novo.</strong> Muitas vezes é mais rápido do que corrigir.</li>
+</ul>
+
+<div class="defesa">
+<h3>Na prática</h3>
+<ul>
+  <li>Uma imagem-mestra e uma prancha de ângulos para cada personagem.</li>
+  <li>Um parágrafo de descrição fixa, copiado sem alterar uma palavra.</li>
+  <li>Uma imagem-mestra e uma lista de pontos fixos para cada cenário.</li>
+  <li>Uma pasta por personagem e por locação, para não confundir versões.</li>
+</ul>
+</div>
+
+<div class="cap-nav">
+  <a href="/audiovisual/guia/direcao-de-arte.html">← Direção de arte</a>
+  <a href="/audiovisual/guia/decupagem.html">Decupagem →</a>
+</div>
+</main>
+
+<footer>
+  <p><a href="/audiovisual/guia/">← guia de curtas com ia</a></p>
+</footer>
+
+</body>
+</html>

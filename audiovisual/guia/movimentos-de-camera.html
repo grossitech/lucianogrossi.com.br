@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movimentos de câmera · Curtas com IA | Luciano Grossi</title>
+<meta name="description" content="O vocabulário de movimentos e quando vale mover a câmera.">
+<link rel="canonical" href="https://lucianogrossi.com.br/audiovisual/guia/movimentos-de-camera.html">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/guia.css?v=2">
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">lg.dev</a>
+  <div class="nav-links">
+    <a href="/#sobre">sobre</a>
+    <a href="/#experiencia">experiência</a>
+    <a href="/#projetos">projetos</a>
+    <a href="/#contato">contato</a>
+  </div>
+</nav>
+
+<main>
+  <div class="page-tag">Curtas com IA · 05</div>
+  <h1><em>Movimentos</em> de câmera</h1>
+  <p class="lead">Movimento é o que os modelos de vídeo mais erram e o que mais consome crédito. Por isso vale o princípio do cinema de sempre: a câmera só se move quando há um motivo.</p>
+<h2>Mover para quê</h2>
+<p>Quase todo movimento bem usado cumpre uma destas funções:</p>
+<ul>
+  <li><strong>seguir</strong> alguém que se desloca;</li>
+  <li><strong>revelar</strong> algo que estava fora do quadro;</li>
+  <li><strong>intensificar</strong> um momento, aproximando ou afastando.</li>
+</ul>
+<p>Se o plano não precisa de nenhuma das três, a câmera fixa é a melhor escolha, e em IA é também a que volta mais limpa: menos deformação no rosto e no cenário, mais chance de acertar na primeira tentativa.</p>
+
+<h2>O vocabulário</h2>
+<div class="tabela">
+<table>
+  <thead><tr><th>Movimento</th><th>O que a câmera faz</th><th>No prompt</th></tr></thead>
+  <tbody>
+    <tr><td>Fixo</td><td>não se move</td><td><code>static shot, locked-off camera</code></td></tr>
+    <tr><td>Panorâmica</td><td>gira para os lados, sem sair do lugar</td><td><code>slow pan right</code></td></tr>
+    <tr><td>Tilt</td><td>gira para cima ou para baixo</td><td><code>tilt up</code></td></tr>
+    <tr><td>Travelling de aproximação</td><td>anda em direção ao assunto</td><td><code>slow dolly in</code></td></tr>
+    <tr><td>Travelling de afastamento</td><td>anda para trás</td><td><code>dolly out</code>, <code>pull back</code></td></tr>
+    <tr><td>Travelling lateral</td><td>anda de lado, paralela à ação</td><td><code>truck left</code>, <code>lateral tracking shot</code></td></tr>
+    <tr><td>Acompanhamento</td><td>segue o personagem</td><td><code>tracking shot following from behind</code></td></tr>
+    <tr><td>Órbita</td><td>contorna o assunto</td><td><code>slow orbit around the subject</code></td></tr>
+    <tr><td>Grua</td><td>sobe ou desce no espaço</td><td><code>crane up</code>, <code>pedestal down</code></td></tr>
+    <tr><td>Câmera na mão</td><td>treme levemente, como operada por alguém</td><td><code>handheld camera, subtle shake</code></td></tr>
+    <tr><td>Zoom</td><td>a lente aproxima, a câmera fica parada</td><td><code>slow zoom in</code></td></tr>
+    <tr><td>Aéreo</td><td>sobrevoa</td><td><code>aerial drone shot moving forward</code></td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Zoom não é travelling</h2>
+<p>Os dois aproximam, mas produzem imagens diferentes. No zoom, a câmera está parada e a imagem inteira aumenta por igual, como quem amplia uma foto. No travelling, a câmera atravessa o espaço: os objetos próximos passam mais rápido do que os distantes, e o espectador sente que entrou na cena. Os modelos confundem os dois com frequência; se o resultado vier trocado, descreva o efeito ("the background shifts in parallax as the camera moves forward").</p>
+
+<h2>Como pedir</h2>
+<ul>
+  <li><strong>Um movimento por plano.</strong> "Pan, depois dolly, depois órbita" num clipe de cinco segundos vira confusão.</li>
+  <li><strong>Diga a velocidade.</strong> <code>slow</code> e <code>very slow</code> evitam a maior parte dos movimentos nervosos.</li>
+  <li><strong>Separe câmera de cena.</strong> Uma frase para o que a câmera faz, outra para o que acontece diante dela.</li>
+  <li><strong>Diga onde termina.</strong> "ending on a close-up of her hands" dá ao modelo um destino.</li>
+</ul>
+<pre><code>Camera: slow dolly in, ending on a medium close-up.
+Scene: the seamstress sits at the sewing machine, eyes
+heavy, the desk lamp flickering once.</code></pre>
+
+<div class="defesa">
+<h3>Na prática</h3>
+<ul>
+  <li>Na lista de planos, marque quais realmente pedem movimento e por quê.</li>
+  <li>Gere primeiro a versão fixa de cada plano. Ela é o seu plano de segurança.</li>
+  <li>Guarde os prompts de movimento que funcionaram na ferramenta que você usa; o vocabulário que cada modelo entende varia.</li>
+</ul>
+</div>
+
+<div class="cap-nav">
+  <a href="/audiovisual/guia/decupagem.html">← Decupagem</a>
+  <a href="/audiovisual/guia/video.html">Gerar o vídeo →</a>
+</div>
+</main>
+
+<footer>
+  <p><a href="/audiovisual/guia/">← guia de curtas com ia</a></p>
+</footer>
+
+</body>
+</html>

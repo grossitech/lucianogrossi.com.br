@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decupagem · Curtas com IA | Luciano Grossi</title>
+<meta name="description" content="Escala de planos, ângulos, a regra dos 180° e a lista de planos.">
+<link rel="canonical" href="https://lucianogrossi.com.br/audiovisual/guia/decupagem.html">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/guia.css?v=2">
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">lg.dev</a>
+  <div class="nav-links">
+    <a href="/#sobre">sobre</a>
+    <a href="/#experiencia">experiência</a>
+    <a href="/#projetos">projetos</a>
+    <a href="/#contato">contato</a>
+  </div>
+</nav>
+
+<main>
+  <div class="page-tag">Curtas com IA · 04</div>
+  <h1><em>Decupagem</em>: do roteiro aos planos</h1>
+  <p class="lead">Decupar é decidir, cena por cena, o que a câmera mostra e de onde. Para quem trabalha com IA, é também o que impede de gastar crédito gerando plano que não vai entrar no filme.</p>
+<h2>A escala dos planos</h2>
+<div class="tabela">
+<table>
+  <thead><tr><th>Plano</th><th>O que enquadra</th><th>Para que serve</th></tr></thead>
+  <tbody>
+    <tr><td>Geral</td><td>o lugar inteiro, a pessoa pequena</td><td>situar: onde estamos</td></tr>
+    <tr><td>Conjunto</td><td>a pessoa de corpo inteiro no ambiente</td><td>mostrar ação e relação com o espaço</td></tr>
+    <tr><td>Americano</td><td>dos joelhos para cima</td><td>ação com gesto visível</td></tr>
+    <tr><td>Médio</td><td>da cintura para cima</td><td>conversa, o plano neutro</td></tr>
+    <tr><td>Primeiro plano</td><td>ombros e rosto</td><td>emoção</td></tr>
+    <tr><td>Close</td><td>o rosto</td><td>o momento que importa</td></tr>
+    <tr><td>Detalhe</td><td>um objeto ou parte do corpo</td><td>informação ou símbolo</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Em inglês, para os prompts: <code>wide shot</code>, <code>full shot</code>, <code>medium shot</code>, <code>medium close-up</code>, <code>close-up</code>, <code>extreme close-up</code>, <code>insert shot</code>.</p>
+
+<h2>A altura da câmera</h2>
+<ul>
+  <li><strong>Na altura dos olhos</strong>: neutro, de igual para igual.</li>
+  <li><strong>De cima para baixo</strong> (plongée, <code>high angle</code>): diminui, fragiliza.</li>
+  <li><strong>De baixo para cima</strong> (contra-plongée, <code>low angle</code>): engrandece, ameaça.</li>
+  <li><strong>Zenital</strong> (<code>top-down</code>): transforma a cena em desenho, distancia.</li>
+</ul>
+
+<h2>Cada plano precisa de um motivo</h2>
+<p>A pergunta que organiza a decupagem é: o que o espectador precisa saber ou sentir agora que ainda não sabe? Se o plano novo não acrescenta informação nem emoção, ele só ilustra, e pode sair. Um curta de dois minutos costuma ter entre quinze e trinta planos. Na dúvida, menos.</p>
+
+<h2>A regra dos 180°</h2>
+<p>Imagine uma linha ligando dois personagens que conversam. Se a câmera fica sempre do mesmo lado dessa linha, quem está à esquerda continua à esquerda em todos os planos, e o espectador entende o espaço sem pensar. Cruzar a linha inverte as posições e dá a impressão de que eles trocaram de lugar.</p>
+<p>A IA não sabe dessa regra. Cabe a você escrever em cada prompt de que lado está cada personagem e para onde ele olha.</p>
+
+<h2>A lista de planos</h2>
+<p>O resultado da decupagem é uma tabela, com uma linha por plano:</p>
+<div class="tabela">
+<table>
+  <thead><tr><th>#</th><th>Plano</th><th>O que acontece</th><th>Por quê</th><th>Duração</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>Geral, fixo</td><td>Casa pequena à noite, uma janela acesa</td><td>situar e isolar</td><td>4 s</td></tr>
+    <tr><td>2</td><td>Médio, fixo</td><td>A costureira à máquina, o vestido branco sobre a mesa</td><td>apresentar</td><td>5 s</td></tr>
+    <tr><td>3</td><td>Detalhe</td><td>Um convite de casamento preso na parede</td><td>plantar a pista</td><td>2 s</td></tr>
+  </tbody>
+</table>
+</div>
+<p>A coluna "por quê" é a que mais corta plano desnecessário. Some as durações: se o total passa muito do tempo previsto, o corte tem de acontecer aqui, e não depois de gerar.</p>
+
+<div class="defesa">
+<h3>Na prática</h3>
+<ul>
+  <li>Decupe uma cena por vez e escreva o motivo de cada plano.</li>
+  <li>Marque de que lado da linha a câmera fica e mantenha.</li>
+  <li>Varie a escala entre planos seguidos; dois planos quase iguais em sequência parecem erro.</li>
+  <li>Gere primeiro uma imagem parada de cada plano e monte um storyboard. Só então parta para o vídeo.</li>
+</ul>
+</div>
+
+<div class="cap-nav">
+  <a href="/audiovisual/guia/consistencia.html">← Consistência</a>
+  <a href="/audiovisual/guia/movimentos-de-camera.html">Movimentos de câmera →</a>
+</div>
+</main>
+
+<footer>
+  <p><a href="/audiovisual/guia/">← guia de curtas com ia</a></p>
+</footer>
+
+</body>
+</html>
