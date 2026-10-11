@@ -290,6 +290,21 @@
       line-height: 1.65;
     }
 
+    .cert-list { list-style: none; }
+
+    .cert-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.15rem 1.5rem;
+      padding: 0.45rem 0;
+    }
+
+    .cert-list li:first-child { padding-top: 0; }
+    .cert-name { font-size: 0.95rem; }
+    .cert-meta { font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: 0.04em; }
+
     .timeline-tags {
       display: flex;
       flex-wrap: wrap;
@@ -413,8 +428,8 @@
         <span class="stat-label">seguidores LinkedIn</span>
       </div>
       <div class="stat-item">
-        <span class="stat-number">500+</span>
-        <span class="stat-label">conexões profissionais</span>
+        <span class="stat-number">2.700+</span>
+        <span class="stat-label">horas de capacitação</span>
       </div>
       <div class="stat-item">
         <span class="stat-number">GW</span>
@@ -694,10 +709,116 @@
     </div>
   </section>
 
+  <!-- TALKS -->
+  <section id="palestras" style="border-top: 1px solid var(--border);">
+    <div class="section-header">
+      <span class="section-label">// 05</span>
+      <h2>Palestras</h2>
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-period">ago – set 2026</div>
+        <div>
+          <div class="timeline-role">De Dados Conflitantes à Governança Madura: o Case da ANEEL em Governança de Dados</div>
+          <div class="timeline-company">Agile Trends 2026 · São Paulo</div>
+          <div class="timeline-tags">
+            <span class="tag">Governança de Dados</span>
+            <span class="tag">Setor Público</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="formacao" style="border-top: 1px solid var(--border);">
+    <div class="section-header">
+      <span class="section-label">// 06</span>
+      <h2>Formação e certificações</h2>
+    </div>
+    <p style="color: var(--muted); margin-bottom: 1rem; max-width: 480px;">
+      Uma seleção entre mais de 2.700 horas de capacitação.
+    </p>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-period">Acadêmica</div>
+        <div>
+          <ul class="cert-list">
+            <li><span class="cert-name">Programa Minerva: Theory and Operation of a Modern National Economy</span><span class="cert-meta">George Washington University · 2012 · 750 h</span></li>
+            <li><span class="cert-name">Pós-graduação em Estratégia</span><span class="cert-meta">FGV</span></li>
+            <li><span class="cert-name">Graduação em Ciência da Informação</span><span class="cert-meta">PUC Minas</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-period">Dados e IA</div>
+        <div>
+          <ul class="cert-list">
+            <li><span class="cert-name">Formação Machine Learning Specialist</span><span class="cert-meta">DIO · 2025 · 92 h</span></li>
+            <li><span class="cert-name">Formação Power BI Analyst</span><span class="cert-meta">DIO · 2025 · 60 h</span></li>
+            <li><span class="cert-name">Engenharia de Dados com Python e Bancos de Dados SQL e NoSQL</span><span class="cert-meta">2025 · 37 h</span></li>
+            <li><span class="cert-name">Formação ChatGPT for Devs</span><span class="cert-meta">DIO · 2025 · 18 h</span></li>
+            <li><span class="cert-name">Desvendando a Inteligência Artificial na Administração Pública</span><span class="cert-meta">Enap · 2025 · 25 h</span></li>
+            <li><span class="cert-name">Análise de Dados como Suporte à Tomada de Decisão</span><span class="cert-meta">Enap · 2024 · 30 h</span></li>
+            <li><span class="cert-name">Estatística, Linguagem R e Big Data para análise de dados</span><span class="cert-meta">Enap · 2024 · 70 h</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-period">Governança e privacidade</div>
+        <div>
+          <ul class="cert-list">
+            <li><span class="cert-name">Governança de Dados</span><span class="cert-meta">Enap · 2024 · 30 h</span></li>
+            <li><span class="cert-name">Governança de Dados, MDM e Qualidade de Dados com LGPD</span><span class="cert-meta">CS Technologies · 2024 · 16 h</span></li>
+            <li><span class="cert-name">Proteção de Dados Pessoais no Setor Público</span><span class="cert-meta">Enap · 2025 · 15 h</span></li>
+            <li><span class="cert-name">Workshop Open Source Intelligence</span><span class="cert-meta">2025 · 32 h</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-period">Blockchain</div>
+        <div>
+          <ul class="cert-list">
+            <li><span class="cert-name">Ethereum Developer Pack</span><span class="cert-meta">ETH Kipu · 2025 · 39 h</span></li>
+            <li><span class="cert-name">Blockchain Rio</span><span class="cert-meta">2025 · 20 h</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-period">Pessoas e carreira</div>
+        <div>
+          <ul class="cert-list">
+            <li><span class="cert-name">Professional Self Coach</span><span class="cert-meta">2017 · 180 h</span></li>
+            <li><span class="cert-name">PNL Training Practitioner</span><span class="cert-meta">2015 · 96 h</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-period">Conferências</div>
+        <div>
+          <ul class="cert-list">
+            <li><span class="cert-name">DAMA Brasil Summit</span><span class="cert-meta">2025</span></li>
+            <li><span class="cert-name">TDC Summit São Paulo</span><span class="cert-meta">2025</span></li>
+            <li><span class="cert-name">Gartner Data &amp; Analytics</span><span class="cert-meta">2024</span></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section id="contato" style="border-top: 1px solid var(--border);">
     <div class="section-header">
-      <span class="section-label">// 05</span>
+      <span class="section-label">// 07</span>
       <h2>Contato</h2>
     </div>
     <p style="color: var(--muted); margin-bottom: 2rem; max-width: 480px;">
