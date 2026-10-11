@@ -1,5 +1,5 @@
 // Monta o catálogo a partir de uma lista de categorias:
-// [{ id, codigo, nome, ferramentas: [{ nome, url }] }]
+// [{ id, codigo, nome, descricao, ferramentas: [{ nome, url }] }]
 // A lista vem do JSON em <body data-fonte="..."> ou, se não houver, do <script id="dados"> da página.
 
 const search = document.getElementById('search');
@@ -56,7 +56,9 @@ function montar(categorias) {
       grid.append(card);
     });
 
-    section.append(h2, grid);
+    section.append(h2);
+    if (cat.descricao) section.append(el('p', 'cat-desc', cat.descricao));
+    section.append(grid);
     lista.append(section);
   });
 

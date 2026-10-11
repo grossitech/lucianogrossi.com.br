@@ -5,6 +5,7 @@ h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 300; line-height: 1.1; lett
 .page-desc { color: var(--muted); font-size: 0.95rem; max-width: 66ch; margin-bottom: 2rem; }
 .page-desc a { color: var(--accent); text-decoration: none; }
 .page-desc a:hover { text-decoration: underline; }
+.page-desc strong { color: var(--text); font-weight: 500; }
 
 /* BUSCA */
 .searchwrap {
@@ -88,6 +89,8 @@ h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 300; line-height: 1.1; lett
   margin-bottom: 0.9rem;
   border-bottom: 1px solid var(--border);
 }
+
+.cat-desc { color: var(--muted); font-size: 0.9rem; max-width: 80ch; margin-bottom: 1rem; }
 
 .catcode {
   font-family: var(--mono);

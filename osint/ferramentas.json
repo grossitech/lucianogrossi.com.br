@@ -1,5 +1,7 @@
 [
-  {"id": "buscadores-e-operadores-de-busca", "codigo": "SRC", "nome": "Buscadores e Operadores de Busca", "ferramentas": [
+  {"id": "buscadores-e-operadores-de-busca", "codigo": "SRC", "nome": "Buscadores e Operadores de Busca",
+   "descricao": "Ponto de partida de quase toda pesquisa. Use mais de um buscador, porque cada um indexa a web de um jeito, e os montadores de consulta para combinar operadores sem decorar a sintaxe.",
+   "ferramentas": [
     {"nome": "Google", "url": "https://google.com"},
     {"nome": "DuckDuckGo", "url": "https://duckduckgo.com"},
     {"nome": "Bing", "url": "https://www.bing.com"},
@@ -7,7 +9,9 @@
     {"nome": "Advangle (montar expressão de busca/dorks)", "url": "http://advangle.com"},
     {"nome": "Programmable Search Engine (Google CSE)", "url": "https://cse.google.com/cse?cx=011444696387487602669:aqf7d9w73om"}
   ]},
-  {"id": "dominios-ip-e-infraestrutura-web", "codigo": "NET", "nome": "Domínios, IP e Infraestrutura Web", "ferramentas": [
+  {"id": "dominios-ip-e-infraestrutura-web", "codigo": "NET", "nome": "Domínios, IP e Infraestrutura Web",
+   "descricao": "Para descobrir quem registrou um domínio, desde quando ele existe, onde o site está hospedado e como ele era no passado. Útil para avaliar se um site é confiável.",
+   "ferramentas": [
     {"nome": "Registro.br - Whois", "url": "https://registro.br/tecnologia/ferramentas/whois/"},
     {"nome": "Whois.com", "url": "https://www.whois.com"},
     {"nome": "What's My IP Address", "url": "https://www.whatsmyip.org"},
@@ -17,7 +21,9 @@
     {"nome": "IANA", "url": "https://www.iana.org"},
     {"nome": "Whoxy (Whois histórico)", "url": "https://www.whoxy.com/"}
   ]},
-  {"id": "pesquisa-reversa-de-imagem", "codigo": "IMG", "nome": "Pesquisa Reversa de Imagem", "ferramentas": [
+  {"id": "pesquisa-reversa-de-imagem", "codigo": "IMG", "nome": "Pesquisa Reversa de Imagem",
+   "descricao": "Você envia uma imagem e descobre onde mais ela aparece na internet. Serve para achar a origem de uma foto, checar se ela é antiga ou fora de contexto e estimar onde foi tirada.",
+   "ferramentas": [
     {"nome": "Google Imagens", "url": "https://www.google.com/imghp"},
     {"nome": "Yandex Images", "url": "https://yandex.com/images/"},
     {"nome": "TinEye", "url": "https://tineye.com"},
@@ -29,7 +35,9 @@
     {"nome": "Face Finder (VGG Oxford)", "url": "https://www.robots.ox.ac.uk/~vgg/software/vff/"},
     {"nome": "Geolocation Estimation (TIB Labs)", "url": "https://labs.tib.eu/geoestimation/"}
   ]},
-  {"id": "reconhecimento-e-comparacao-facial", "codigo": "FAC", "nome": "Reconhecimento e Comparação Facial", "ferramentas": [
+  {"id": "reconhecimento-e-comparacao-facial", "codigo": "FAC", "nome": "Reconhecimento e Comparação Facial",
+   "descricao": "Comparam dois rostos ou procuram fotos parecidas na web. Rosto é dado biométrico sensível pela LGPD: use para checar a sua própria exposição ou em contextos autorizados.",
+   "ferramentas": [
     {"nome": "PimEyes", "url": "https://pimeyes.com/en"},
     {"nome": "FaceCheck.ID", "url": "https://facecheck.id/"},
     {"nome": "FaceOnLive - Face Search", "url": "https://faceonlive.com/face-search-online/"},
@@ -39,14 +47,18 @@
     {"nome": "face_recognition (GitHub)", "url": "https://github.com/ageitgey/face_recognition"},
     {"nome": "Image Analysis Toolset (IAT) - Google Play", "url": "https://play.google.com/store/apps/details?id=tk.silviomarano.imageanalysistoolset"}
   ]},
-  {"id": "rostos-e-imagens-geradas-por-ia", "codigo": "GEN", "nome": "Rostos e Imagens Geradas por IA", "ferramentas": [
+  {"id": "rostos-e-imagens-geradas-por-ia", "codigo": "GEN", "nome": "Rostos e Imagens Geradas por IA",
+   "descricao": "Exemplos de rostos e imagens criados por inteligência artificial. Ajudam a treinar o olho para reconhecer fotos de perfil falsas e conteúdo sintético.",
+   "ferramentas": [
     {"nome": "This Person Does Not Exist", "url": "https://thispersondoesnotexist.com/"},
     {"nome": "This Cat Does Not Exist", "url": "https://thiscatdoesnotexist.com"},
     {"nome": "Gallery of AI Generated Faces", "url": "https://generated.photos/faces"},
     {"nome": "AI Generated Faces (BoredHumans)", "url": "https://boredhumans.com/faces.php"},
     {"nome": "Am I Real?", "url": "https://seintpl.github.io/AmIReal/"}
   ]},
-  {"id": "edicao-e-melhoria-de-imagem", "codigo": "EDT", "nome": "Edição e Melhoria de Imagem", "ferramentas": [
+  {"id": "edicao-e-melhoria-de-imagem", "codigo": "EDT", "nome": "Edição e Melhoria de Imagem",
+   "descricao": "Aumentam a resolução, removem fundo e limpam ruído. Servem para tornar legível um detalhe de uma imagem ruim, como uma placa ou um letreiro, antes de pesquisar.",
+   "ferramentas": [
     {"nome": "PicWish", "url": "https://picwish.com/pt/create"},
     {"nome": "Fotor - Editor de Fotos Online", "url": "https://www.fotor.com/pt/"},
     {"nome": "Expression Editor (Hugging Face)", "url": "https://huggingface.co/spaces/fffiloni/expression-editor"},
@@ -62,7 +74,9 @@
     {"nome": "ImprovePhoto.net", "url": "https://improvephoto.net"},
     {"nome": "PinkMirror.com", "url": "https://pinkmirror.com"}
   ]},
-  {"id": "metadados-de-arquivos-e-imagens", "codigo": "MET", "nome": "Metadados de Arquivos e Imagens", "ferramentas": [
+  {"id": "metadados-de-arquivos-e-imagens", "codigo": "MET", "nome": "Metadados de Arquivos e Imagens",
+   "descricao": "Mostram e removem as informações embutidas em fotos e documentos: data, aparelho, autor e coordenadas de GPS. Use para analisar um arquivo e para limpar os seus antes de publicar.",
+   "ferramentas": [
     {"nome": "ExifTool by Phil Harvey", "url": "https://exiftool.org/"},
     {"nome": "ExifData.com Viewer", "url": "https://www.exifdata.com/"},
     {"nome": "Online Exif Viewer", "url": "http://exif-viewer.com/"},
@@ -76,23 +90,31 @@
     {"nome": "JPG Editor de Metadados (GroupDocs)", "url": "https://products.groupdocs.app/pt/metadata/jpg"},
     {"nome": "Remoção de EXIF - ImageSmaller", "url": "https://www.imagesmaller.com/pt/exif-remover/"}
   ]},
-  {"id": "e-mail", "codigo": "MAIL", "nome": "E-mail", "ferramentas": [
+  {"id": "e-mail", "codigo": "MAIL", "nome": "E-mail",
+   "descricao": "Indicam a quais serviços um endereço de e-mail está associado e quais endereços de um domínio estão expostos. Úteis para validar um contato e medir a exposição de uma empresa.",
+   "ferramentas": [
     {"nome": "Epieos", "url": "https://epieos.com"},
     {"nome": "Hunter.io", "url": "https://hunter.io"},
     {"nome": "theHarvester (GitHub)", "url": "https://github.com/laramies/theHarvester"}
   ]},
-  {"id": "vazamento-de-dados-data-leaks", "codigo": "LEAK", "nome": "Vazamento de Dados (Data Leaks)", "ferramentas": [
+  {"id": "vazamento-de-dados-data-leaks", "codigo": "LEAK", "nome": "Vazamento de Dados (Data Leaks)",
+   "descricao": "Informam se um e-mail, telefone ou senha apareceu em vazamentos conhecidos. Comece pelos seus próprios dados para saber quais senhas trocar.",
+   "ferramentas": [
     {"nome": "Have I Been Pwned?", "url": "https://haveibeenpwned.com"},
     {"nome": "Intelligence X", "url": "https://intelx.io"},
     {"nome": "Pastebin", "url": "https://pastebin.com"},
     {"nome": "DeHashed", "url": "https://www.dehashed.com"}
   ]},
-  {"id": "nome-de-usuario-username", "codigo": "USR", "nome": "Nome de Usuário (Username)", "ferramentas": [
+  {"id": "nome-de-usuario-username", "codigo": "USR", "nome": "Nome de Usuário (Username)",
+   "descricao": "Testam um mesmo nome de usuário em centenas de sites de uma vez. Mostram onde um apelido existe e o quanto as suas contas podem ser ligadas entre si.",
+   "ferramentas": [
     {"nome": "Namechk", "url": "https://namechk.com"},
     {"nome": "WhatsMyName Web", "url": "https://whatsmyname.app"},
     {"nome": "Instant Username Search", "url": "https://instantusername.com"}
   ]},
-  {"id": "facebook", "codigo": "FBK", "nome": "Facebook", "ferramentas": [
+  {"id": "facebook", "codigo": "FBK", "nome": "Facebook",
+   "descricao": "Encontram o ID numérico de um perfil, que não muda quando o nome muda, e permitem buscas por data, local e palavra-chave que a busca do próprio Facebook não oferece.",
+   "ferramentas": [
     {"nome": "Find My Facebook ID (lookup-id.com)", "url": "https://lookup-id.com"},
     {"nome": "Find My Facebook ID (CommentPicker)", "url": "https://commentpicker.com/find-facebook-id.php"},
     {"nome": "Qual é meu ID do Facebook (PiliApp)", "url": "https://pt.piliapp.com/facebook/id/"},
@@ -104,7 +126,9 @@
     {"nome": "IntelX Tools (Facebook)", "url": "https://intelx.io/tools?tab=facebook"},
     {"nome": "Export Comments", "url": "https://exportcomments.com/"}
   ]},
-  {"id": "instagram", "codigo": "IGM", "nome": "Instagram", "ferramentas": [
+  {"id": "instagram", "codigo": "IGM", "nome": "Instagram",
+   "descricao": "Para localizar o ID de uma conta, ver data e hora exatas de publicações, pesquisar por local e analisar perfis públicos sem depender do aplicativo.",
+   "ferramentas": [
     {"nome": "Osintgram (Datalux, GitHub)", "url": "https://github.com/Datalux/Osintgram"},
     {"nome": "Toutatis (megadose, GitHub)", "url": "https://github.com/megadose/toutatis"},
     {"nome": "Exact Time Viewer for Instagram", "url": "https://chromewebstore.google.com/detail/exact-time-viewer-for-ins/koffnfmgjmoopfgelgbbkjmdnppadlae"},
@@ -120,7 +144,9 @@
     {"nome": "InDown - Visualizador de Foto de Perfil", "url": "https://indown.io/insta-dp-viewer/pt"},
     {"nome": "Instagram Location Search (Bellingcat, GitHub)", "url": "https://github.com/bellingcat/instagram-location-search"}
   ]},
-  {"id": "x-twitter", "codigo": "TWX", "nome": "X / Twitter", "ferramentas": [
+  {"id": "x-twitter", "codigo": "TWX", "nome": "X / Twitter",
+   "descricao": "Busca avançada por período, autor e localização, conversão entre ID e nome de usuário e análise de atividade de contas públicas.",
+   "ferramentas": [
     {"nome": "BirdHunt", "url": "https://birdhunt.huntintel.io/"},
     {"nome": "Twitter Advanced Search (nativo)", "url": "https://twitter.com/search-advanced"},
     {"nome": "Twitter Advanced Search (GitHub, igorbrigadir)", "url": "https://github.com/igorbrigadir/twitter-advanced-search"},
@@ -135,11 +161,15 @@
     {"nome": "Tweetdeck", "url": "https://tweetdeck.twitter.com"},
     {"nome": "Twitterfall", "url": "https://twitterfall.com"}
   ]},
-  {"id": "youtube", "codigo": "YTB", "nome": "YouTube", "ferramentas": [
+  {"id": "youtube", "codigo": "YTB", "nome": "YouTube",
+   "descricao": "Extraem os metadados de um vídeo, como data e hora exatas de envio, e localizam vídeos publicados em uma região do mapa.",
+   "ferramentas": [
     {"nome": "YouTube Geofind - Location Search", "url": "https://mattw.io/youtube-geofind/location"},
     {"nome": "YouTube Metadata (mattw.io)", "url": "https://mattw.io/youtube-metadata/"}
   ]},
-  {"id": "tiktok", "codigo": "TTK", "nome": "TikTok", "ferramentas": [
+  {"id": "tiktok", "codigo": "TTK", "nome": "TikTok",
+   "descricao": "Para descobrir o ID de uma conta, a data real de uma publicação e consultar perfis públicos sem precisar de login.",
+   "ferramentas": [
     {"nome": "TokIntel (GitHub)", "url": "https://github.com/HackUnderway/TokIntel"},
     {"nome": "Find TikTok ID (CommentPicker)", "url": "https://commentpicker.com/tiktok-id.php"},
     {"nome": "SnapTik - Downloader", "url": "https://snaptik.app/en1"},
@@ -148,7 +178,9 @@
     {"nome": "TikTok Timestamp Extractor (Bellingcat)", "url": "https://bellingcat.github.io/tiktok-timestamp/"},
     {"nome": "Picuki - Visualizador Instagram", "url": "https://www.picuki.com/"}
   ]},
-  {"id": "whatsapp-telegram-discord", "codigo": "MSG", "nome": "WhatsApp / Telegram / Discord", "ferramentas": [
+  {"id": "whatsapp-telegram-discord", "codigo": "MSG", "nome": "WhatsApp / Telegram / Discord",
+   "descricao": "Diretórios de grupos e servidores públicos, consulta de informações de contas e recursos para pesquisar em comunidades abertas de mensageria.",
+   "ferramentas": [
     {"nome": "Privacy Extension for WhatsApp Web", "url": "https://chromewebstore.google.com/detail/privacy-extension-for-wha/jbojhlhhggfmmkpefknmbdhlaghehini"},
     {"nome": "WA Contact Download (extensão)", "url": "https://chromewebstore.google.com/detail/wa-contact-download/dcidojkknfgophlmohhpdlmoiegfbkdd"},
     {"nome": "DonoDoZap - Dono de número WhatsApp", "url": "https://donodozap.com/"},
@@ -162,10 +194,14 @@
     {"nome": "Discord Leaks (Unicorn Riot)", "url": "https://discordleaks.unicornriot.ninja/"},
     {"nome": "DiscordServers.com - Lista de Servidores", "url": "https://discordservers.com/"}
   ]},
-  {"id": "reddit", "codigo": "RDT", "nome": "Reddit", "ferramentas": [
+  {"id": "reddit", "codigo": "RDT", "nome": "Reddit",
+   "descricao": "Pesquisa em publicações e comentários do Reddit com filtros que a busca nativa não tem.",
+   "ferramentas": [
     {"nome": "Reddit Search Tool (Aware Online Academy)", "url": "https://www.aware-online.com/en/osint-tools/reddit-search-tool/"}
   ]},
-  {"id": "telefone", "codigo": "TEL", "nome": "Telefone", "ferramentas": [
+  {"id": "telefone", "codigo": "TEL", "nome": "Telefone",
+   "descricao": "Ajudam a identificar a operadora, a região e a reputação de um número, e a saber se ele está ligado a golpes ou telemarketing.",
+   "ferramentas": [
     {"nome": "Truecaller", "url": "https://www.truecaller.com"},
     {"nome": "Whoseno.com", "url": "https://www.whoseno.com"},
     {"nome": "Ignorant (GitHub) - verificar apps por número", "url": "https://github.com/megadose/ignorant"},
@@ -173,14 +209,18 @@
     {"nome": "Tellows.com.br", "url": "https://www.tellows.com.br"},
     {"nome": "Anatel - Fique Ligado", "url": "https://sistemas.anatel.gov.br/fiqueligado"}
   ]},
-  {"id": "buscadores-de-pessoas", "codigo": "PPL", "nome": "Buscadores de Pessoas", "ferramentas": [
+  {"id": "buscadores-de-pessoas", "codigo": "PPL", "nome": "Buscadores de Pessoas",
+   "descricao": "Reúnem em uma só consulta menções públicas a um nome em redes sociais, notícias e bases de dados. Bons para auditar o que aparece sobre você.",
+   "ferramentas": [
     {"nome": "FamilySearch", "url": "https://www.familysearch.org/"},
     {"nome": "IDCrawl", "url": "https://www.idcrawl.com/"},
     {"nome": "PeekYou", "url": "https://www.peekyou.com/"},
     {"nome": "WebMii", "url": "https://webmii.com/"},
     {"nome": "Aleph (OCCRP)", "url": "https://aleph.occrp.org"}
   ]},
-  {"id": "registros-publicos-e-cartoriais-brasil", "codigo": "REG", "nome": "Registros Públicos e Cartoriais (Brasil)", "ferramentas": [
+  {"id": "registros-publicos-e-cartoriais-brasil", "codigo": "REG", "nome": "Registros Públicos e Cartoriais (Brasil)",
+   "descricao": "Consultas oficiais a cadastros e registros públicos brasileiros: situação de CPF, cartórios, proclamas e óbitos. São fontes primárias, mais confiáveis do que sites agregadores.",
+   "ferramentas": [
     {"nome": "Receita Federal - Consulta Situação CPF", "url": "https://servicos.receita.fazenda.gov.br/servicos/cpf/consultasituacao/consultapublica.asp"},
     {"nome": "e-Proclamas", "url": "https://proclamas.org.br/"},
     {"nome": "Falecidos no Brasil", "url": "https://www.falecidosnobrasil.org.br/"},
@@ -188,19 +228,25 @@
     {"nome": "e-Notariado", "url": "https://e-notariado.org.br"},
     {"nome": "Amazon UK - Busca de Lista de Casamento", "url": "https://www.amazon.co.uk/wedding/search"}
   ]},
-  {"id": "geracao-de-dados-ficticios-para-testes", "codigo": "FAKE", "nome": "Geração de Dados Fictícios (para testes)", "ferramentas": [
+  {"id": "geracao-de-dados-ficticios-para-testes", "codigo": "FAKE", "nome": "Geração de Dados Fictícios (para testes)",
+   "descricao": "Geram nomes, documentos e endereços fictícios, mas válidos no formato. Servem para testar sistemas e formulários sem usar dados de pessoas reais.",
+   "ferramentas": [
     {"nome": "Gerador Completo de Pessoa Física", "url": "https://geradorbrasileiro.com/pessoa.html"},
     {"nome": "4Devs - Gerador de Pessoas", "url": "https://www.4devs.com.br/gerador_de_pessoas"},
     {"nome": "Invertexto - Gerador de Pessoas", "url": "https://www.invertexto.com/gerador-de-pessoas"}
   ]},
-  {"id": "checagem-de-fake-news", "codigo": "FCK", "nome": "Checagem de Fake News", "ferramentas": [
+  {"id": "checagem-de-fake-news", "codigo": "FCK", "nome": "Checagem de Fake News",
+   "descricao": "Agências e ferramentas que verificam boatos e notícias falsas. Consulte antes de compartilhar e para saber se um conteúdo já foi desmentido.",
+   "ferramentas": [
     {"nome": "Agência Lupa", "url": "https://piaui.folha.uol.com.br/lupa/"},
     {"nome": "Boatos.org", "url": "https://www.boatos.org/"},
     {"nome": "Detector de Fake News (NILC)", "url": "https://nilc-fakenews.herokuapp.com/"},
     {"nome": "E-farsas.com", "url": "https://www.e-farsas.com/"},
     {"nome": "G1 - Fato ou Fake", "url": "https://g1.globo.com/fato-ou-fake/"}
   ]},
-  {"id": "geoint-e-mapas", "codigo": "GEO", "nome": "GEOINT e Mapas", "ferramentas": [
+  {"id": "geoint-e-mapas", "codigo": "GEO", "nome": "GEOINT e Mapas",
+   "descricao": "Mapas, imagens de satélite, fotos de rua e cálculo da posição do sol. Servem para confirmar onde e quando uma foto ou um vídeo foi feito.",
+   "ferramentas": [
     {"nome": "Sentinel Hub - EO Browser", "url": "https://apps.sentinel-hub.com/eo-browser/"},
     {"nome": "Planet", "url": "https://www.planet.com"},
     {"nome": "Google Maps", "url": "https://maps.google.com"},
@@ -214,7 +260,9 @@
     {"nome": "Wikimapia", "url": "https://wikimapia.org/"},
     {"nome": "ImageJ (análise de imagem científica)", "url": "https://imagej.net/ij/"}
   ]},
-  {"id": "maquinas-virtuais-e-sistemas-para-osint", "codigo": "SYS", "nome": "Máquinas Virtuais e Sistemas para OSINT", "ferramentas": [
+  {"id": "maquinas-virtuais-e-sistemas-para-osint", "codigo": "SYS", "nome": "Máquinas Virtuais e Sistemas para OSINT",
+   "descricao": "Sistemas prontos e máquinas virtuais para pesquisar em um ambiente isolado do seu computador pessoal, sem misturar arquivos, contas e histórico.",
+   "ferramentas": [
     {"nome": "CSI Linux", "url": "https://csilinux.com/"},
     {"nome": "OSINT VM (Trace Labs)", "url": "https://www.tracelabs.org/initiatives/osint-vm"},
     {"nome": "OSBoxes - Virtual Machines", "url": "https://www.osboxes.org/"},
@@ -223,17 +271,23 @@
     {"nome": "Oracle VirtualBox", "url": "https://www.virtualbox.org/wiki/Downloads"},
     {"nome": "Tails", "url": "https://tails.net/install/download-iso/index.en.html"}
   ]},
-  {"id": "e-mails-temporarios", "codigo": "TMP", "nome": "E-mails Temporários", "ferramentas": [
+  {"id": "e-mails-temporarios", "codigo": "TMP", "nome": "E-mails Temporários",
+   "descricao": "Endereços descartáveis para se cadastrar em ferramentas e testes sem expor o seu e-mail principal a spam e a vazamentos.",
+   "ferramentas": [
     {"nome": "Temp-Mail.org", "url": "https://temp-mail.org/pt/"},
     {"nome": "Guerrilla Mail", "url": "https://www.guerrillamail.com/pt/"},
     {"nome": "10 Minute Mail", "url": "https://10minutemail.com"}
   ]},
-  {"id": "organizacao-e-mapa-de-vinculos", "codigo": "LNK", "nome": "Organização e Mapa de Vínculos", "ferramentas": [
+  {"id": "organizacao-e-mapa-de-vinculos", "codigo": "LNK", "nome": "Organização e Mapa de Vínculos",
+   "descricao": "Mapas mentais e diagramas de vínculos para organizar os achados e enxergar relações entre pessoas, empresas, domínios e contas.",
+   "ferramentas": [
     {"nome": "Maltego", "url": "https://www.maltego.com/downloads/"},
     {"nome": "XMind 8 Pro", "url": "https://www.xmind.net/xmind8-pro/"},
     {"nome": "yEd Graph Editor", "url": "https://www.yworks.com/products/yed"}
   ]},
-  {"id": "comunidades-e-atualizacao-em-osint", "codigo": "INT", "nome": "Comunidades e Atualização em OSINT", "ferramentas": [
+  {"id": "comunidades-e-atualizacao-em-osint", "codigo": "INT", "nome": "Comunidades e Atualização em OSINT",
+   "descricao": "Perfis, blogs e canais para acompanhar. Ferramentas de OSINT mudam e saem do ar o tempo todo, e é por aqui que se fica sabendo.",
+   "ferramentas": [
     {"nome": "Alex Lozano (LinkedIn)", "url": "https://www.linkedin.com/in/alozano-cibergy/"},
     {"nome": "OSINT Combine - Blog", "url": "https://www.osintcombine.com/blog"},
     {"nome": "Brigada OSINT (LinkedIn)", "url": "https://www.linkedin.com/company/brigadaosint/"},
