@@ -24,6 +24,10 @@ Site estático hospedado via **GitHub Pages**, sem framework, sem bundler, sem d
 | `/audiovisual/guia/` | Guia de curtas com IA em nove capítulos, do roteiro à entrega |
 | `/venca-os-mitos-que-sabotam-sua-carreira/` | Landing page do livro |
 
+## Design
+
+A identidade visual (cores, tipografia, componentes e regras para páginas novas) está em [`DESIGN.md`](DESIGN.md). Toda mudança visual no site atualiza esse arquivo.
+
 ## Stack
 
 - HTML5 · CSS3 · JavaScript (vanilla)
