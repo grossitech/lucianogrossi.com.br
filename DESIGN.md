@@ -199,6 +199,13 @@ Na home, só o copyright. **Em janeiro, atualizar o ano em todas as páginas.**
 
 ---
 
+## Imagens
+
+- Formato **WebP**, redimensionado para **o dobro do tamanho em que aparece** na tela (a foto da home aparece com 260 px e o arquivo tem 520 px). O original fica guardado na mesma pasta, mas não é usado nas páginas.
+- Toda `<img>` tem `alt` descritivo e `width`/`height` com as dimensões reais do arquivo, para a página não "pular" enquanto carrega.
+- A primeira imagem visível da página leva `fetchpriority="high"`; as demais, `loading="lazy"`.
+- Referência de peso: foto de retrato até ~50 KB, imagem de topo em largura total até ~200 KB.
+
 ## Movimento
 
 - **Entrada:** a animação `fadeUp` (sobe 16px e aparece, 0,6 s) é usada só no topo da home, em cascata de 0,1 s.
@@ -233,6 +240,8 @@ Todo CSS e JS é linkado com `?v=N` (`style.css?v=2`, `guia.css?v=3`, `catalogo.
 
 Na home, seções com divisória usam `.sec-border` e o parágrafo de abertura de seção usa `.section-intro` (`.section-intro.tight` quando vem seguido de lista). Não use `style="..."` no HTML: crie uma classe.
 
+O `robots.txt` libera todos os rastreadores, inclusive os de IA, e aponta para o `sitemap.xml`. Páginas reservadas usam `noindex` na própria página, não `Disallow` no `robots.txt` (que publicaria o endereço).
+
 ### Página nova: checklist
 
 1. Pasta própria com `index.html` (URL limpa, em minúsculas).
@@ -241,7 +250,8 @@ Na home, seções com divisória usam `.sec-border` e o parágrafo de abertura d
 4. Menu e rodapé padrão.
 5. Rótulo de página, `h1` com uma ênfase em laranja e um texto de apoio.
 6. Card na home (se for pública), linha no `README.md` e entrada no `sitemap.xml`.
-7. Página reservada (sem divulgação): `meta name="robots" content="noindex, nofollow"` e nenhum link apontando para ela.
+7. Campos de formulário com `<label for>` ou `aria-label`; links externos com `target="_blank" rel="noopener"`.
+8. Página reservada (sem divulgação): `meta name="robots" content="noindex, nofollow"` e nenhum link apontando para ela.
 
 ---
 
