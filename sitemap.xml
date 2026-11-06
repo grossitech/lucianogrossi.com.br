@@ -24,140 +24,147 @@
 
   <url>
     <loc>https://lucianogrossi.com.br/osint/</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://lucianogrossi.com.br/osint/guia/</loc>
-    <lastmod>2026-10-10</lastmod>
+    <loc>https://lucianogrossi.com.br/artigos/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://lucianogrossi.com.br/artigos/osint/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://lucianogrossi.com.br/artigos/osint/o-que-e-osint/</loc>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://lucianogrossi.com.br/osint/guia/o-que-e-osint.html</loc>
-    <lastmod>2026-10-10</lastmod>
+    <loc>https://lucianogrossi.com.br/artigos/osint/metodo/</loc>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://lucianogrossi.com.br/osint/guia/metodo.html</loc>
-    <lastmod>2026-10-10</lastmod>
+    <loc>https://lucianogrossi.com.br/artigos/osint/busca-avancada/</loc>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://lucianogrossi.com.br/osint/guia/busca-avancada.html</loc>
-    <lastmod>2026-10-10</lastmod>
+    <loc>https://lucianogrossi.com.br/artigos/osint/imagens/</loc>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://lucianogrossi.com.br/osint/guia/imagens.html</loc>
-    <lastmod>2026-10-10</lastmod>
+    <loc>https://lucianogrossi.com.br/artigos/osint/dominios-e-ips/</loc>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://lucianogrossi.com.br/osint/guia/dominios-e-ips.html</loc>
-    <lastmod>2026-10-10</lastmod>
+    <loc>https://lucianogrossi.com.br/artigos/osint/metadados/</loc>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://lucianogrossi.com.br/osint/guia/metadados.html</loc>
-    <lastmod>2026-10-10</lastmod>
+    <loc>https://lucianogrossi.com.br/artigos/osint/pegada-digital/</loc>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://lucianogrossi.com.br/osint/guia/pegada-digital.html</loc>
-    <lastmod>2026-10-10</lastmod>
+    <loc>https://lucianogrossi.com.br/artigos/osint/higiene-digital/</loc>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://lucianogrossi.com.br/osint/guia/higiene-digital.html</loc>
-    <lastmod>2026-10-10</lastmod>
+    <loc>https://lucianogrossi.com.br/artigos/curtas-com-ia/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://lucianogrossi.com.br/artigos/curtas-com-ia/roteiro/</loc>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://lucianogrossi.com.br/audiovisual/guia/</loc>
-    <lastmod>2026-10-10</lastmod>
+    <loc>https://lucianogrossi.com.br/artigos/curtas-com-ia/direcao-de-arte/</loc>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://lucianogrossi.com.br/audiovisual/guia/roteiro.html</loc>
-    <lastmod>2026-10-10</lastmod>
+    <loc>https://lucianogrossi.com.br/artigos/curtas-com-ia/consistencia/</loc>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://lucianogrossi.com.br/audiovisual/guia/direcao-de-arte.html</loc>
-    <lastmod>2026-10-10</lastmod>
+    <loc>https://lucianogrossi.com.br/artigos/curtas-com-ia/decupagem/</loc>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://lucianogrossi.com.br/audiovisual/guia/consistencia.html</loc>
-    <lastmod>2026-10-10</lastmod>
+    <loc>https://lucianogrossi.com.br/artigos/curtas-com-ia/movimentos-de-camera/</loc>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://lucianogrossi.com.br/audiovisual/guia/decupagem.html</loc>
-    <lastmod>2026-10-10</lastmod>
+    <loc>https://lucianogrossi.com.br/artigos/curtas-com-ia/video/</loc>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://lucianogrossi.com.br/audiovisual/guia/movimentos-de-camera.html</loc>
-    <lastmod>2026-10-10</lastmod>
+    <loc>https://lucianogrossi.com.br/artigos/curtas-com-ia/montagem/</loc>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://lucianogrossi.com.br/audiovisual/guia/video.html</loc>
-    <lastmod>2026-10-10</lastmod>
+    <loc>https://lucianogrossi.com.br/artigos/curtas-com-ia/som/</loc>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://lucianogrossi.com.br/audiovisual/guia/montagem.html</loc>
-    <lastmod>2026-10-10</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://lucianogrossi.com.br/audiovisual/guia/som.html</loc>
-    <lastmod>2026-10-10</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://lucianogrossi.com.br/audiovisual/guia/entrega.html</loc>
-    <lastmod>2026-10-10</lastmod>
+    <loc>https://lucianogrossi.com.br/artigos/curtas-com-ia/entrega/</loc>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>

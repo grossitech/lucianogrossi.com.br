@@ -327,6 +327,8 @@
 
     .section-intro { color: var(--muted); margin-bottom: 2rem; max-width: 480px; }
     .section-intro.tight { margin-bottom: 1rem; }
+    .section-intro a { color: var(--text); text-decoration: none; border-bottom: 1px solid var(--accent); }
+    .section-intro a:hover { color: var(--accent); }
 
     .card-title { color: var(--text); font-size: 13px; margin-bottom: 2px; }
     .card-sub { font-size: 11px; font-family: var(--mono); }
@@ -398,6 +400,7 @@
     <div class="nav-links">
       <a href="#sobre">sobre</a>
       <a href="#projetos">projetos</a>
+      <a href="#artigos">artigos</a>
       <a href="#ferramentas">ferramentas</a>
       <a href="#experiencia">experiência</a>
       <a href="#contato">contato</a>
@@ -545,10 +548,46 @@
     </div>
   </section>
 
+  <!-- ARTICLES -->
+  <section id="artigos" class="sec-border">
+    <div class="section-header">
+      <span class="section-label">// 03</span>
+      <h2>Artigos</h2>
+    </div>
+    <p class="section-intro">
+      Séries de artigos sobre o que estudo e pratico. <a href="/artigos/">Ver todos</a>.
+    </p>
+    <div class="contact-grid">
+      <a href="/artigos/osint/" class="contact-card">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="card-title">OSINT: o que as fontes abertas revelam</div>
+          <div class="card-sub">8 artigos · privacidade e pesquisa</div>
+        </div>
+      </a>
+
+      <a href="/artigos/curtas-com-ia/" class="contact-card">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V4h-4z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="card-title">Fazer um curta com IA</div>
+          <div class="card-sub">9 artigos · do roteiro à entrega</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
   <!-- TOOLS -->
   <section id="ferramentas" class="sec-border">
     <div class="section-header">
-      <span class="section-label">// 03</span>
+      <span class="section-label">// 04</span>
       <h2>Ferramentas</h2>
     </div>
     <p class="section-intro">
@@ -563,19 +602,7 @@
         </div>
         <div>
           <div class="card-title">Kit de Ferramentas OSINT</div>
-          <div class="card-sub">198 ferramentas · guia em 8 capítulos</div>
-        </div>
-      </a>
-
-      <a href="./audiovisual/guia/" class="contact-card">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V4h-4z"/>
-          </svg>
-        </div>
-        <div>
-          <div class="card-title">Guia de Curtas com IA</div>
-          <div class="card-sub">Do roteiro à entrega · 9 capítulos</div>
+          <div class="card-sub">198 ferramentas · 27 categorias</div>
         </div>
       </a>
 
@@ -633,7 +660,7 @@
   <!-- EXPERIENCE -->
   <section id="experiencia" class="sec-border">
     <div class="section-header">
-      <span class="section-label">// 04</span>
+      <span class="section-label">// 05</span>
       <h2>Experiência</h2>
     </div>
     <div class="timeline">
@@ -721,7 +748,7 @@
   <!-- TALKS -->
   <section id="palestras" class="sec-border">
     <div class="section-header">
-      <span class="section-label">// 05</span>
+      <span class="section-label">// 06</span>
       <h2>Palestras</h2>
     </div>
     <div class="timeline">
@@ -744,7 +771,7 @@
   <!-- EDUCATION -->
   <section id="formacao" class="sec-border">
     <div class="section-header">
-      <span class="section-label">// 06</span>
+      <span class="section-label">// 07</span>
       <h2>Formação e certificações</h2>
     </div>
     <p class="section-intro tight">
@@ -827,7 +854,7 @@
   <!-- CONTACT -->
   <section id="contato" class="sec-border">
     <div class="section-header">
-      <span class="section-label">// 07</span>
+      <span class="section-label">// 08</span>
       <h2>Contato</h2>
     </div>
     <p class="section-intro">

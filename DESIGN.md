@@ -70,7 +70,7 @@ Pesos: **300** é o padrão (corpo e títulos grandes); **400** para títulos de
 |---|---|---|---|
 | Título da home (`h1`) | `clamp(2.8rem, 6vw, 5rem)` | 300 | `letter-spacing: -0.02em`, `line-height: 1.08` |
 | Título de página interna (`h1`) | `clamp(2rem, 5vw, 3rem)` | 300 | `line-height: 1.1` |
-| Título de seção (`h2`) | `2rem` (home) · `1.3rem` (guias) | 300 / 400 | |
+| Título de seção (`h2`) | `2rem` (home) · `1.3rem` (artigos) | 300 / 400 | |
 | Corpo | `1rem` | 300 | `line-height: 1.7` |
 | Texto de apoio (lead, descrição) | `0.95rem` a `1.1rem` | 300 | cor `--muted` |
 | Rótulo em mono | `10px` a `12px` | 400 | maiúsculas e `letter-spacing` de `0.04em` a `0.12em` |
@@ -94,7 +94,7 @@ Uma ênfase por título.
 | Home (seções) | `1100px` | `padding: 5rem 2rem` por seção |
 | Catálogo OSINT | `1120px` | `padding: 8rem 2rem 5rem` |
 | Ferramentas pequenas (contador etc.) | `780px` | `padding: 8rem 2rem 5rem` |
-| Guias (texto longo) | `760px` | `padding: 8rem 2rem 5rem` |
+| Artigos (texto longo) | `760px` | `padding: 8rem 2rem 5rem` |
 
 - O `8rem` no topo das páginas internas compensa o menu fixo (cerca de 63 px de altura).
 - Seções da home são separadas por `border-top: 1px solid var(--border)`.
@@ -117,19 +117,20 @@ Fixo no topo, fundo `rgba(10,10,10,0.85)` com `backdrop-filter: blur(12px)`, bor
     <a href="/#sobre">sobre</a>
     <a href="/#experiencia">experiência</a>
     <a href="/#projetos">projetos</a>
+    <a href="/artigos/">artigos</a>
     <a href="/#contato">contato</a>
   </div>
 </nav>
 ```
 
-Na home (`index.html`), os links usam âncoras locais e incluem "ferramentas": sobre, projetos, ferramentas, experiência, contato.
+Na home (`index.html`), os links usam âncoras locais: sobre, projetos, artigos, ferramentas, experiência, contato.
 
 ### Rótulo de página
 
 Mono, laranja, maiúsculas, com um traço de 24 px à esquerda. Fica acima do `h1` das páginas internas.
 
 ```html
-<div class="page-tag">Guia OSINT · 03</div>
+<div class="page-tag">Série OSINT · Parte 3 de 8</div>
 ```
 
 Na home, o equivalente é `.hero-tag`; nas seções, `.section-label` com a numeração `// 01`, `// 02`… Ao incluir ou remover uma seção da home, renumere todas.
@@ -154,11 +155,25 @@ Variação para listas: `.cert-list`, com nome à esquerda e metadados em mono �
 
 `.tag` (mono 10px com borda) para assuntos; `.skill-tag` (com bolinha laranja) para os destaques do Sobre.
 
-### Caixa de destaque (guias)
+### Artigos
+
+Artigos ficam em `/artigos/<série>/<artigo>/`, com índice da série em `/artigos/<série>/` e índice geral em `/artigos/`. Endereços em minúsculas, palavras separadas por hífen, sem `.html`. Estilos em `guia.css`.
+
+Ordem do topo de um artigo: rótulo de página (`Série X · Parte N de T`), `h1` com uma ênfase, **assinatura** e texto de apoio (`.lead`).
+
+```html
+<p class="byline">por Luciano Grossi · <time datetime="2026-10-10">10 de outubro de 2026</time> · 3 min de leitura</p>
+```
+
+O tempo de leitura conta 200 palavras por minuto. No fim do artigo, nesta ordem: caixa de destaque, link para o catálogo (quando houver), **Leia também** (`.leia`, com um artigo relacionado de outra série quando o assunto cruza e o link para a outra série) e a navegação anterior/próxima (`.cap-nav`).
+
+Cada artigo tem `meta description` e as tags Open Graph (`og:type` article, título, descrição, URL, data de publicação). Ao mover um artigo de endereço, o antigo vira página de redirecionamento com `noindex`, como os antigos `/osint/guia/` e `/audiovisual/guia/`.
+
+### Caixa de destaque (artigos)
 
 `.defesa` em `guia.css`: fundo `--bg2`, borda, e **borda esquerda de 2px laranja**. Título interno em mono laranja maiúsculo (`h3`). Usada para "Do lado da defesa" (OSINT) e "Na prática" (curtas).
 
-### Tabelas e código (guias)
+### Tabelas e código (artigos)
 
 Tabelas sem fundo, só linhas divisórias; cabeçalho em mono 10px `--muted` maiúsculo. Código inline com fundo `--bg3`; blocos `pre` com fundo `--bg2`.
 
@@ -178,7 +193,8 @@ Na home, só o copyright. **Em janeiro, atualizar o ano em todas as páginas.**
 ### Links no texto
 
 - Em parágrafos da home: texto `--text` com sublinhado laranja de 1px (`border-bottom`), laranja no hover. Use pouco: no Sobre há só dois.
-- Em guias e catálogos: laranja, sem sublinhado, sublinhado no hover.
+- Em artigos e catálogos: laranja, sem sublinhado, sublinhado no hover.
+- No parágrafo de abertura de seção da home (`.section-intro a`): o mesmo estilo dos parágrafos.
 - Links externos abrem em nova aba com `target="_blank" rel="noopener"`.
 
 ---
@@ -199,7 +215,7 @@ Na home, só o copyright. **Em janeiro, atualizar o ano em todas as páginas.**
 - Sem superlativos de marketing ("incrível", "épico", "revolucionário") e sem exclamações.
 - Termo estrangeiro aparece explicado na primeira vez: "Inteligência de Fontes Abertas (*Open Source Intelligence*, ou OSINT)".
 - Nomes de cargos e instituições como no documento oficial.
-- Guias são escritos do zero, sem copiar material de cursos.
+- Artigos são escritos do zero, sem copiar material de cursos.
 
 ---
 
@@ -209,10 +225,10 @@ Na home, só o copyright. **Em janeiro, atualizar o ano em todas as páginas.**
 |---|---|
 | `style.css` | variáveis, reset, menu, botões, rótulo de página, rodapé. Base de todas as páginas |
 | `index.html` | home, com os estilos próprios em `<style>` |
-| `guia.css` | estilos dos guias (`/osint/guia/` e `/audiovisual/guia/`) |
+| `guia.css` | estilos dos artigos (`/artigos/`) |
 | `osint/catalogo.css` · `catalogo.js` | catálogo com busca, gerado de `osint/ferramentas.json` |
 
-Todo CSS e JS é linkado com `?v=N` (`style.css?v=2`, `guia.css?v=2`, `catalogo.css?v=2`, `catalogo.js?v=2`). Ao mudar um desses arquivos, aumente o número em todas as páginas que o usam, para o navegador não servir a versão antiga.
+Todo CSS e JS é linkado com `?v=N` (`style.css?v=2`, `guia.css?v=3`, `catalogo.css?v=2`, `catalogo.js?v=2`). Ao mudar um desses arquivos, aumente o número em todas as páginas que o usam, para o navegador não servir a versão antiga.
 
 Na home, seções com divisória usam `.sec-border` e o parágrafo de abertura de seção usa `.section-intro` (`.section-intro.tight` quando vem seguido de lista). Não use `style="..."` no HTML: crie uma classe.
 

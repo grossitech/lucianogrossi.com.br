@@ -20,8 +20,9 @@ Site estático hospedado via **GitHub Pages**, sem framework, sem bundler, sem d
 | `/snake/` | Ferramenta: jogo da cobrinha estilo Nokia 3310/3320 |
 | `/pizza-day/` | Ferramenta: contagem do Bitcoin Pizza Day com preço do BTC ao vivo |
 | `/osint/` | Ferramenta: catálogo de ferramentas de OSINT com busca (dados em `osint/ferramentas.json`) |
-| `/osint/guia/` | Guia de OSINT em oito capítulos, com foco em privacidade e proteção |
-| `/audiovisual/guia/` | Guia de curtas com IA em nove capítulos, do roteiro à entrega |
+| `/artigos/` | Índice dos artigos |
+| `/artigos/osint/` | Série de 8 artigos sobre OSINT, com foco em privacidade e proteção |
+| `/artigos/curtas-com-ia/` | Série de 9 artigos sobre curtas com IA, do roteiro à entrega |
 | `/venca-os-mitos-que-sabotam-sua-carreira/` | Landing page do livro |
 
 ## Design
