@@ -227,24 +227,24 @@
   <div class="card">
     <div class="field-group">
       <div class="field">
-        <label class="required">DDI</label>
+        <label class="required" for="ddi">DDI</label>
         <input type="tel" id="ddi" placeholder="55" maxlength="4">
         <span class="hint">Brasil = 55</span>
       </div>
       <div class="field">
-        <label class="required">DDD</label>
+        <label class="required" for="ddd">DDD</label>
         <input type="tel" id="ddd" placeholder="11" maxlength="3">
         <span class="hint">Sem zero inicial</span>
       </div>
       <div class="field">
-        <label class="required">Número</label>
+        <label class="required" for="numero">Número</label>
         <input type="tel" id="numero" placeholder="999999999">
         <span class="hint">Só dígitos</span>
       </div>
     </div>
 
     <div class="field-full">
-      <label>Mensagem <span class="optional-label">opcional</span></label>
+      <label for="mensagem">Mensagem <span class="optional-label">opcional</span></label>
       <textarea id="mensagem" placeholder="Digite uma mensagem pré-definida…"></textarea>
     </div>
 
@@ -260,7 +260,7 @@
     <div class="result-label">// link gerado</div>
     <span class="result-link" id="linkGerado"></span>
     <div class="result-actions">
-      <a class="btn-action btn-open" id="btnAbrir" href="#" target="_blank">Abrir no WhatsApp</a>
+      <a class="btn-action btn-open" id="btnAbrir" href="#" target="_blank" rel="noopener">Abrir no WhatsApp</a>
       <button class="btn-action btn-copy" id="btnCopiar" onclick="copiarLink()">Copiar link</button>
     </div>
   </div>
