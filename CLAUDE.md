@@ -7,4 +7,3 @@ Site estático (HTML, CSS e JS puros) publicado pelo GitHub Pages a cada push na
 - Página nova: siga o checklist do `DESIGN.md` (card na home, `README.md`, `sitemap.xml`).
 - Ao mudar `osint/catalogo.css`, `osint/catalogo.js` ou `guia.css`, aumente o `?v=` nos links.
 - Material de cursos não é publicado; guias são escritos do zero.
-- A página `/osint/lab/` não é citada em nenhum outro lugar do site.
