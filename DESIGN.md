@@ -214,6 +214,7 @@ Na home, só o copyright. **Em janeiro, atualizar o ano em todas as páginas.**
 - Português do Brasil, frases diretas, primeira pessoa no Sobre.
 - Sem superlativos de marketing ("incrível", "épico", "revolucionário") e sem exclamações.
 - Termo estrangeiro aparece explicado na primeira vez: "Inteligência de Fontes Abertas (*Open Source Intelligence*, ou OSINT)".
+- **Siglas sempre explicadas** na primeira vez que aparecem em cada texto: de onde vêm, o que significam por extenso e, se não for óbvio, para que servem. Ex.: "OSINT vem do inglês *Open Source Intelligence*, que significa Inteligência de Fontes Abertas".
 - Nomes de cargos e instituições como no documento oficial.
 - Artigos são escritos do zero, sem copiar material de cursos.
 
