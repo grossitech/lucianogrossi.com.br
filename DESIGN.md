@@ -34,7 +34,7 @@ Definidas como variáveis em `style.css` (`:root`). Use sempre a variável, nunc
 | `--accent` | `#ff6b2b` | o laranja: ênfase, rótulos, links, números de destaque |
 | `--accent-dark` | `#e05520` | hover do botão principal |
 
-Transparências do laranja usadas hoje: `rgba(255,107,43,0.1)` no fundo dos códigos de categoria do catálogo OSINT; `0.3` e `0.12` na borda e no brilho da foto da home.
+Transparências do laranja usadas hoje: `rgba(255,107,43,0.1)` no fundo dos códigos de categoria do catálogo OSINT; `0.3` e `0.12` na borda e no brilho da foto da home; `0.04` no brilho de fundo do topo da home.
 
 ### Contraste (WCAG)
 
@@ -47,7 +47,7 @@ Medido sobre `--bg` (`#0a0a0a`). AA exige 4,5:1 para texto normal e 3:1 para tex
 | `--accent` | 7,0 | 6,6 | 6,1 | sim, inclusive texto pequeno |
 | `--accent-dark` | 5,2 | 4,9 | 4,5 | sim, no limite sobre `--bg3` |
 
-**Nunca** ponha texto claro sobre fundo laranja: branco sobre `--accent` dá 2,8:1 e reprova. Ver "Pendências".
+**Nunca** ponha texto claro sobre fundo laranja: branco sobre `--accent` dá 2,8:1 e reprova. Sobre laranja, o texto é `--bg` (7,0:1), como no botão principal.
 
 ---
 
@@ -99,7 +99,8 @@ Uma ênfase por título.
 - O `8rem` no topo das páginas internas compensa o menu fixo (cerca de 63 px de altura).
 - Seções da home são separadas por `border-top: 1px solid var(--border)`.
 - Raios de borda pequenos: `4px` em cartões e campos, `2px`–`3px` em etiquetas. Nada arredondado demais.
-- Celular: abaixo de **600px**, grades de duas colunas viram uma. No catálogo e nos guias, o menu também esconde os links e fica só o logo (ver "Pendências").
+- Celular: abaixo de **600px**, grades de duas colunas viram uma e o menu esconde os links, ficando só o logo (regra em `style.css`, vale para todas as páginas).
+- Nenhum elemento, nem decorativo, pode passar da largura da tela: no celular isso alarga a página inteira. Decoração posicionada fora do bloco precisa de `overflow-x: clip` no pai, como o brilho do topo da home.
 
 ---
 
@@ -135,11 +136,11 @@ Na home, o equivalente é `.hero-tag`; nas seções, `.section-label` com a nume
 
 ### Botões
 
-`.btn` em mono 13px. `.btn-primary` (fundo laranja) para a ação principal, uma por tela; `.btn-outline` (contorno) para as demais.
+`.btn` em mono 13px. `.btn-primary` (fundo laranja, texto `--bg`) para a ação principal, uma por tela; `.btn-outline` (contorno) para as demais.
 
 ### Cartão de link (`.contact-card`)
 
-Usado em Projetos, Ferramentas e Contato da home. Borda fina, ícone SVG de 16px em laranja dentro de um quadrado `--bg3` de 36px, título em `--text` 13px e uma linha de apoio em mono 11px. Hover só clareia a borda e o texto. Grade de duas colunas, uma no celular.
+Usado em Projetos, Ferramentas e Contato da home. Borda fina, ícone SVG de 16px em laranja dentro de um quadrado `--bg3` de 36px, título em `--text` 13px (`.card-title`) e uma linha de apoio em mono 11px (`.card-sub`). Hover só clareia a borda e o texto. Grade de duas colunas, uma no celular.
 
 Ordem nas grades: o mais novo ou mais importante primeiro.
 
@@ -211,7 +212,9 @@ Na home, só o copyright. **Em janeiro, atualizar o ano em todas as páginas.**
 | `guia.css` | estilos dos guias (`/osint/guia/` e `/audiovisual/guia/`) |
 | `osint/catalogo.css` · `catalogo.js` | catálogo com busca, gerado de `osint/ferramentas.json` |
 
-Ao mudar `catalogo.css`, `catalogo.js` ou `guia.css`, aumente o `?v=` nos links das páginas que os usam, para o navegador não servir a versão antiga.
+Todo CSS e JS é linkado com `?v=N` (`style.css?v=2`, `guia.css?v=2`, `catalogo.css?v=2`, `catalogo.js?v=2`). Ao mudar um desses arquivos, aumente o número em todas as páginas que o usam, para o navegador não servir a versão antiga.
+
+Na home, seções com divisória usam `.sec-border` e o parágrafo de abertura de seção usa `.section-intro` (`.section-intro.tight` quando vem seguido de lista). Não use `style="..."` no HTML: crie uma classe.
 
 ### Página nova: checklist
 
@@ -229,8 +232,5 @@ Ao mudar `catalogo.css`, `catalogo.js` ou `guia.css`, aumente o `?v=` nos links 
 
 Diferenças que já existem e ainda não foram corrigidas. Ao resolver uma, remova-a daqui.
 
-- **Contraste do botão principal:** texto branco sobre laranja (`.btn-primary`) dá 2,8:1 e reprova o WCAG AA. Opções: texto `--bg` sobre o laranja (7,0:1) ou escurecer o fundo do botão.
-- **Brilho verde no topo da home:** `.hero::after` usa `rgba(200,245,90,0.04)`, um verde que não faz parte da paleta. Quase invisível, mas destoa; o natural seria o laranja.
 - **Larguras de página:** 1100, 1120, 780 e 760 px convivem. Não é erro, mas uma página nova deve escolher uma das existentes.
-- **Menu no celular:** catálogo e guias escondem os links abaixo de 600px; a home e as ferramentas antigas (contador, WhatsApp, Pizza Day, cobrinha, livro) não, e o menu pode apertar em telas estreitas.
-- **Estilos inline na home:** os cards de Projetos e Ferramentas repetem `style="..."` em vez de usar classes.
+- **Regras repetidas:** `catalogo.css` e `guia.css` ainda escondem `.nav-links` no celular, o que agora já vem do `style.css`. Inofensivo; dá para remover na próxima mudança desses arquivos.

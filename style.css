@@ -84,6 +84,12 @@ nav {
   color: var(--text);
 }
 
+@media (max-width: 600px) {
+  .nav-links {
+    display: none;
+  }
+}
+
 /* =============================================
    BOTÕES
    ============================================= */
@@ -104,7 +110,7 @@ nav {
 
 .btn-primary {
   background: var(--accent);
-  color: #ffffff;
+  color: var(--bg);
   font-weight: 500;
 }
 
